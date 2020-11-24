@@ -1,0 +1,11 @@
+{
+  "client_id": "DfgJGu962MJhC9IDVvfndqUOrfka",
+  "client_secret": "iOG7QPx_7nW9A5c1fkJGGBWh_WUa",
+  "redirect_uri": "com.wso2is.androidsample2://oauth",
+  "authorization_scope": "openid email profile",
+  "authorization_endpoint": "https://htid.hungthinhcorp.com.vn/oauth2/authorize",
+  "end_session_endpoint": "https://htid.hungthinhcorp.com.vn/oidc/logout",
+  "token_endpoint": "https://htid.hungthinhcorp.com.vn/oauth2/token",
+  "userinfo_endpoint": "https://htid.hungthinhcorp.com.vn/oauth2/userinfo",
+  "https_required": true
+}

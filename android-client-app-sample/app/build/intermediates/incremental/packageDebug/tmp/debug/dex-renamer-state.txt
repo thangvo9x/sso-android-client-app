@@ -1,0 +1,4 @@
+#Tue Nov 24 10:02:33 ICT 2020
+base.0=/Users/thang/Desktop/android-client-app-sample/app/build/intermediates/dex/debug/mergeDexDebug/classes.dex
+path.0=classes.dex
+renamed.0=classes.dex
