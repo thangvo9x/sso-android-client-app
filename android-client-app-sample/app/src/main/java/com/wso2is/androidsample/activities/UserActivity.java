@@ -143,7 +143,9 @@ public class UserActivity extends AppCompatActivity {
             });
 
             TextView tvUsername = findViewById(R.id.tvUsername);
+            TextView tvEmail = findViewById(R.id.tvEmail);
             tvUsername.setText(user.getUsername());
+            tvEmail.setText(user.getEmail());
         } else {
             Toast.makeText(this, "Unable to Fetch User Information", Toast.LENGTH_LONG).show();
             Log.e(TAG, "Error while fetching user information.");

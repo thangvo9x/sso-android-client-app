@@ -117,9 +117,20 @@ public class UserInfoRequest {
                 String response = Okio.buffer(Okio.source(conn.getInputStream())).readString(Charset.forName(UTF_8));
                 userInfoJson.set(new JSONObject(response));
 
+                Log.d(TAG, userInfoJson.get().toString());
                 // Sets values for the user object.
-                user.setUsername(userInfoJson.get().getString("name"));
-                user.setEmail(userInfoJson.get().getString("email"));
+                if (!userInfoJson.get().isNull("name")){
+                    user.setUsername("username: " + userInfoJson.get().getString("name"));
+                } else{
+                    user.setUsername("updating...");
+                }
+
+                if (!userInfoJson.get().isNull("email")){
+                    user.setEmail(userInfoJson.get().getString("email"));
+                } else{
+                    user.setEmail("Email is updating...");
+                }
+
                 val = true;
 
             } catch (IOException ioEx) {

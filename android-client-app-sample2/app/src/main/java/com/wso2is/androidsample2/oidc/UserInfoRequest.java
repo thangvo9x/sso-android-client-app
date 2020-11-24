@@ -47,6 +47,7 @@ import static com.wso2is.androidsample2.utils.Constants.AUTHORIZATION;
 import static com.wso2is.androidsample2.utils.Constants.BEARER;
 import static com.wso2is.androidsample2.utils.Constants.UTF_8;
 
+
 /**
  * This class facilitates the invoking of userinfo endpoint of WSO2 IS in order to obtain user information.
  */
@@ -116,10 +117,21 @@ public class UserInfoRequest {
                 conn.setInstanceFollowRedirects(false);
                 String response = Okio.buffer(Okio.source(conn.getInputStream())).readString(Charset.forName(UTF_8));
                 userInfoJson.set(new JSONObject(response));
+
                 Log.d(TAG, userInfoJson.get().toString());
                 // Sets values for the user object.
-                user.setUsername(userInfoJson.get().getString("name"));
-                user.setEmail(userInfoJson.get().getString("email"));
+                if (!userInfoJson.get().isNull("name")){
+                    user.setUsername("username: " + userInfoJson.get().getString("name"));
+                } else{
+                    user.setUsername("updating...");
+                }
+
+                if (!userInfoJson.get().isNull("email")){
+                    user.setEmail(userInfoJson.get().getString("email"));
+                } else{
+                    user.setEmail("Email is updating...");
+                }
+
                 val = true;
 
             } catch (IOException ioEx) {

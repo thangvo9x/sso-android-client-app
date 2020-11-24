@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/thang/Desktop/android-client-app-sample/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml",
+            "outputFile": "/Users/thang/Desktop/sso-android-client-app/android-client-app-sample/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml",
             "map": [
                 {
-                    "source": "/Users/thang/Desktop/android-client-app-sample/app/src/main/res/values/font_certs.xml",
+                    "source": "/Users/thang/Desktop/sso-android-client-app/android-client-app-sample/app/src/main/res/values/font_certs.xml",
                     "from": {
                         "startLines": "20,24,29",
                         "startColumns": "4,4,4",
@@ -20,25 +20,6 @@
                         "endLines": "5,10,15",
                         "endColumns": "12,19,19",
                         "endOffsets": "302,2027,3617"
-                    }
-                },
-                {
-                    "source": "/Users/thang/Desktop/android-client-app-sample/app/src/main/res/values/preloaded_fonts.xml",
-                    "from": {
-                        "startLines": "20",
-                        "startColumns": "4",
-                        "startOffsets": "748",
-                        "endLines": "25",
-                        "endColumns": "12",
-                        "endOffsets": "973"
-                    },
-                    "to": {
-                        "startLines": "16",
-                        "startColumns": "4",
-                        "startOffsets": "3622",
-                        "endLines": "21",
-                        "endColumns": "12",
-                        "endOffsets": "3847"
                     }
                 },
                 {
@@ -61,26 +42,26 @@
                     }
                 },
                 {
-                    "source": "/Users/thang/Desktop/android-client-app-sample/app/src/main/res/values/styles.xml",
+                    "source": "/Users/thang/Desktop/sso-android-client-app/android-client-app-sample/app/src/main/res/values/preloaded_fonts.xml",
                     "from": {
-                        "startLines": "21",
+                        "startLines": "20",
                         "startColumns": "4",
-                        "startOffsets": "747",
-                        "endLines": "27",
+                        "startOffsets": "748",
+                        "endLines": "25",
                         "endColumns": "12",
-                        "endOffsets": "1117"
+                        "endOffsets": "973"
                     },
                     "to": {
-                        "startLines": "410",
+                        "startLines": "16",
                         "startColumns": "4",
-                        "startOffsets": "27156",
-                        "endLines": "416",
+                        "startOffsets": "3622",
+                        "endLines": "21",
                         "endColumns": "12",
-                        "endOffsets": "27526"
+                        "endOffsets": "3847"
                     }
                 },
                 {
-                    "source": "/Users/thang/Desktop/android-client-app-sample/app/src/main/res/values/strings.xml",
+                    "source": "/Users/thang/Desktop/sso-android-client-app/android-client-app-sample/app/src/main/res/values/strings.xml",
                     "from": {
                         "startLines": "19,28,21,20,25,23,27,24,22,26",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4",
@@ -113,6 +94,25 @@
                         "endLines": "194,195,291,292,293,294,295,296,297,307,308,309,310,311,312,313,314,315,316,317,318,319,320,321,330,331,337,338,342,343,344,345,346,347,353,399,1726,1730,1731,1735,1736,1873,1874,2545,2734,2766,2803,2810",
                         "endColumns": "68,62,69,67,71,69,60,73,72,60,60,61,63,61,60,67,99,59,65,72,68,56,51,61,71,75,34,34,49,60,56,33,34,34,69,70,116,12,109,12,128,71,66,24,24,24,24,24",
                         "endOffsets": "12833,12896,19489,19557,19629,19699,19760,19834,19907,20752,20813,20875,20939,21001,21062,21130,21230,21290,21356,21429,21498,21555,21607,21669,22194,22270,22544,22579,22771,22832,22889,22923,22958,22993,23338,26481,114767,114968,115078,115279,115408,126306,126373,162483,179343,181408,183168,183545"
+                    }
+                },
+                {
+                    "source": "/Users/thang/Desktop/sso-android-client-app/android-client-app-sample/app/src/main/res/values/styles.xml",
+                    "from": {
+                        "startLines": "21",
+                        "startColumns": "4",
+                        "startOffsets": "747",
+                        "endLines": "27",
+                        "endColumns": "12",
+                        "endOffsets": "1117"
+                    },
+                    "to": {
+                        "startLines": "410",
+                        "startColumns": "4",
+                        "startOffsets": "27156",
+                        "endLines": "416",
+                        "endColumns": "12",
+                        "endOffsets": "27526"
                     }
                 },
                 {

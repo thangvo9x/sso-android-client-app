@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/thang/Desktop/android-client-app-sample/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-tr/values-tr.xml",
+            "outputFile": "/Users/thang/Desktop/sso-android-client-app/android-client-app-sample/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-tr/values-tr.xml",
             "map": [
                 {
                     "source": "/Users/thang/.gradle/caches/transforms-2/files-2.1/4ac41fd35476668ebb95f9c5d1f4caae/support-compat-28.0.0-rc01/res/values-tr/values-tr.xml",

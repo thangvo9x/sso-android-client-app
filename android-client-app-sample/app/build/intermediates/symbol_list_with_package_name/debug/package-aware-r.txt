@@ -794,6 +794,7 @@ id titleDividerNoCustom
 id title_template
 id top
 id topPanel
+id tvEmail
 id tvProfile
 id tvUsername
 id tvUsernameLabel
