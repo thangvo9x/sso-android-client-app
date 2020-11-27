@@ -105,20 +105,25 @@ public class UserInfoRequest {
             return false;
         }
 
+
         executor.submit(() -> {
             try {
+
                 HttpURLConnection conn;
                 if (configuration.isHttpsRequired()) {
                     conn = (HttpURLConnection) userInfoEndpoint.openConnection();
                 } else {
                     conn = ConnectionBuilderForTesting.INSTANCE.openConnection(Uri.parse(userInfoEndpoint.toString()));
                 }
+
                 conn.setRequestProperty(AUTHORIZATION, BEARER + accessToken);
-                conn.setInstanceFollowRedirects(false);
+                conn.setInstanceFollowRedirects(true);
+                Log.d(TAG, conn.getInputStream().toString());
                 String response = Okio.buffer(Okio.source(conn.getInputStream())).readString(Charset.forName(UTF_8));
                 userInfoJson.set(new JSONObject(response));
+                Log.d(TAG, "toi day roi ne");
+                Log.d(TAG, "Response" + userInfoJson.get().toString());
 
-                Log.d(TAG, userInfoJson.get().toString());
                 // Sets values for the user object.
                 if (!userInfoJson.get().isNull("name")){
                     user.setUsername("username: " + userInfoJson.get().getString("name"));

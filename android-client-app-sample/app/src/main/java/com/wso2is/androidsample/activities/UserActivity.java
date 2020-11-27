@@ -39,6 +39,7 @@ import java.util.Map;
 import java.util.concurrent.atomic.AtomicReference;
 
 import net.openid.appauth.AppAuthConfiguration;
+import net.openid.appauth.AuthState;
 import net.openid.appauth.AuthorizationException;
 import net.openid.appauth.AuthorizationResponse;
 import net.openid.appauth.AuthorizationService;
@@ -131,8 +132,9 @@ public class UserActivity extends AppCompatActivity {
      */
     private void displayAuthorized() {
 
+        AuthState state = stateManager.getCurrentState();
         // Fetches the user information from the userinfo endpoint of the WSO2 IS.
-        boolean val = UserInfoRequest.getInstance().fetchUserInfo(accessToken, this, user);
+        boolean val = UserInfoRequest.getInstance().fetchUserInfo(accessToken == null ? state.getAccessToken() : accessToken, this, user);
 
         if (val) {
             setContentView(R.layout.activity_user);

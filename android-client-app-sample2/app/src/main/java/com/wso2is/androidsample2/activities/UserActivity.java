@@ -39,6 +39,7 @@ import java.util.Map;
 import java.util.concurrent.atomic.AtomicReference;
 
 import net.openid.appauth.AppAuthConfiguration;
+import net.openid.appauth.AuthState;
 import net.openid.appauth.AuthorizationException;
 import net.openid.appauth.AuthorizationResponse;
 import net.openid.appauth.AuthorizationService;
@@ -94,6 +95,7 @@ public class UserActivity extends AppCompatActivity {
         super.onStart();
 
         if (stateManager.getCurrentState().isAuthorized()) {
+            Log.d(TAG, "authorized");
             displayAuthorized();
         } else {
             AuthorizationResponse response = AuthorizationResponse.fromIntent(getIntent());
@@ -130,11 +132,19 @@ public class UserActivity extends AppCompatActivity {
      * Once the access token is obtained the user profile view will be set.
      */
     private void displayAuthorized() {
-//        Log.i("test", accessToken.toString());
         // Fetches the user information from the userinfo endpoint of the WSO2 IS.
-        boolean val = UserInfoRequest.getInstance().fetchUserInfo(accessToken, this, user);
+//        Log.d(TAG, stateManager.getCurrentState().toString());
+        AuthState state = stateManager.getCurrentState();
+        if(accessToken == null){
+            Log.d(TAG, "vao day");
+            accessToken = state.getAccessToken();
+        }
+        Log.d(TAG, state.getAccessToken());
+
+        boolean val = UserInfoRequest.getInstance().fetchUserInfo(accessToken , this, user);
 
         if (val) {
+            Log.d(TAG, "vao tren");
             setContentView(R.layout.activity_user);
             getSupportActionBar().setTitle(APP_NAME);
             (findViewById(R.id.bLogout)).setOnClickListener((View view) -> {
@@ -147,6 +157,7 @@ public class UserActivity extends AppCompatActivity {
             tvUsername.setText(user.getUsername());
             tvEmail.setText(user.getEmail());
         } else {
+            Log.d(TAG, "vao duoi");
             Toast.makeText(this, "Unable to Fetch User Information", Toast.LENGTH_LONG).show();
             Log.e(TAG, "Error while fetching user information.");
             Intent login = new Intent(this, LoginActivity.class);
@@ -206,6 +217,7 @@ public class UserActivity extends AppCompatActivity {
 
         if (!stateManager.getCurrentState().isAuthorized()) {
             Log.e(TAG, "Authorization code exchange failed.");
+
         } else {
             idToken = tokenResponse.idToken;
             accessToken = tokenResponse.accessToken;

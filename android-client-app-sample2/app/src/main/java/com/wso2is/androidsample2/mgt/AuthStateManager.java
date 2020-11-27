@@ -145,7 +145,7 @@ public class AuthStateManager {
      */
     @AnyThread
     @NonNull
-    private AuthState readState() {
+    public AuthState readState() {
 
         AuthState auth;
         String currentState = prefs.getString(KEY_STATE, null);

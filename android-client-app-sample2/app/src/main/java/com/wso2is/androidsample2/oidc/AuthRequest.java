@@ -30,6 +30,7 @@ import com.wso2is.androidsample2.mgt.AuthStateManager;
 import com.wso2is.androidsample2.mgt.ConfigManager;
 
 import java.lang.ref.WeakReference;
+import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.atomic.AtomicReference;
 
 import net.openid.appauth.AppAuthConfiguration;
@@ -62,7 +63,7 @@ public class AuthRequest {
     private static AuthStateManager authStateManager;
 
     private AuthorizationService authService;
-
+    private CountDownLatch authIntentLatch = new CountDownLatch(1);
     private AuthRequest(Context context) {
 
         this.context = context;
@@ -168,9 +169,10 @@ public class AuthRequest {
     private void warmUpBrowser() {
 
         Log.i(TAG, "Warming up browser instance for auth request.");
-
+        authIntentLatch = new CountDownLatch(1);
         CustomTabsIntent.Builder intentBuilder = authService.createCustomTabsIntentBuilder(authRequest.get().toUri());
         customTabIntent.set(intentBuilder.build());
+        authIntentLatch.countDown();
     }
 
     /**

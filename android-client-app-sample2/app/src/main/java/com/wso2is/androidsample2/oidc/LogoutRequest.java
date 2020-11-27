@@ -22,6 +22,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.support.customtabs.CustomTabsIntent;
+import android.util.Log;
 
 import com.wso2is.androidsample2.mgt.AuthStateManager;
 import com.wso2is.androidsample2.mgt.ConfigManager;
@@ -33,7 +34,7 @@ import net.openid.appauth.AuthState;
 
 import static com.wso2is.androidsample2.activities.UserActivity.idToken;
 import static com.wso2is.androidsample2.activities.UserActivity.state;
-
+import android.util.Log;
 /**
  * This class facilitates the logout function of the application.
  * User's state will be reset and will be logged out from the WSO2 IS.
@@ -92,7 +93,6 @@ public class LogoutRequest {
         url.append(redirect);
         url.append("&state=");
         url.append(state);
-
         CustomTabsIntent.Builder builder = new CustomTabsIntent.Builder();
         CustomTabsIntent customTabsIntent = builder.build();
         customTabsIntent.intent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY | Intent.FLAG_ACTIVITY_NEW_TASK

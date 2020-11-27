@@ -55,7 +55,7 @@ public class LoginActivity extends AppCompatActivity {
         } else {
             // If the user is not authorized, the LoginActivity view will be launched.
             setContentView(R.layout.activity_login);
-            getSupportActionBar().setTitle("");
+            getSupportActionBar().setTitle("PICKUP2");
 
             // Checks if the configuration is valid.
             if (!configuration.isValid()) {
