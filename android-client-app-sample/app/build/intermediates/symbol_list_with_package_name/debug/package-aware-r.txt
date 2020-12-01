@@ -631,6 +631,7 @@ drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable ic_launcher_background
 drawable ic_launcher_foreground
+drawable logo_hungthinh
 drawable notification_action_background
 drawable notification_bg
 drawable notification_bg_low

@@ -26,7 +26,9 @@ import com.wso2is.androidsample.mgt.ConfigManager;
 import com.wso2is.androidsample.models.User;
 import com.wso2is.androidsample.utils.ConnectionBuilderForTesting;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.lang.ref.WeakReference;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
@@ -112,12 +114,35 @@ public class UserInfoRequest {
                 } else {
                     conn = ConnectionBuilderForTesting.INSTANCE.openConnection(Uri.parse(userInfoEndpoint.toString()));
                 }
-                conn.setRequestProperty(AUTHORIZATION, BEARER + accessToken);
-                conn.setInstanceFollowRedirects(false);
-                String response = Okio.buffer(Okio.source(conn.getInputStream())).readString(Charset.forName(UTF_8));
-                userInfoJson.set(new JSONObject(response));
 
-                Log.d(TAG, userInfoJson.get().toString());
+                conn.setRequestProperty(AUTHORIZATION, BEARER + accessToken);
+                conn.setRequestMethod("GET");
+                conn.setInstanceFollowRedirects(false);
+                Log.d(TAG, "AccessToken " + accessToken);
+                Log.d(TAG, "response code: " + conn.getResponseCode());
+                int responseCode = conn.getResponseCode();
+                if (responseCode == HttpURLConnection.HTTP_OK) { // success
+                    BufferedReader in = new BufferedReader(new InputStreamReader(
+                            conn.getInputStream()));
+                    String inputLine;
+                    StringBuffer response = new StringBuffer();
+
+                    while ((inputLine = in.readLine()) != null) {
+                        response.append(inputLine);
+                    }
+                    in.close();
+
+                    // print result
+//                    System.out.println("vao roi" + response.toString());
+                    userInfoJson.set(new JSONObject(response.toString()));
+                } else {
+                    System.out.println("GET request not worked");
+                }
+
+//                String response = Okio.buffer(Okio.source(conn.getInputStream())).readString(Charset.forName(UTF_8));
+//                userInfoJson.set(new JSONObject(response));
+//                Log.d(TAG, "Response" + userInfoJson.get().toString());
+
                 // Sets values for the user object.
                 if (!userInfoJson.get().isNull("name")){
                     user.setUsername("username: " + userInfoJson.get().getString("name"));

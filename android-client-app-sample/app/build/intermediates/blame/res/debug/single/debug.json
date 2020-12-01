@@ -28,6 +28,10 @@
         "source": "/Users/thang/Desktop/sso-android-client-app/android-client-app-sample/app/src/main/res/font/roboto_bold.xml"
     },
     {
+        "merged": "/Users/thang/Desktop/sso-android-client-app/android-client-app-sample/app/build/intermediates/res/merged/debug/drawable-mdpi_logo_hungthinh.png.flat",
+        "source": "/Users/thang/Desktop/sso-android-client-app/android-client-app-sample/app/src/main/res/drawable-mdpi/logo_hungthinh.png"
+    },
+    {
         "merged": "/Users/thang/Desktop/sso-android-client-app/android-client-app-sample/app/build/intermediates/res/merged/debug/mipmap-hdpi_ic_launcher_round.png.flat",
         "source": "/Users/thang/Desktop/sso-android-client-app/android-client-app-sample/app/src/main/res/mipmap-hdpi/ic_launcher_round.png"
     },

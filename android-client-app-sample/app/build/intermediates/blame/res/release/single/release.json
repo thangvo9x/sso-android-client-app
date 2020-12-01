@@ -44,6 +44,10 @@
         "source": "/Users/thang/Desktop/sso-android-client-app/android-client-app-sample/app/build/generated/res/pngs/release/drawable-xxhdpi/ic_launcher_background.png"
     },
     {
+        "merged": "/Users/thang/Desktop/sso-android-client-app/android-client-app-sample/app/build/intermediates/res/merged/release/drawable-mdpi_logo_hungthinh.png.flat",
+        "source": "/Users/thang/Desktop/sso-android-client-app/android-client-app-sample/app/src/main/res/drawable-mdpi/logo_hungthinh.png"
+    },
+    {
         "merged": "/Users/thang/Desktop/sso-android-client-app/android-client-app-sample/app/build/intermediates/res/merged/release/font_roboto_medium.xml.flat",
         "source": "/Users/thang/Desktop/sso-android-client-app/android-client-app-sample/app/src/main/res/font/roboto_medium.xml"
     },

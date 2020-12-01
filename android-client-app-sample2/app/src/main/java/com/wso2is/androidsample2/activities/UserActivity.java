@@ -36,6 +36,7 @@ import com.wso2is.androidsample2.oidc.UserInfoRequest;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.ExecutorService;
 import java.util.concurrent.atomic.AtomicReference;
 
 import net.openid.appauth.AppAuthConfiguration;
@@ -61,6 +62,7 @@ public class UserActivity extends AppCompatActivity {
 
     private final String TAG = UserActivity.class.getSimpleName();
     private final User user = new User();
+    private ExecutorService executor;
 
     private static AuthStateManager stateManager;
     private static String accessToken;
@@ -97,6 +99,7 @@ public class UserActivity extends AppCompatActivity {
         if (stateManager.getCurrentState().isAuthorized()) {
             Log.d(TAG, "authorized");
             displayAuthorized();
+            return;
         } else {
             AuthorizationResponse response = AuthorizationResponse.fromIntent(getIntent());
             AuthorizationException ex = AuthorizationException.fromIntent(getIntent());
@@ -123,9 +126,9 @@ public class UserActivity extends AppCompatActivity {
 
     @Override
     protected void onDestroy() {
-
         super.onDestroy();
         authService.dispose();
+//        executor.shutdownNow();
     }
 
     /**
@@ -133,16 +136,11 @@ public class UserActivity extends AppCompatActivity {
      */
     private void displayAuthorized() {
         // Fetches the user information from the userinfo endpoint of the WSO2 IS.
-//        Log.d(TAG, stateManager.getCurrentState().toString());
         AuthState state = stateManager.getCurrentState();
-        if(accessToken == null){
-            Log.d(TAG, "vao day");
-            accessToken = state.getAccessToken();
-        }
-        Log.d(TAG, state.getAccessToken());
 
-        boolean val = UserInfoRequest.getInstance().fetchUserInfo(accessToken , this, user);
+        Log.d(TAG, "accessToken " + state.getAccessToken());
 
+        boolean val = UserInfoRequest.getInstance().fetchUserInfo(accessToken == null ? state.getAccessToken() : accessToken , this, user);
         if (val) {
             Log.d(TAG, "vao tren");
             setContentView(R.layout.activity_user);

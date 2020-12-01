@@ -26,6 +26,7 @@ import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.text.TextUtils;
+import android.util.Log;
 
 import com.wso2is.androidsample2.utils.ConnectionBuilderForTesting;
 import com.wso2is.androidsample2.R;
