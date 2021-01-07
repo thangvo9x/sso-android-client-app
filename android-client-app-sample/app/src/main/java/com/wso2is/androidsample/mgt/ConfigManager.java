@@ -73,6 +73,7 @@ public class ConfigManager {
     private Uri userInfoEndpointUri;
     private Uri logoutEndpointUri;
     private Boolean httpsRequired;
+    private Uri introspectUri;
 
     private ConfigManager(Context context) {
 
@@ -222,6 +223,12 @@ public class ConfigManager {
         return logoutEndpointUri;
     }
 
+    @Nullable
+    public Uri getIntrospectUri() {
+
+        return introspectUri;
+    }
+
     /**
      * Returns the client secret specified in the res/raw/config.json file.
      *
@@ -305,6 +312,7 @@ public class ConfigManager {
         userInfoEndpointUri = getRequiredConfigWebUri("userinfo_endpoint");
         logoutEndpointUri = getRequiredConfigWebUri("end_session_endpoint");
         httpsRequired = configJson.optBoolean("https_required", true);
+        introspectUri = getRequiredConfigWebUri("introspect");
     }
 
     /**

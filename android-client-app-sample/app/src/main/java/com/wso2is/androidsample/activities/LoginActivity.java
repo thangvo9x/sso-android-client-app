@@ -18,16 +18,19 @@
 
 package com.wso2is.androidsample.activities;
 
+import android.content.ComponentName;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
+import android.content.ServiceConnection;
 import android.os.Bundle;
+import android.os.IBinder;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
+import com.wso2is.androidsample.R;
 import com.wso2is.androidsample.mgt.AuthStateManager;
 import com.wso2is.androidsample.mgt.ConfigManager;
-import com.wso2is.androidsample.R;
 import com.wso2is.androidsample.oidc.AuthRequest;
 
 import net.openid.appauth.AuthState;
@@ -39,10 +42,39 @@ public class LoginActivity extends AppCompatActivity {
 
     private static final String TAG = LoginActivity.class.getSimpleName();
 
+
+    ServiceConnection m_service;
+    boolean isBound = false;
+
+    private ServiceConnection m_serviceConnection = new ServiceConnection()
+    {
+        @Override
+        public void onServiceConnected(ComponentName className, IBinder service)
+        {
+            isBound = true;
+        }
+
+        @Override
+        public void onServiceDisconnected(ComponentName className)
+        {
+            m_service = null;
+            isBound = false;
+        }
+    };
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
+
+
+//        Map<String, String> extraHeaders = new HashMap<String, String>();
+//        extraHeaders.put("Referer", "http://www.example.com");
+
+//        WebView wv = (WebView) findViewById(R.id.webview);
+//        wv.loadUrl("http://google.com", extraHeaders);
+
 
         AuthStateManager authStateManager = AuthStateManager.getInstance(this);
         ConfigManager configuration = ConfigManager.getInstance(this);
@@ -72,6 +104,9 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
             findViewById(R.id.bLogin).setOnClickListener((View view) -> AuthRequest.getInstance(this).doAuth());
+//            findViewById(R.id.bSignup).setOnClickListener((View view) -> AuthRequest.getInstance(this).warmUpBrowserWithSignup());
         }
     }
+
+
 }

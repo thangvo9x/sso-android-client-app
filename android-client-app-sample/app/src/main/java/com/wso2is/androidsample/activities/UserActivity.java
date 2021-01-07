@@ -18,6 +18,7 @@
 
 package com.wso2is.androidsample.activities;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;

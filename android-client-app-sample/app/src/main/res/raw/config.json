@@ -7,5 +7,6 @@
   "end_session_endpoint": "https://htid.hungthinhcorp.com.vn/oidc/logout",
   "token_endpoint": "https://htid.hungthinhcorp.com.vn/oauth2/token",
   "userinfo_endpoint": "https://htid.hungthinhcorp.com.vn/oauth2/userinfo",
-  "https_required": false
+  "https_required": false,
+  "introspect": "https://htid.hungthinhcorp.com.vn/oauth2/introspect"
 }

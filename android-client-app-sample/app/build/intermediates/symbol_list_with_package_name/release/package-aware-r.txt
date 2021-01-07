@@ -685,6 +685,7 @@ id always
 id async
 id bLogin
 id bLogout
+id bSignup
 id barrier
 id beginning
 id blocking

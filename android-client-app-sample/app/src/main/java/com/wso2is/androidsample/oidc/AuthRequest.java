@@ -21,6 +21,7 @@ package com.wso2is.androidsample.oidc;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.support.customtabs.CustomTabsIntent;
 import android.util.Log;
 
@@ -28,9 +29,6 @@ import com.wso2is.androidsample.activities.LoginActivity;
 import com.wso2is.androidsample.activities.UserActivity;
 import com.wso2is.androidsample.mgt.AuthStateManager;
 import com.wso2is.androidsample.mgt.ConfigManager;
-
-import java.lang.ref.WeakReference;
-import java.util.concurrent.atomic.AtomicReference;
 
 import net.openid.appauth.AppAuthConfiguration;
 import net.openid.appauth.AuthState;
@@ -41,6 +39,9 @@ import net.openid.appauth.CodeVerifierUtil;
 import net.openid.appauth.ResponseTypeValues;
 import net.openid.appauth.browser.AnyBrowserMatcher;
 import net.openid.appauth.browser.BrowserMatcher;
+
+import java.lang.ref.WeakReference;
+import java.util.concurrent.atomic.AtomicReference;
 
 import static net.openid.appauth.AuthorizationRequest.CODE_CHALLENGE_METHOD_S256;
 
@@ -189,5 +190,23 @@ public class AuthRequest {
                 .setCodeVerifier(codeVerifier, codeChallenge, CODE_CHALLENGE_METHOD_S256);
 
         authRequest.set(authRequestBuilder.build());
+    }
+
+    /**
+     * Warms up the custom tab by specifying the possible request URI.
+     */
+    public void warmUpBrowserWithSignup() {
+
+        Log.i(TAG, "Warming up browser instance for Sign up.");
+
+
+       String url = "https://app-profile-dev.hungthinhcorp.com.vn/account/register";
+
+
+        CustomTabsIntent.Builder builder = new CustomTabsIntent.Builder();
+        builder.setShowTitle(true);
+        builder.addDefaultShareMenuItem();
+        CustomTabsIntent customTabsIntent = builder.build();
+        customTabsIntent.launchUrl(context, Uri.parse(url));
     }
 }
