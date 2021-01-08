@@ -18,22 +18,34 @@
 
 package com.wso2is.androidsample.activities;
 
+import android.annotation.SuppressLint;
+import android.app.ActionBar;
 import android.content.ComponentName;
 import android.content.Intent;
 import android.content.ServiceConnection;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
+import android.webkit.WebChromeClient;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.Toast;
 
 import com.wso2is.androidsample.R;
 import com.wso2is.androidsample.mgt.AuthStateManager;
 import com.wso2is.androidsample.mgt.ConfigManager;
 import com.wso2is.androidsample.oidc.AuthRequest;
-
+import com.wso2is.androidsample.oidc.LogoutRequest;
+import static com.wso2is.androidsample.utils.Constants.APP_NAME;
 import net.openid.appauth.AuthState;
+
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * This activity will handle the login view of the application.
@@ -63,17 +75,12 @@ public class LoginActivity extends AppCompatActivity {
     };
 
 
+    @SuppressLint("RestrictedApi")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
 
-
-//        Map<String, String> extraHeaders = new HashMap<String, String>();
-//        extraHeaders.put("Referer", "http://www.example.com");
-
-//        WebView wv = (WebView) findViewById(R.id.webview);
-//        wv.loadUrl("http://google.com", extraHeaders);
 
 
         AuthStateManager authStateManager = AuthStateManager.getInstance(this);
@@ -87,7 +94,7 @@ public class LoginActivity extends AppCompatActivity {
         } else {
             // If the user is not authorized, the LoginActivity view will be launched.
             setContentView(R.layout.activity_login);
-            getSupportActionBar().setTitle("");
+            getSupportActionBar().setTitle(APP_NAME);
 
             // Checks if the configuration is valid.
             if (!configuration.isValid()) {
@@ -104,9 +111,41 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
             findViewById(R.id.bLogin).setOnClickListener((View view) -> AuthRequest.getInstance(this).doAuth());
-//            findViewById(R.id.bSignup).setOnClickListener((View view) -> AuthRequest.getInstance(this).warmUpBrowserWithSignup());
+            WebView wv = (WebView) findViewById(R.id.wv);
+            Map<String, String> extraHeaders = new HashMap<String, String>();
+            extraHeaders.put("Referer", "http://www.example.com");
+            findViewById(R.id.bSignup).setOnClickListener((View view) -> {
+//                AuthRequest.getInstance(this).warmUpBrowserWithSignup();
+                wv.canGoBack();
+                wv.setVisibility(1);
+                wv.loadUrl("http://172.19.22.117:8082/account/register", extraHeaders);
+                wv.getSettings().setJavaScriptEnabled(true);
+                wv.setWebViewClient(new WebViewClient() {
+                    public boolean shouldOverrideUrlLoading(WebView viewx, String urlx) {
+                        viewx.loadUrl(urlx);
+                        return false;
+                    }
+                });
+                getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            });
         }
     }
 
+    @Override
+    public boolean onSupportNavigateUp() {
+        finish();
+        return super.onSupportNavigateUp();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem menuItem) {
+        switch (menuItem.getItemId()) {
+            case android.R.id.home:
+                Intent homeIntent = new Intent(this, LoginActivity.class);
+                homeIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(homeIntent);
+        }
+        return (super.onOptionsItemSelected(menuItem));
+    }
 
 }
