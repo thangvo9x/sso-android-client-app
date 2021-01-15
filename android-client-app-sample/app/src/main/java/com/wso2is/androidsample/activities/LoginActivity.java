@@ -19,18 +19,15 @@
 package com.wso2is.androidsample.activities;
 
 import android.annotation.SuppressLint;
-import android.app.ActionBar;
 import android.content.ComponentName;
 import android.content.Intent;
 import android.content.ServiceConnection;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
-import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Toast;
@@ -39,11 +36,11 @@ import com.wso2is.androidsample.R;
 import com.wso2is.androidsample.mgt.AuthStateManager;
 import com.wso2is.androidsample.mgt.ConfigManager;
 import com.wso2is.androidsample.oidc.AuthRequest;
-import com.wso2is.androidsample.oidc.LogoutRequest;
+
 import static com.wso2is.androidsample.utils.Constants.APP_NAME;
+
 import net.openid.appauth.AuthState;
 
-import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -58,17 +55,14 @@ public class LoginActivity extends AppCompatActivity {
     ServiceConnection m_service;
     boolean isBound = false;
 
-    private ServiceConnection m_serviceConnection = new ServiceConnection()
-    {
+    private ServiceConnection m_serviceConnection = new ServiceConnection() {
         @Override
-        public void onServiceConnected(ComponentName className, IBinder service)
-        {
+        public void onServiceConnected(ComponentName className, IBinder service) {
             isBound = true;
         }
 
         @Override
-        public void onServiceDisconnected(ComponentName className)
-        {
+        public void onServiceDisconnected(ComponentName className) {
             m_service = null;
             isBound = false;
         }
@@ -80,7 +74,6 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-
 
 
         AuthStateManager authStateManager = AuthStateManager.getInstance(this);
@@ -111,6 +104,8 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
             findViewById(R.id.bLogin).setOnClickListener((View view) -> AuthRequest.getInstance(this).doAuth());
+
+            /* --- CUSTOM CODE --- */
             WebView wv = (WebView) findViewById(R.id.wv);
             Map<String, String> extraHeaders = new HashMap<String, String>();
             extraHeaders.put("Referer", "http://www.example.com");
@@ -118,11 +113,26 @@ public class LoginActivity extends AppCompatActivity {
 //                AuthRequest.getInstance(this).warmUpBrowserWithSignup();
                 wv.canGoBack();
                 wv.setVisibility(1);
-                wv.loadUrl("http://172.19.22.117:8082/account/register", extraHeaders);
+                wv.loadUrl("http://172.19.23.27:8082/account/register", extraHeaders);
                 wv.getSettings().setJavaScriptEnabled(true);
                 wv.setWebViewClient(new WebViewClient() {
-                    public boolean shouldOverrideUrlLoading(WebView viewx, String urlx) {
-                        viewx.loadUrl(urlx);
+                    @Override
+                    public boolean shouldOverrideUrlLoading(WebView wView, String url) {
+
+                        if (url.startsWith("com.wso2is")) {
+                            Log.w(TAG, "vao day");
+                            Log.w(TAG, wView.toString());
+                            Intent sendIntent = new Intent();
+                            sendIntent.setAction(Intent.ACTION_VIEW);
+//                            sendIntent.putExtra(Intent.EXTRA_TEXT, "This is my text to send.");
+//                            sendIntent.setType("text/plain");
+
+                            startActivity(sendIntent);
+                            finish();
+
+                            return true;
+
+                        }
                         return false;
                     }
                 });
