@@ -18,4 +18,12 @@
   -->
 
 <resources>
+    <color name="colorPrimary">#fc511f</color>
+    <color name="colorPrimaryDark">#fc511f</color>
+    <color name="textColorPrimary">#FFFFFF</color>
+    <color name="windowBackground">#FFFFFF</color>
+    <color name="navigationBarColor">#000000</color>
+    <color name="colorAccent">#c8e8ff</color>
+    <color name="white">#FFFFFF</color>
+    <color name="backgroundTabBar">#347c4c</color>
 </resources>

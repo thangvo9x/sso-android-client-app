@@ -14,6 +14,7 @@
  See the License for the specific language governing permissions and
  limitations under the License.
 -->
+<!-- // android:theme="@style/AppTheme" -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.wso2is.androidsample"
     android:targetSandboxVersion="2"
@@ -43,13 +44,27 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
-        <activity android:name="com.wso2is.androidsample.activities.LoginActivity" >
+        <activity
+            android:name="com.wso2is.androidsample.activities.MainActivity"
+            android:label="@string/app_name"
+            android:launchMode="singleTop" >
             <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-            <intent-filter android:autoVerify="true" >
+        </activity>
+        <activity
+            android:name="com.wso2is.androidsample.activities.UserActivity"
+            android:label="@string/app_name" />
+        <activity
+            android:name="com.wso2is.androidsample.activities.LoginActivity"
+            android:launchMode="singleTop" >
+
+            <!-- <tools:validation testUrl="https://172.19.23.27:8082/notification/register-by-email-success" /> -->
+
+            <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 
                 <category android:name="android.intent.category.DEFAULT" />
@@ -57,8 +72,8 @@
 
                 <data
                     android:host="172.19.23.27"
+                    android:port="8082"
                     android:scheme="https" />
-                <data android:scheme="https" />
             </intent-filter>
         </activity>
         <activity
@@ -81,11 +96,6 @@
                 <data android:scheme="com.wso2is.androidsample" />
             </intent-filter>
         </activity>
-        <activity
-            android:name="com.wso2is.androidsample.activities.UserActivity"
-            android:icon="@drawable/wso2logo_round"
-            android:label="@string/app_name"
-            android:launchMode="singleTask" />
 
         <meta-data
             android:name="preloaded_fonts"

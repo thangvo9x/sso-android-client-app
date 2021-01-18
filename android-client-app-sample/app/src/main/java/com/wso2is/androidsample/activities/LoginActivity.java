@@ -22,14 +22,15 @@ import android.annotation.SuppressLint;
 import android.content.ComponentName;
 import android.content.Intent;
 import android.content.ServiceConnection;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.IBinder;
+import android.support.design.widget.TabLayout;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
-import android.view.MenuItem;
 import android.view.View;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
 import android.widget.Toast;
 
 import com.wso2is.androidsample.R;
@@ -37,12 +38,7 @@ import com.wso2is.androidsample.mgt.AuthStateManager;
 import com.wso2is.androidsample.mgt.ConfigManager;
 import com.wso2is.androidsample.oidc.AuthRequest;
 
-import static com.wso2is.androidsample.utils.Constants.APP_NAME;
-
 import net.openid.appauth.AuthState;
-
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * This activity will handle the login view of the application.
@@ -52,21 +48,25 @@ public class LoginActivity extends AppCompatActivity {
     private static final String TAG = LoginActivity.class.getSimpleName();
 
 
-    ServiceConnection m_service;
-    boolean isBound = false;
-
-    private ServiceConnection m_serviceConnection = new ServiceConnection() {
-        @Override
-        public void onServiceConnected(ComponentName className, IBinder service) {
-            isBound = true;
-        }
-
-        @Override
-        public void onServiceDisconnected(ComponentName className) {
-            m_service = null;
-            isBound = false;
-        }
-    };
+//    ServiceConnection m_service;
+//    boolean isBound = false;
+//
+//    private Toolbar toolbar;
+//    private TabLayout tabLayout;
+//    private ViewPager viewPager;
+//
+//    private ServiceConnection m_serviceConnection = new ServiceConnection() {
+//        @Override
+//        public void onServiceConnected(ComponentName className, IBinder service) {
+//            isBound = true;
+//        }
+//
+//        @Override
+//        public void onServiceDisconnected(ComponentName className) {
+//            m_service = null;
+//            isBound = false;
+//        }
+//    };
 
 
     @SuppressLint("RestrictedApi")
@@ -74,7 +74,6 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-
 
         AuthStateManager authStateManager = AuthStateManager.getInstance(this);
         ConfigManager configuration = ConfigManager.getInstance(this);
@@ -87,7 +86,8 @@ public class LoginActivity extends AppCompatActivity {
         } else {
             // If the user is not authorized, the LoginActivity view will be launched.
             setContentView(R.layout.activity_login);
-            getSupportActionBar().setTitle(APP_NAME);
+
+//            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
             // Checks if the configuration is valid.
             if (!configuration.isValid()) {
@@ -105,57 +105,34 @@ public class LoginActivity extends AppCompatActivity {
             }
             findViewById(R.id.bLogin).setOnClickListener((View view) -> AuthRequest.getInstance(this).doAuth());
 
-            /* --- CUSTOM CODE --- */
-            WebView wv = (WebView) findViewById(R.id.wv);
-            Map<String, String> extraHeaders = new HashMap<String, String>();
-            extraHeaders.put("Referer", "http://www.example.com");
-            findViewById(R.id.bSignup).setOnClickListener((View view) -> {
-//                AuthRequest.getInstance(this).warmUpBrowserWithSignup();
-                wv.canGoBack();
-                wv.setVisibility(1);
-                wv.loadUrl("http://172.19.23.27:8082/account/register", extraHeaders);
-                wv.getSettings().setJavaScriptEnabled(true);
-                wv.setWebViewClient(new WebViewClient() {
-                    @Override
-                    public boolean shouldOverrideUrlLoading(WebView wView, String url) {
-
-                        if (url.startsWith("com.wso2is")) {
-                            Log.w(TAG, "vao day");
-                            Log.w(TAG, wView.toString());
-                            Intent sendIntent = new Intent();
-                            sendIntent.setAction(Intent.ACTION_VIEW);
-//                            sendIntent.putExtra(Intent.EXTRA_TEXT, "This is my text to send.");
-//                            sendIntent.setType("text/plain");
-
-                            startActivity(sendIntent);
-                            finish();
-
-                            return true;
-
-                        }
-                        return false;
-                    }
-                });
-                getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-            });
         }
     }
 
-    @Override
-    public boolean onSupportNavigateUp() {
-        finish();
-        return super.onSupportNavigateUp();
-    }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem menuItem) {
-        switch (menuItem.getItemId()) {
-            case android.R.id.home:
-                Intent homeIntent = new Intent(this, LoginActivity.class);
-                homeIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(homeIntent);
-        }
-        return (super.onOptionsItemSelected(menuItem));
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        setIntent(intent);
+        handleIntent();
     }
+
+    private void handleIntent() {
+        Intent appLinkIntent = getIntent();
+        String appLinkAction = appLinkIntent.getAction();
+        Uri appLinkData = appLinkIntent.getData();
+
+        if (appLinkData != null) {
+            Log.i(TAG, "appLink not null"+ appLinkData.toString());
+            String urlSuffix = appLinkData.getLastPathSegment();
+            Intent sendIntent = new Intent();
+            sendIntent.setAction(Intent.ACTION_VIEW);
+            startActivity(sendIntent);
+
+        } else {
+            Log.i(TAG, "appLink is null");
+            setContentView(R.layout.activity_login);
+        }
+    }
+
 
 }

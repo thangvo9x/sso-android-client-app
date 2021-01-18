@@ -4,7 +4,7 @@
             "outputFile": "/Users/thang/Desktop/sso-android-client-app/android-client-app-sample/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-h720dp-v13/values-h720dp-v13.xml",
             "map": [
                 {
-                    "source": "/Users/thang/.gradle/caches/transforms-2/files-2.1/68c4a49638522b0f681abdd28f37e0f5/appcompat-v7-28.0.0-rc01/res/values-h720dp-v13/values-h720dp-v13.xml",
+                    "source": "/Users/thang/.gradle/caches/transforms-2/files-2.1/03f1f307dc22603ed4d78ce7a5863c75/appcompat-v7-28.0.0/res/values-h720dp-v13/values-h720dp-v13.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

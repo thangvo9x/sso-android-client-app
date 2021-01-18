@@ -111,10 +111,4 @@
             app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="8dp"
             android:layout_marginStart="8dp" app:layout_constraintVertical_bias="1.0"/>
 
-    <WebView
-        android:id="@+id/wv"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:visibility="invisible" />
-
 </android.support.constraint.ConstraintLayout>
