@@ -24,17 +24,25 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.wso2is.androidsample.R;
 import com.wso2is.androidsample.fragments.One;
 import com.wso2is.androidsample.navigation.CustomViewPager;
 
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     private TabLayout mTabLayout;
+    private Toolbar toolbar;
 
     private int[] mTabsIcons = {
             R.drawable.home,
@@ -45,9 +53,33 @@ public class MainActivity extends AppCompatActivity {
 
 
     @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.items_app_bar, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_favorite:
+                Toast.makeText(this, "Item 1 selected", Toast.LENGTH_LONG).show();
+                return true;
+            case R.id.action_settings:
+                Toast.makeText(this, "Item 2 selected", Toast.LENGTH_LONG).show();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
 
         // Setup the viewPager
@@ -88,7 +120,7 @@ public class MainActivity extends AppCompatActivity {
             super(manager);
         }
 
-        public void addFrag(Fragment fragment, String title ) {
+        public void addFrag(Fragment fragment, String title) {
             mFragmentList.add(fragment);
             mFragmentTitleList.add(title);
         }

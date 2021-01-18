@@ -25,6 +25,8 @@
         <item name="colorPrimary">#fc511f</item>
         <item name="colorPrimaryDark">@android:color/background_dark</item>
         <item name="colorAccent">@android:color/darker_gray</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
     </style>
 
 
@@ -56,6 +58,12 @@
     <style name="AppTabTextAppearance" parent="TextAppearance.Design.Tab">
         <item name="android:textColor">@color/colorPrimary</item>
         <item name="textAllCaps">false</item>
+    </style>
+
+
+    <style name="MyToolbarTheme" parent="ThemeOverlay.AppCompat.ActionBar">
+        <item name="colorControlNormal">@color/white</item>
+        <item name="titleTextColor">@color/white</item>
     </style>
 
 

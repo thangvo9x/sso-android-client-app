@@ -103,7 +103,7 @@ public class LoginActivity extends AppCompatActivity {
                     configuration.acceptConfiguration();
                 }
             }
-            findViewById(R.id.bLogin).setOnClickListener((View view) -> AuthRequest.getInstance(this).doAuth());
+//            findViewById(R.id.bLogin).setOnClickListener((View view) -> AuthRequest.getInstance(this).doAuth());
 
         }
     }

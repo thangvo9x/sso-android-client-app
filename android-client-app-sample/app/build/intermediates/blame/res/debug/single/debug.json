@@ -8,12 +8,16 @@
         "source": "/Users/thang/Desktop/sso-android-client-app/android-client-app-sample/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png"
     },
     {
-        "merged": "/Users/thang/Desktop/sso-android-client-app/android-client-app-sample/app/build/intermediates/res/merged/debug/mipmap-xxhdpi_ic_launcher.png.flat",
-        "source": "/Users/thang/Desktop/sso-android-client-app/android-client-app-sample/app/src/main/res/mipmap-xxhdpi/ic_launcher.png"
+        "merged": "/Users/thang/Desktop/sso-android-client-app/android-client-app-sample/app/build/intermediates/res/merged/debug/layout_app_bar.xml.flat",
+        "source": "/Users/thang/Desktop/sso-android-client-app/android-client-app-sample/app/src/main/res/layout/app_bar.xml"
     },
     {
         "merged": "/Users/thang/Desktop/sso-android-client-app/android-client-app-sample/app/build/intermediates/res/merged/debug/drawable-mdpi_home.png.flat",
         "source": "/Users/thang/Desktop/sso-android-client-app/android-client-app-sample/app/src/main/res/drawable-mdpi/home.png"
+    },
+    {
+        "merged": "/Users/thang/Desktop/sso-android-client-app/android-client-app-sample/app/build/intermediates/res/merged/debug/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "/Users/thang/Desktop/sso-android-client-app/android-client-app-sample/app/src/main/res/mipmap-xxhdpi/ic_launcher.png"
     },
     {
         "merged": "/Users/thang/Desktop/sso-android-client-app/android-client-app-sample/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi_ic_launcher.png.flat",
@@ -32,8 +36,8 @@
         "source": "/Users/thang/Desktop/sso-android-client-app/android-client-app-sample/app/src/main/res/drawable-mdpi/wso2logo_round.png"
     },
     {
-        "merged": "/Users/thang/Desktop/sso-android-client-app/android-client-app-sample/app/build/intermediates/res/merged/debug/layout_custom_tab.xml.flat",
-        "source": "/Users/thang/Desktop/sso-android-client-app/android-client-app-sample/app/src/main/res/layout/custom_tab.xml"
+        "merged": "/Users/thang/Desktop/sso-android-client-app/android-client-app-sample/app/build/intermediates/res/merged/debug/menu_items_app_bar.xml.flat",
+        "source": "/Users/thang/Desktop/sso-android-client-app/android-client-app-sample/app/src/main/res/menu/items_app_bar.xml"
     },
     {
         "merged": "/Users/thang/Desktop/sso-android-client-app/android-client-app-sample/app/build/intermediates/res/merged/debug/font_roboto_bold.xml.flat",
@@ -62,10 +66,6 @@
     {
         "merged": "/Users/thang/Desktop/sso-android-client-app/android-client-app-sample/app/build/intermediates/res/merged/debug/mipmap-xxhdpi_ic_launcher_round.png.flat",
         "source": "/Users/thang/Desktop/sso-android-client-app/android-client-app-sample/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png"
-    },
-    {
-        "merged": "/Users/thang/Desktop/sso-android-client-app/android-client-app-sample/app/build/intermediates/res/merged/debug/menu_bottom_nav_menu.xml.flat",
-        "source": "/Users/thang/Desktop/sso-android-client-app/android-client-app-sample/app/src/main/res/menu/bottom_nav_menu.xml"
     },
     {
         "merged": "/Users/thang/Desktop/sso-android-client-app/android-client-app-sample/app/build/intermediates/res/merged/debug/mipmap-mdpi_ic_launcher_round.png.flat",
