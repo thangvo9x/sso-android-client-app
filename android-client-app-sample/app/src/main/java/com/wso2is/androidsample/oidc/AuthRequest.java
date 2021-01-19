@@ -32,6 +32,7 @@ import android.webkit.WebView;
 
 import com.wso2is.androidsample.R;
 import com.wso2is.androidsample.activities.LoginActivity;
+import com.wso2is.androidsample.activities.MainActivity;
 import com.wso2is.androidsample.activities.UserActivity;
 import com.wso2is.androidsample.mgt.AuthStateManager;
 import com.wso2is.androidsample.mgt.ConfigManager;
@@ -106,7 +107,7 @@ public class AuthRequest extends AppCompatActivity {
 
         initializeAppAuth();
         Intent completionIntent = new Intent(context, UserActivity.class);
-        Intent cancelIntent = new Intent(context, LoginActivity.class);
+        Intent cancelIntent = new Intent(context, MainActivity.class);
         cancelIntent.putExtra("failed", true);
         cancelIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 
