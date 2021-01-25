@@ -18,17 +18,17 @@
 
 package com.wso2is.androidsample2.activities;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
+import android.net.Uri;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.view.View;
 import android.widget.Toast;
 
+import com.wso2is.androidsample2.R;
 import com.wso2is.androidsample2.mgt.AuthStateManager;
 import com.wso2is.androidsample2.mgt.ConfigManager;
-import com.wso2is.androidsample2.R;
-import com.wso2is.androidsample2.oidc.AuthRequest;
 
 import net.openid.appauth.AuthState;
 
@@ -39,6 +39,29 @@ public class LoginActivity extends AppCompatActivity {
 
     private static final String TAG = LoginActivity.class.getSimpleName();
 
+
+//    ServiceConnection m_service;
+//    boolean isBound = false;
+//
+//    private Toolbar toolbar;
+//    private TabLayout tabLayout;
+//    private ViewPager viewPager;
+//
+//    private ServiceConnection m_serviceConnection = new ServiceConnection() {
+//        @Override
+//        public void onServiceConnected(ComponentName className, IBinder service) {
+//            isBound = true;
+//        }
+//
+//        @Override
+//        public void onServiceDisconnected(ComponentName className) {
+//            m_service = null;
+//            isBound = false;
+//        }
+//    };
+
+
+    @SuppressLint("RestrictedApi")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -55,7 +78,8 @@ public class LoginActivity extends AppCompatActivity {
         } else {
             // If the user is not authorized, the LoginActivity view will be launched.
             setContentView(R.layout.activity_login);
-            getSupportActionBar().setTitle("PICKUP2");
+
+//            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
             // Checks if the configuration is valid.
             if (!configuration.isValid()) {
@@ -71,7 +95,36 @@ public class LoginActivity extends AppCompatActivity {
                     configuration.acceptConfiguration();
                 }
             }
-            findViewById(R.id.bLogin).setOnClickListener((View view) -> AuthRequest.getInstance(this).doAuth());
+//            findViewById(R.id.bLogin).setOnClickListener((View view) -> AuthRequest.getInstance(this).doAuth());
+
         }
     }
+
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        setIntent(intent);
+        handleIntent();
+    }
+
+    private void handleIntent() {
+        Intent appLinkIntent = getIntent();
+        String appLinkAction = appLinkIntent.getAction();
+        Uri appLinkData = appLinkIntent.getData();
+
+        if (appLinkData != null) {
+            Log.i(TAG, "appLink not null"+ appLinkData.toString());
+            String urlSuffix = appLinkData.getLastPathSegment();
+            Intent sendIntent = new Intent();
+            sendIntent.setAction(Intent.ACTION_VIEW);
+            startActivity(sendIntent);
+
+        } else {
+            Log.i(TAG, "appLink is null");
+            setContentView(R.layout.activity_login);
+        }
+    }
+
+
 }

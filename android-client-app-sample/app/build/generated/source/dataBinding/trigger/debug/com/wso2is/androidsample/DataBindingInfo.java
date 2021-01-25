@@ -1,6 +1,6 @@
 package com.wso2is.androidsample;
 
-import androidx.databinding.BindingBuildInfo;
+import android.databinding.BindingBuildInfo;
 
 @BindingBuildInfo
 public class DataBindingInfo {}

@@ -42,5 +42,5 @@ public final class Constants {
     public static final String PROTOCOL = "TLSv1.2";
 
     // Constants related to the Application.
-    public static final String APP_NAME = "PICKUP2";
+    public static final String APP_NAME = "HT CORP";
 }

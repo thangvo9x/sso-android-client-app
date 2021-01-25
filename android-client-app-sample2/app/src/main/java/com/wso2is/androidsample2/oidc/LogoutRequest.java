@@ -34,13 +34,14 @@ import net.openid.appauth.AuthState;
 
 import static com.wso2is.androidsample2.activities.UserActivity.idToken;
 import static com.wso2is.androidsample2.activities.UserActivity.state;
-import android.util.Log;
+
 /**
  * This class facilitates the logout function of the application.
  * User's state will be reset and will be logged out from the WSO2 IS.
  */
 public class LogoutRequest {
 
+    private static final String TAG = LogoutRequest.class.getSimpleName();
     private static final AtomicReference<WeakReference<LogoutRequest>> instance = new AtomicReference<>
             (new WeakReference<LogoutRequest>(null));
 
@@ -77,26 +78,55 @@ public class LogoutRequest {
         AuthState currentState = authStateManager.getCurrentState();
         AuthState clearedState = new AuthState(currentState.getAuthorizationServiceConfiguration());
 
+//        Log.i(TAG, currentState.getLastRegistrationResponse().toString());
         if (currentState.getLastRegistrationResponse() != null) {
             clearedState.update(currentState.getLastRegistrationResponse());
         }
 
         authStateManager.replaceState(clearedState);
 
-        String logout_uri = configuration.getLogoutEndpointUri().toString();
-        String redirect = configuration.getRedirectUri().toString();
-        StringBuffer url = new StringBuffer();
-        url.append(logout_uri);
-        url.append("?id_token_hint=");
-        url.append(idToken);
-        url.append("&post_logout_redirect_uri=");
-        url.append(redirect);
-        url.append("&state=");
-        url.append(state);
-        CustomTabsIntent.Builder builder = new CustomTabsIntent.Builder();
-        CustomTabsIntent customTabsIntent = builder.build();
-        customTabsIntent.intent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY | Intent.FLAG_ACTIVITY_NEW_TASK
-                | Intent.FLAG_ACTIVITY_SINGLE_TOP);
-        customTabsIntent.launchUrl(context, Uri.parse(url.toString()));
+//        if(idToken != null) {
+//            Log.i(TAG, idToken);
+//            String logout_uri = configuration.getLogoutEndpointUri().toString();
+//            String redirect = configuration.getRedirectUri().toString();
+//            StringBuffer url = new StringBuffer();
+//            url.append(logout_uri);
+//            url.append("?id_token_hint=");
+//            url.append(idToken);
+//            url.append("&post_logout_redirect_uri=");
+//            url.append(redirect);
+//            url.append("&state=");
+//            url.append(state);
+//
+//            CustomTabsIntent.Builder builder = new CustomTabsIntent.Builder();
+//            CustomTabsIntent customTabsIntent = builder.build();
+//            customTabsIntent.intent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY | Intent.FLAG_ACTIVITY_NEW_TASK
+//                    | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+//            customTabsIntent.launchUrl(context, Uri.parse(url.toString()));
+//        }
+    }
+
+    public void signOutSSO(Context context){
+
+        ConfigManager configuration = ConfigManager.getInstance(context);
+        if(idToken != null) {
+            Log.i(TAG, idToken);
+            String logout_uri = configuration.getLogoutEndpointUri().toString();
+            String redirect = configuration.getRedirectUri().toString();
+            StringBuffer url = new StringBuffer();
+            url.append(logout_uri);
+            url.append("?id_token_hint=");
+            url.append(idToken);
+            url.append("&post_logout_redirect_uri=");
+            url.append(redirect);
+            url.append("&state=");
+            url.append(state);
+
+            CustomTabsIntent.Builder builder = new CustomTabsIntent.Builder();
+            CustomTabsIntent customTabsIntent = builder.build();
+            customTabsIntent.intent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY | Intent.FLAG_ACTIVITY_NEW_TASK
+                    | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+            customTabsIntent.launchUrl(context, Uri.parse(url.toString()));
+        }
     }
 }

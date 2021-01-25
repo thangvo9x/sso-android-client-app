@@ -21,17 +21,21 @@ package com.wso2is.androidsample2.oidc;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
+import android.os.Bundle;
+import android.provider.Browser;
 import android.support.customtabs.CustomTabsIntent;
+import android.support.customtabs.CustomTabsSession;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.webkit.WebView;
 
+import com.wso2is.androidsample2.R;
 import com.wso2is.androidsample2.activities.LoginActivity;
+import com.wso2is.androidsample2.activities.MainActivity;
 import com.wso2is.androidsample2.activities.UserActivity;
 import com.wso2is.androidsample2.mgt.AuthStateManager;
 import com.wso2is.androidsample2.mgt.ConfigManager;
-
-import java.lang.ref.WeakReference;
-import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.atomic.AtomicReference;
 
 import net.openid.appauth.AppAuthConfiguration;
 import net.openid.appauth.AuthState;
@@ -43,12 +47,20 @@ import net.openid.appauth.ResponseTypeValues;
 import net.openid.appauth.browser.AnyBrowserMatcher;
 import net.openid.appauth.browser.BrowserMatcher;
 
+import java.io.IOException;
+import java.lang.ref.WeakReference;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.atomic.AtomicReference;
+
 import static net.openid.appauth.AuthorizationRequest.CODE_CHALLENGE_METHOD_S256;
 
 /**
  * This class facilitates carrying out of the authorization request.
  */
-public class AuthRequest {
+public class AuthRequest extends AppCompatActivity {
 
     private static final String TAG = AuthRequest.class.getSimpleName();
 
@@ -63,7 +75,7 @@ public class AuthRequest {
     private static AuthStateManager authStateManager;
 
     private AuthorizationService authService;
-    private CountDownLatch authIntentLatch = new CountDownLatch(1);
+
     private AuthRequest(Context context) {
 
         this.context = context;
@@ -95,7 +107,7 @@ public class AuthRequest {
 
         initializeAppAuth();
         Intent completionIntent = new Intent(context, UserActivity.class);
-        Intent cancelIntent = new Intent(context, LoginActivity.class);
+        Intent cancelIntent = new Intent(context, MainActivity.class);
         cancelIntent.putExtra("failed", true);
         cancelIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 
@@ -169,10 +181,9 @@ public class AuthRequest {
     private void warmUpBrowser() {
 
         Log.i(TAG, "Warming up browser instance for auth request.");
-        authIntentLatch = new CountDownLatch(1);
+
         CustomTabsIntent.Builder intentBuilder = authService.createCustomTabsIntentBuilder(authRequest.get().toUri());
         customTabIntent.set(intentBuilder.build());
-        authIntentLatch.countDown();
     }
 
     /**
@@ -191,5 +202,43 @@ public class AuthRequest {
                 .setCodeVerifier(codeVerifier, codeChallenge, CODE_CHALLENGE_METHOD_S256);
 
         authRequest.set(authRequestBuilder.build());
+    }
+
+    /**
+     * Warms up the custom tab by specifying the possible request URI.
+     */
+    public void warmUpBrowserWithSignup()  {
+
+//        Log.i(TAG, "Warming up browser instance for Sign up.");
+//
+//
+//       String url = "http://127.0.0.1:8082/account/register";
+//        String url = ;
+//        URL url = new URL("http://172.19.22.117:8082/account/register");
+////        HttpURLConnection connection = (HttpURLConnection)url.openConnection();
+////        connection.addRequestProperty("REFERER", "http://www.mydomain.com");
+//
+        CustomTabsIntent.Builder builder = new CustomTabsIntent.Builder();
+//        builder.setToolbarColor(4834);
+//        builder.setShowTitle(true);
+//
+//        CustomTabsIntent customTabsIntent = builder.build();
+//
+//        // Example non-cors-whitelisted headers.
+//        Bundle headers = new Bundle();
+//        headers.putString("Referer", "abc.com");
+//
+//        customTabsIntent.intent.putExtra(Browser.EXTRA_HEADERS, headers);
+//        customTabsIntent.launchUrl(context, Uri.parse(url.toString()));
+
+
+
+        // OPTION 2
+
+//        Map<String, String> extraHeaders = new HashMap<String, String>();
+//        extraHeaders.put("Referer", "http://www.example.com");
+//
+//        WebView wv = (WebView) findViewById(R.id.wv);
+//        wv.loadUrl("http://172.19.22.117:8082/account/register", extraHeaders);
     }
 }

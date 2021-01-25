@@ -17,14 +17,18 @@
   -->
 
 <resources>
-    <string name="app_name">Hưng Thịnh ID 2</string>
-    <string name="sign_in">LOGIN</string>
+    <string name="app_name">HTCorp 2</string>
+    <string name="sign_in">Đăng nhập</string>
+    <string name="sign_up">Đăng ký</string>
     <string name="logged_out">Successfully Logged Out!</string>
-    <string name="welcome">Welcome!</string>
+    <string name="welcome">Xin chào!</string>
     <string name="test">Admin</string>
     <string name="username">Username</string>
-    <string name="sign_out">SIGN OUT</string>
+    <string name="sign_out">Đăng xuất</string>
+    <string name="sign_out_sso">Đăng xuất SSO</string>
     <string name="wso2_logo">WSO2 Logo</string>
     <string name="user_image">User Image</string>
-    <string name="copyright">Copyright \u00A9 HungThinhCorp 2020</string>
+    <string name="language">Tiếng Việt</string>
+    <string name="copyright">Copyright \u00A9 Hưng Thịnh Corp 2021</string>
+
 </resources>

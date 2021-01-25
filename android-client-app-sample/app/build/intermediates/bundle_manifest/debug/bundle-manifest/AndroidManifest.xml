@@ -36,7 +36,7 @@
         android:appComponentFactory="android.support.v4.app.CoreComponentFactory"
         android:debuggable="true"
         android:fullBackupContent="true"
-        android:icon="@drawable/sampleappicon"
+        android:icon="@mipmap/ic_launcher"
         android:label="Hưng Thịnh Corp"
         android:networkSecurityConfig="@xml/network_security_config"
         android:roundIcon="@mipmap/ic_launcher_round"

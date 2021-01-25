@@ -19,18 +19,10 @@ package com.wso2is.androidsample.activities;
  */
 
 
-import android.annotation.TargetApi;
-import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
-import android.graphics.drawable.Drawable;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.SpannableString;
@@ -41,23 +33,20 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
-
 import com.wso2is.androidsample.R;
-import com.wso2is.androidsample.fragments.One;
+import com.wso2is.androidsample.fragments.Home;
 import com.wso2is.androidsample.mgt.AuthStateManager;
 import com.wso2is.androidsample.mgt.ConfigManager;
 import com.wso2is.androidsample.navigation.CustomViewPager;
+import com.wso2is.androidsample.navigation.ViewPagerAdapter;
 import com.wso2is.androidsample.oidc.AuthRequest;
 
 import net.openid.appauth.AuthState;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -92,11 +81,14 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.action_language:
-                Toast.makeText(this, "Change Language was clicked", Toast.LENGTH_LONG).show();
-                return true;
+//            case R.id.action_language:
+//                Toast.makeText(this, "Change Language was clicked", Toast.LENGTH_LONG).show();
+//                return true;
             case R.id.action_login:
                 logIn();
+                return true;
+            case R.id.action_signup:
+                signUp();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
@@ -107,6 +99,11 @@ public class MainActivity extends AppCompatActivity {
         AuthRequest.getInstance(this).doAuth();
     }
 
+    private void signUp() {
+
+    }
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -115,6 +112,7 @@ public class MainActivity extends AppCompatActivity {
         AuthStateManager authStateManager = AuthStateManager.getInstance(this);
         ConfigManager configuration = ConfigManager.getInstance(this);
 
+        Log.i(TAG, "Vao day roi - HTCorp 1 !!!");
         // If the user is authorized, the UserActivity view will be launched.
         if (authStateManager.getCurrentState().isAuthorized() && !configuration.hasConfigurationChanged()) {
             Log.i(TAG, "User is already authorized, proceeding to user activity.");
@@ -138,8 +136,9 @@ public class MainActivity extends AppCompatActivity {
                     configuration.acceptConfiguration();
                 }
             }
-
+//            findViewById(R.id.action_login).setOnClickListener((View view) -> AuthRequest.getInstance(this).doAuth());
         }
+
 
 //        setContentView(R.layout.activity_main);
 
@@ -155,16 +154,19 @@ public class MainActivity extends AppCompatActivity {
 
         if (viewPager != null) {
             viewPager.setPagingEnabled(false);
-            pagerAdapter.addFrag(new One(R.layout.activity_login), "Home");
-            pagerAdapter.addFrag(new One(R.layout.activity_user), "Categories");
-            pagerAdapter.addFrag(new One(R.layout.activity_login), "Favorites");
-            pagerAdapter.addFrag(new One(R.layout.activity_login), "User");
+
+            pagerAdapter.addFrag(new Home(), "Home");
+            pagerAdapter.addFrag(new Home(), "Categories");
+            pagerAdapter.addFrag(new Home(), "Favorites");
+            pagerAdapter.addFrag(new Home(), "User");
             viewPager.setAdapter(pagerAdapter);
+
+            mTabLayout = findViewById(R.id.tab_layout);
+            mTabLayout.setupWithViewPager(viewPager);
+            setupTabIcons();
         }
 
-        mTabLayout = findViewById(R.id.tab_layout);
-        mTabLayout.setupWithViewPager(viewPager);
-        setupTabIcons();
+
 
         /* --- REMOVE CLICKABLE ON OTHERS TAB BAR --- */
         LinearLayout tabStrip = ((LinearLayout) mTabLayout.getChildAt(0));
@@ -183,43 +185,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setupTabIcons() {
-        mTabLayout.getTabAt(0).setIcon(mTabsIcons[0]);
-        mTabLayout.getTabAt(1).setIcon(mTabsIcons[1]);
-        mTabLayout.getTabAt(2).setIcon(mTabsIcons[2]);
-        mTabLayout.getTabAt(3).setIcon(mTabsIcons[3]);
+        Objects.requireNonNull(mTabLayout.getTabAt(0)).setIcon(mTabsIcons[0]);
+        Objects.requireNonNull(mTabLayout.getTabAt(1)).setIcon(mTabsIcons[1]);
+        Objects.requireNonNull(mTabLayout.getTabAt(2)).setIcon(mTabsIcons[2]);
+        Objects.requireNonNull(mTabLayout.getTabAt(3)).setIcon(mTabsIcons[3]);
     }
 
-
-    class ViewPagerAdapter extends FragmentPagerAdapter {
-
-        private final List<Fragment> mFragmentList = new ArrayList<>();
-        private final List<String> mFragmentTitleList = new ArrayList<>();
-
-        public ViewPagerAdapter(FragmentManager manager) {
-            super(manager);
-        }
-
-        public void addFrag(Fragment fragment, String title) {
-            mFragmentList.add(fragment);
-            mFragmentTitleList.add(title);
-        }
-
-        @Override
-        public Fragment getItem(int position) {
-            return mFragmentList.get(position);
-        }
-
-        @Override
-        public int getCount() {
-            return mFragmentList.size();
-        }
-
-        @Override
-        public CharSequence getPageTitle(int position) {
-            return null;
-//            return mFragmentTitleList.get(position);
-        }
-
-    }
 
 }

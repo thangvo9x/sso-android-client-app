@@ -4,7 +4,7 @@
             "outputFile": "/Users/thang/Desktop/sso-android-client-app/android-client-app-sample/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-land/values-land.xml",
             "map": [
                 {
-                    "source": "/Users/thang/.gradle/caches/transforms-2/files-2.1/0564381c3a62efa5249bd816ba097efc/design-28.0.0/res/values-land/values-land.xml",
+                    "source": "/Users/thang/.gradle/caches/transforms-2/files-2.1/0e8846c1e204e79a65a49499cf5cacc7/design-28.0.0/res/values-land/values-land.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "/Users/thang/.gradle/caches/transforms-2/files-2.1/b81cd352fa5346457db7fc15554dd992/appcompat-v7-28.0.0/res/values-land/values-land.xml",
+                    "source": "/Users/thang/.gradle/caches/transforms-2/files-2.1/02a0b5591867b269bf90099dda756d74/appcompat-v7-28.0.0/res/values-land/values-land.xml",
                     "from": {
                         "startLines": "2,3,4",
                         "startColumns": "4,4,4",

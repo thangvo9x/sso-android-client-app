@@ -197,11 +197,11 @@ public class UserInfoRequest {
 
 //                String response = Okio.buffer(Okio.source(conn.getInputStream())).readString(Charset.forName(UTF_8));
 //                userInfoJson.set(new JSONObject(response));
-//                Log.d(TAG, "Response" + userInfoJson.get().toString());
+                Log.d(TAG, "Response" + userInfoJson.get().getString("sub"));
 
                 // Sets values for the user object.
                 if (!userInfoJson.get().isNull("sub")) {
-                    user.setUsername("username: " + userInfoJson.get().getString("sub"));
+                    user.setUsername("tên đăng nhập: " + userInfoJson.get().getString("sub"));
                 } else {
                     user.setUsername("");
                 }

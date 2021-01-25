@@ -20,6 +20,14 @@
         "source": "/Users/thang/Desktop/sso-android-client-app/android-client-app-sample/app/src/main/res/drawable/background_appbar.png"
     },
     {
+        "merged": "/Users/thang/Desktop/sso-android-client-app/android-client-app-sample/app/build/intermediates/res/merged/debug/drawable-xxxhdpi_profile.png.flat",
+        "source": "/Users/thang/Desktop/sso-android-client-app/android-client-app-sample/app/src/main/res/drawable-xxxhdpi/profile.png"
+    },
+    {
+        "merged": "/Users/thang/Desktop/sso-android-client-app/android-client-app-sample/app/build/intermediates/res/merged/debug/drawable-xxhdpi_profile.png.flat",
+        "source": "/Users/thang/Desktop/sso-android-client-app/android-client-app-sample/app/src/main/res/drawable-xxhdpi/profile.png"
+    },
+    {
         "merged": "/Users/thang/Desktop/sso-android-client-app/android-client-app-sample/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi_ic_launcher.png.flat",
         "source": "/Users/thang/Desktop/sso-android-client-app/android-client-app-sample/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
     },
@@ -68,8 +76,16 @@
         "source": "/Users/thang/Desktop/sso-android-client-app/android-client-app-sample/app/src/main/res/mipmap-mdpi/ic_launcher.png"
     },
     {
+        "merged": "/Users/thang/Desktop/sso-android-client-app/android-client-app-sample/app/build/intermediates/res/merged/debug/drawable-xhdpi_profile.png.flat",
+        "source": "/Users/thang/Desktop/sso-android-client-app/android-client-app-sample/app/src/main/res/drawable-xhdpi/profile.png"
+    },
+    {
         "merged": "/Users/thang/Desktop/sso-android-client-app/android-client-app-sample/app/build/intermediates/res/merged/debug/drawable-mdpi_sampleappicon.png.flat",
         "source": "/Users/thang/Desktop/sso-android-client-app/android-client-app-sample/app/src/main/res/drawable-mdpi/sampleappicon.png"
+    },
+    {
+        "merged": "/Users/thang/Desktop/sso-android-client-app/android-client-app-sample/app/build/intermediates/res/merged/debug/drawable_profile.png.flat",
+        "source": "/Users/thang/Desktop/sso-android-client-app/android-client-app-sample/app/src/main/res/drawable/profile.png"
     },
     {
         "merged": "/Users/thang/Desktop/sso-android-client-app/android-client-app-sample/app/build/intermediates/res/merged/debug/drawable-xxxhdpi_ic_menu.png.flat",
@@ -86,6 +102,10 @@
     {
         "merged": "/Users/thang/Desktop/sso-android-client-app/android-client-app-sample/app/build/intermediates/res/merged/debug/drawable-xhdpi_ic_discount.png.flat",
         "source": "/Users/thang/Desktop/sso-android-client-app/android-client-app-sample/app/src/main/res/drawable-xhdpi/ic_discount.png"
+    },
+    {
+        "merged": "/Users/thang/Desktop/sso-android-client-app/android-client-app-sample/app/build/intermediates/res/merged/debug/drawable-ldpi_profile.png.flat",
+        "source": "/Users/thang/Desktop/sso-android-client-app/android-client-app-sample/app/src/main/res/drawable-ldpi/profile.png"
     },
     {
         "merged": "/Users/thang/Desktop/sso-android-client-app/android-client-app-sample/app/build/intermediates/res/merged/debug/drawable-mdpi_ic_movie.png.flat",
@@ -138,6 +158,10 @@
     {
         "merged": "/Users/thang/Desktop/sso-android-client-app/android-client-app-sample/app/build/intermediates/res/merged/debug/drawable-mdpi_home.png.flat",
         "source": "/Users/thang/Desktop/sso-android-client-app/android-client-app-sample/app/src/main/res/drawable-mdpi/home.png"
+    },
+    {
+        "merged": "/Users/thang/Desktop/sso-android-client-app/android-client-app-sample/app/build/intermediates/res/merged/debug/drawable-mdpi_profile.png.flat",
+        "source": "/Users/thang/Desktop/sso-android-client-app/android-client-app-sample/app/src/main/res/drawable-mdpi/profile.png"
     },
     {
         "merged": "/Users/thang/Desktop/sso-android-client-app/android-client-app-sample/app/build/intermediates/res/merged/debug/drawable-xhdpi_ic_menu.png.flat",
@@ -212,6 +236,10 @@
         "source": "/Users/thang/Desktop/sso-android-client-app/android-client-app-sample/app/src/main/res/drawable/login.png"
     },
     {
+        "merged": "/Users/thang/Desktop/sso-android-client-app/android-client-app-sample/app/build/intermediates/res/merged/debug/drawable-hdpi_profile.png.flat",
+        "source": "/Users/thang/Desktop/sso-android-client-app/android-client-app-sample/app/src/main/res/drawable-hdpi/profile.png"
+    },
+    {
         "merged": "/Users/thang/Desktop/sso-android-client-app/android-client-app-sample/app/build/intermediates/res/merged/debug/drawable-hdpi_ic_travel.png.flat",
         "source": "/Users/thang/Desktop/sso-android-client-app/android-client-app-sample/app/src/main/res/drawable-hdpi/ic_travel.png"
     },
@@ -230,6 +258,10 @@
     {
         "merged": "/Users/thang/Desktop/sso-android-client-app/android-client-app-sample/app/build/intermediates/res/merged/debug/drawable-xhdpi_ic_baseline_supervised_user_circle_24.png.flat",
         "source": "/Users/thang/Desktop/sso-android-client-app/android-client-app-sample/app/build/generated/res/pngs/debug/drawable-xhdpi/ic_baseline_supervised_user_circle_24.png"
+    },
+    {
+        "merged": "/Users/thang/Desktop/sso-android-client-app/android-client-app-sample/app/build/intermediates/res/merged/debug/layout_activity_try_user.xml.flat",
+        "source": "/Users/thang/Desktop/sso-android-client-app/android-client-app-sample/app/src/main/res/layout/activity_try_user.xml"
     },
     {
         "merged": "/Users/thang/Desktop/sso-android-client-app/android-client-app-sample/app/build/intermediates/res/merged/debug/font_roboto_thin.xml.flat",

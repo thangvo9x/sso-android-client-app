@@ -1074,6 +1074,7 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable profile
 drawable sampleappicon
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
@@ -1102,13 +1103,13 @@ id action_container
 id action_context_bar
 id action_divider
 id action_image
-id action_language
 id action_login
 id action_menu_divider
 id action_menu_presenter
 id action_mode_bar
 id action_mode_bar_stub
 id action_mode_close_button
+id action_signup
 id action_text
 id actions
 id activity_chooser_view_content
@@ -1120,6 +1121,7 @@ id appbarlayout
 id async
 id auto
 id bLogout
+id bLogoutSSO
 id barrier
 id beginning
 id blocking
@@ -1348,6 +1350,7 @@ layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_login
 layout activity_main
+layout activity_try_user
 layout activity_user
 layout app_bar
 layout design_bottom_navigation_item
@@ -1439,6 +1442,7 @@ string path_password_strike_through
 string search_menu_title
 string sign_in
 string sign_out
+string sign_out_sso
 string sign_up
 string status_bar_notification_info_overflow
 string test

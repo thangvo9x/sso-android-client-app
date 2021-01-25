@@ -26,7 +26,6 @@ import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.text.TextUtils;
-import android.util.Log;
 
 import com.wso2is.androidsample2.utils.ConnectionBuilderForTesting;
 import com.wso2is.androidsample2.R;
@@ -74,6 +73,7 @@ public class ConfigManager {
     private Uri userInfoEndpointUri;
     private Uri logoutEndpointUri;
     private Boolean httpsRequired;
+    private Uri introspectUri;
 
     private ConfigManager(Context context) {
 
@@ -223,6 +223,12 @@ public class ConfigManager {
         return logoutEndpointUri;
     }
 
+    @Nullable
+    public Uri getIntrospectUri() {
+
+        return introspectUri;
+    }
+
     /**
      * Returns the client secret specified in the res/raw/config.json file.
      *
@@ -306,6 +312,7 @@ public class ConfigManager {
         userInfoEndpointUri = getRequiredConfigWebUri("userinfo_endpoint");
         logoutEndpointUri = getRequiredConfigWebUri("end_session_endpoint");
         httpsRequired = configJson.optBoolean("https_required", true);
+        introspectUri = getRequiredConfigWebUri("introspect");
     }
 
     /**

@@ -18,27 +18,23 @@
 
 package com.wso2is.androidsample.activities;
 
-import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.wso2is.androidsample.R;
 import com.wso2is.androidsample.mgt.AuthStateManager;
 import com.wso2is.androidsample.mgt.ConfigManager;
-import com.wso2is.androidsample.R;
 import com.wso2is.androidsample.models.User;
 import com.wso2is.androidsample.oidc.LogoutRequest;
 import com.wso2is.androidsample.oidc.UserInfoRequest;
-
-import java.util.HashMap;
-import java.util.Map;
-import java.util.concurrent.atomic.AtomicReference;
+import com.wso2is.androidsample.utils.SetupScreenCustom;
 
 import net.openid.appauth.AppAuthConfiguration;
 import net.openid.appauth.AuthState;
@@ -51,7 +47,9 @@ import net.openid.appauth.TokenResponse;
 
 import org.json.JSONObject;
 
-import static com.wso2is.androidsample.utils.Constants.APP_NAME;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.atomic.AtomicReference;
 
 /**
  * This activity will exchange the authorization code for an access token if not
@@ -73,6 +71,7 @@ public class UserActivity extends AppCompatActivity {
     private AuthorizationService authService;
     private ConfigManager configuration;
     private Toolbar toolbar;
+    private SetupScreenCustom setupScreenCustom;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,6 +80,8 @@ public class UserActivity extends AppCompatActivity {
 
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+
 
         stateManager = AuthStateManager.getInstance(this);
         configuration = ConfigManager.getInstance(this);
@@ -97,11 +98,10 @@ public class UserActivity extends AppCompatActivity {
 
     @Override
     protected void onStart() {
-
         super.onStart();
-
         if (stateManager.getCurrentState().isAuthorized()) {
             displayAuthorized();
+//            setupScreenCustom.init();
         } else {
             AuthorizationResponse response = AuthorizationResponse.fromIntent(getIntent());
             AuthorizationException ex = AuthorizationException.fromIntent(getIntent());
@@ -128,7 +128,6 @@ public class UserActivity extends AppCompatActivity {
 
     @Override
     protected void onDestroy() {
-
         super.onDestroy();
         authService.dispose();
     }
@@ -139,25 +138,29 @@ public class UserActivity extends AppCompatActivity {
     private void displayAuthorized() {
 
         AuthState state = stateManager.getCurrentState();
-        // Fetches the user information from the userinfo endpoint of the WSO2 IS.
+        // Fetches the user information from the userInfo endpoint of the WSO2 IS.
         boolean val = UserInfoRequest.getInstance().fetchUserInfo(accessToken == null ? state.getAccessToken() : accessToken, this, user);
 
         if (val) {
-            setContentView(R.layout.activity_user);
-            getSupportActionBar().setTitle(APP_NAME);
+            setContentView(R.layout.activity_try_user);
+//            getSupportActionBar().setTitle(APP_NAME);
             (findViewById(R.id.bLogout)).setOnClickListener((View view) -> {
                 LogoutRequest.getInstance().signOut(this);
                 finish();
             });
 
+            (findViewById(R.id.bLogoutSSO)).setOnClickListener((View view) -> {
+                LogoutRequest.getInstance().signOutSSO(this);
+                finish();
+            });
+
             TextView tvUsername = findViewById(R.id.tvUsername);
-            TextView tvEmail = findViewById(R.id.tvEmail);
             tvUsername.setText(user.getUsername());
-            tvEmail.setText(user.getEmail());
+
         } else {
             Toast.makeText(this, "Unable to Fetch User Information", Toast.LENGTH_LONG).show();
             Log.e(TAG, "Error while fetching user information.");
-            Intent login = new Intent(this, LoginActivity.class);
+            Intent login = new Intent(this, MainActivity.class);
             startActivity(login);
         }
     }
