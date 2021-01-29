@@ -25,6 +25,7 @@ public class User {
 
     private String username;
     private String email;
+    private String htId;
 
     /**
      * Get username from the User object.
@@ -64,5 +65,16 @@ public class User {
     public void setEmail(String email) {
 
         this.email = email;
+    }
+
+
+
+    public void setHtId(String htId) {
+
+        this.htId = htId;
+    }
+
+    public String getHtId() {
+        return htId;
     }
 }

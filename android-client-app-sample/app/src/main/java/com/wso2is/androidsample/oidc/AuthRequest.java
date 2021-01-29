@@ -28,7 +28,9 @@ import android.support.customtabs.CustomTabsIntent;
 import android.support.customtabs.CustomTabsSession;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 
 import com.wso2is.androidsample.R;
 import com.wso2is.androidsample.activities.LoginActivity;
@@ -114,6 +116,11 @@ public class AuthRequest extends AppCompatActivity {
         authService.performAuthorizationRequest(authRequest.get(), PendingIntent.getActivity(context, 0,
                 completionIntent, 0), PendingIntent.getActivity(context, 0, cancelIntent, 0),
                 customTabIntent.get());
+    }
+
+    public void signUp() {
+
+
     }
 
     /**

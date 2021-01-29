@@ -24,16 +24,16 @@ import android.net.Uri;
 import android.support.customtabs.CustomTabsIntent;
 import android.util.Log;
 
+import com.wso2is.androidsample.activities.MainActivity;
 import com.wso2is.androidsample.mgt.AuthStateManager;
 import com.wso2is.androidsample.mgt.ConfigManager;
+
+import net.openid.appauth.AuthState;
 
 import java.lang.ref.WeakReference;
 import java.util.concurrent.atomic.AtomicReference;
 
-import net.openid.appauth.AuthState;
-
 import static com.wso2is.androidsample.activities.UserActivity.idToken;
-import static com.wso2is.androidsample.activities.UserActivity.state;
 
 /**
  * This class facilitates the logout function of the application.
@@ -85,6 +85,11 @@ public class LogoutRequest {
 
         authStateManager.replaceState(clearedState);
 
+
+        // move to Main screen
+        Intent Main = new Intent(context, MainActivity.class);
+        context.startActivity(Main);
+
 //        if(idToken != null) {
 //            Log.i(TAG, idToken);
 //            String logout_uri = configuration.getLogoutEndpointUri().toString();
@@ -108,7 +113,23 @@ public class LogoutRequest {
 
     public void signOutSSO(Context context){
 
+        AuthStateManager authStateManager = AuthStateManager.getInstance(context);
         ConfigManager configuration = ConfigManager.getInstance(context);
+
+        // Discards the authorization and token states, but retains the configuration.
+        AuthState currentState = authStateManager.getCurrentState();
+        AuthState clearedState = new AuthState(currentState.getAuthorizationServiceConfiguration());
+
+//        Log.i(TAG, currentState.getLastRegistrationResponse().toString());
+        if (currentState.getLastRegistrationResponse() != null) {
+            clearedState.update(currentState.getLastRegistrationResponse());
+        }
+        AuthState state = authStateManager.getCurrentState();
+
+
+        idToken = state.getIdToken();
+
+        Log.i(TAG, idToken);
         if(idToken != null) {
             Log.i(TAG, idToken);
             String logout_uri = configuration.getLogoutEndpointUri().toString();

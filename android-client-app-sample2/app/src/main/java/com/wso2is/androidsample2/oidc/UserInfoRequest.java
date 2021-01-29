@@ -189,7 +189,6 @@ public class UserInfoRequest {
                     in.close();
 
                     // print result
-                    System.out.println("vao roi" + response.toString());
                     userInfoJson.set(new JSONObject(response.toString()));
                 } else {
                     System.out.println("GET request not worked");
@@ -204,6 +203,12 @@ public class UserInfoRequest {
                     user.setUsername("tên đăng nhập: " + userInfoJson.get().getString("sub"));
                 } else {
                     user.setUsername("");
+                }
+
+                if (!userInfoJson.get().isNull("ht_id")) {
+                    user.setHtId("HtID: " + userInfoJson.get().getString("ht_id"));
+                } else {
+                    user.setHtId("");
                 }
 
                 val = true;

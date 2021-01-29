@@ -22,6 +22,7 @@ package com.wso2is.androidsample2.activities;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.customtabs.CustomTabsIntent;
 import android.support.design.widget.TabLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -33,6 +34,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
@@ -45,8 +47,11 @@ import com.wso2is.androidsample2.navigation.ViewPagerAdapter;
 import com.wso2is.androidsample2.oidc.AuthRequest;
 
 import net.openid.appauth.AuthState;
+import net.openid.appauth.AuthorizationService;
 
+import java.util.Date;
 import java.util.Objects;
+import java.util.concurrent.atomic.AtomicReference;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -61,7 +66,8 @@ public class MainActivity extends AppCompatActivity {
             R.drawable.google_maps,
             R.drawable.favorite,
     };
-
+    private AuthorizationService authService;
+    private final AtomicReference<CustomTabsIntent> customTabIntent = new AtomicReference<>();
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -81,14 +87,11 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-//            case R.id.action_language:
-//                Toast.makeText(this, "Change Language was clicked", Toast.LENGTH_LONG).show();
-//                return true;
             case R.id.action_login:
                 logIn();
                 return true;
             case R.id.action_signup:
-                signUp();
+                startActivity(new Intent(this, SignUpActivity.class));
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
@@ -99,10 +102,6 @@ public class MainActivity extends AppCompatActivity {
         AuthRequest.getInstance(this).doAuth();
     }
 
-    private void signUp() {
-
-    }
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -110,17 +109,21 @@ public class MainActivity extends AppCompatActivity {
 
 
         AuthStateManager authStateManager = AuthStateManager.getInstance(this);
+        AuthState state = authStateManager.getCurrentState();
         ConfigManager configuration = ConfigManager.getInstance(this);
 
-        Log.i(TAG, "Vao day roi - HTCorp 2 !!!");
+
+
+//        Log.i(TAG, "Vao day roi - HTCorp 1 !!!" + new Date(state.getAccessTokenExpirationTime()));
         // If the user is authorized, the UserActivity view will be launched.
+//        int compare = new Date().compareTo(new Date(state.getAccessTokenExpirationTime()));
+//        Log.i(TAG, String.valueOf(compare));
+//        compare != 1
         if (authStateManager.getCurrentState().isAuthorized() && !configuration.hasConfigurationChanged()) {
-            Log.i(TAG, "Vao day roi - HTCorp 1 - O tren !!!");
             Log.i(TAG, "User is already authorized, proceeding to user activity.");
             startActivity(new Intent(this, UserActivity.class));
             finish();
         } else {
-            Log.i(TAG, "Vao day roi - HTCorp 1 - O duoi !!!");
             // If the user is not authorized, the LoginActivity view will be launched.
             setContentView(R.layout.activity_main);
 
@@ -138,11 +141,9 @@ public class MainActivity extends AppCompatActivity {
                     configuration.acceptConfiguration();
                 }
             }
-//            findViewById(R.id.action_login).setOnClickListener((View view) -> AuthRequest.getInstance(this).doAuth());
+
         }
 
-
-//        setContentView(R.layout.activity_main);
 
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -165,26 +166,41 @@ public class MainActivity extends AppCompatActivity {
 
             mTabLayout = findViewById(R.id.tab_layout);
             mTabLayout.setupWithViewPager(viewPager);
+            mTabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+                @Override
+                public void onTabSelected(TabLayout.Tab tab) {
+                    switch (tab.getPosition()) {
+                        case 1:
+                            View tabView = ((ViewGroup) mTabLayout.getChildAt(0)).getChildAt(1);
+                            tabView.setClickable(false);
+                            break;
+                        case 2:
+                            View tabView2 = ((ViewGroup) mTabLayout.getChildAt(0)).getChildAt(2);
+                            tabView2.setClickable(false);
+                            break;
+                        case 3:
+                            View tabView3 = ((ViewGroup) mTabLayout.getChildAt(0)).getChildAt(3);
+                            tabView3.setClickable(false);
+                            break;
+                    }
+                }
+
+                @Override
+                public void onTabUnselected(TabLayout.Tab tab) {
+
+                }
+
+                @Override
+                public void onTabReselected(TabLayout.Tab tab) {
+
+                }
+            });
+
             setupTabIcons();
         }
 
-
-
-        /* --- REMOVE CLICKABLE ON OTHERS TAB BAR --- */
-        LinearLayout tabStrip = ((LinearLayout) mTabLayout.getChildAt(0));
-        for (int i = 0; i < tabStrip.getChildCount(); i++) {
-            int finalI = i;
-            tabStrip.getChildAt(i).setOnTouchListener(new View.OnTouchListener() {
-                @Override
-                public boolean onTouch(View v, MotionEvent event) {
-                    if (finalI > 0)
-                        return true;
-                    return false;
-                }
-            });
-        }
-
     }
+
 
     private void setupTabIcons() {
         Objects.requireNonNull(mTabLayout.getTabAt(0)).setIcon(mTabsIcons[0]);

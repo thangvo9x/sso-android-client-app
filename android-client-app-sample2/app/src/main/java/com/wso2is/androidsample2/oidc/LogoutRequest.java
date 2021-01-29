@@ -24,6 +24,7 @@ import android.net.Uri;
 import android.support.customtabs.CustomTabsIntent;
 import android.util.Log;
 
+import com.wso2is.androidsample2.activities.MainActivity;
 import com.wso2is.androidsample2.mgt.AuthStateManager;
 import com.wso2is.androidsample2.mgt.ConfigManager;
 
@@ -85,6 +86,11 @@ public class LogoutRequest {
 
         authStateManager.replaceState(clearedState);
 
+
+        // move to Main screen
+        Intent Main = new Intent(context, MainActivity.class);
+        context.startActivity(Main);
+
 //        if(idToken != null) {
 //            Log.i(TAG, idToken);
 //            String logout_uri = configuration.getLogoutEndpointUri().toString();
@@ -108,7 +114,22 @@ public class LogoutRequest {
 
     public void signOutSSO(Context context){
 
+        AuthStateManager authStateManager = AuthStateManager.getInstance(context);
         ConfigManager configuration = ConfigManager.getInstance(context);
+
+        // Discards the authorization and token states, but retains the configuration.
+        AuthState currentState = authStateManager.getCurrentState();
+        AuthState clearedState = new AuthState(currentState.getAuthorizationServiceConfiguration());
+
+//        Log.i(TAG, currentState.getLastRegistrationResponse().toString());
+        if (currentState.getLastRegistrationResponse() != null) {
+            clearedState.update(currentState.getLastRegistrationResponse());
+        }
+
+        AuthState state = authStateManager.getCurrentState();
+
+        idToken = state.getIdToken();
+
         if(idToken != null) {
             Log.i(TAG, idToken);
             String logout_uri = configuration.getLogoutEndpointUri().toString();

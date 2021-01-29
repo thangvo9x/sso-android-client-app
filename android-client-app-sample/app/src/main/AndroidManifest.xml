@@ -26,7 +26,7 @@
     <application
         android:allowBackup="true"
         android:fullBackupContent="true"
-        android:label="Hưng Thịnh Corp"
+        android:label="@string/app_name"
         android:networkSecurityConfig="@xml/network_security_config"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:icon="@mipmap/ic_launcher"
@@ -34,12 +34,13 @@
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
 
         <activity
-            android:name=".activities.MainActivity"
+            android:name=".activities.SplashActivity"
             android:launchMode="singleTop"
             android:label="@string/app_name">
             <intent-filter>
 
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
@@ -47,14 +48,18 @@
         </activity>
 
         <activity
-            android:name=".activities.UserActivity"
-            android:label="@string/app_name" />
+            android:name=".activities.MainActivity"
+            android:label="@string/app_name"
+            android:launchMode="singleTask"/>
 
         <activity
-            android:name=".activities.LoginActivity"
-            android:launchMode="singleTop">
-            <!--            <tools:validation testUrl="https://172.19.23.27:8082/notification/register-by-email-success" />-->
+            android:name=".activities.UserActivity"
+            android:label="@string/app_name"
+            android:launchMode="singleTask"/>
 
+        <activity
+            android:name=".activities.SignUpActivity"
+            android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 
@@ -62,10 +67,15 @@
                 <category android:name="android.intent.category.BROWSABLE" />
 
                 <data
-                    android:host="172.19.23.27"
-                    android:port="8082"
-                    android:scheme="https" />
+                    android:scheme="https"
+                    android:host="app-profile-dev.hungthinhcorp.com.vn" />
             </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".activities.LoginActivity"
+            android:launchMode="singleTop">
+            <!--            <tools:validation testUrl="https://172.19.23.27:8082/notification/register-by-email-success" />-->
 
 
         </activity>

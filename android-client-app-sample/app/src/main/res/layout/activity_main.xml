@@ -4,15 +4,37 @@
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <include layout="@layout/app_bar" />
 
-    <com.wso2is.androidsample.navigation.CustomViewPager
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="122dp"
+        android:layout_marginTop="260dp"
+        android:layout_marginBottom="253dp"
+        android:contentDescription="@string/wso2_logo"
+        android:src="@drawable/logo_hungthinh"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:srcCompat="@drawable/logo_hungthinh" />
 
+    <com.wso2is.androidsample.navigation.CustomViewPager
         android:id="@+id/view_pager"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent">
+
+        <WebView
+            android:id="@+id/webview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </com.wso2is.androidsample.navigation.CustomViewPager>
 
     <LinearLayout
         android:layout_width="match_parent"

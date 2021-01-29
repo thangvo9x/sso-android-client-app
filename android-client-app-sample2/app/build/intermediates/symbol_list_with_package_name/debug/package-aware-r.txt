@@ -1122,7 +1122,6 @@ id appbarlayout
 id async
 id auto
 id bLogout
-id bLogoutSSO
 id barrier
 id beginning
 id blocking
@@ -1137,6 +1136,7 @@ id chronometer
 id clip_horizontal
 id clip_vertical
 id collapseActionView
+id constraintLayout
 id container
 id content
 id contentPanel
@@ -1175,6 +1175,7 @@ id icon
 id icon_group
 id ifRoom
 id image
+id imageView
 id info
 id invisible
 id italic
@@ -1245,6 +1246,7 @@ id snackbar_text
 id snap
 id snapMargins
 id spacer
+id splashscreen
 id split_action_bar
 id spread
 id spread_inside
@@ -1267,6 +1269,7 @@ id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
 id textView
+id textView2
 id text_input_password_toggle
 id textinput_counter
 id textinput_error
@@ -1285,7 +1288,9 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id tvEmail
+id tvHtID
 id tvProfile
+id tvProfile2
 id tvUsername
 id tvUsernameLabel
 id uniform
@@ -1295,6 +1300,7 @@ id useLogo
 id view_offset_helper
 id view_pager
 id visible
+id webview
 id withText
 id wrap
 id wrap_content
@@ -1345,8 +1351,10 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_cate
 layout activity_login
 layout activity_main
+layout activity_signup
 layout activity_try_user
 layout activity_user
 layout app_bar
@@ -1375,7 +1383,9 @@ layout notification_template_part_time
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
+layout splashscreen
 layout support_simple_spinner_dropdown_item
+menu app_bar_logined
 menu items_app_bar
 mipmap ic_launcher
 mipmap ic_launcher_round

@@ -19,12 +19,18 @@
 package com.wso2is.androidsample.oidc;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.util.Log;
 
+import com.wso2is.androidsample.activities.MainActivity;
+import com.wso2is.androidsample.activities.SplashActivity;
+import com.wso2is.androidsample.mgt.AuthStateManager;
 import com.wso2is.androidsample.mgt.ConfigManager;
 import com.wso2is.androidsample.models.User;
 import com.wso2is.androidsample.utils.ConnectionBuilderForTesting;
+import android.app.PendingIntent;
+import net.openid.appauth.AuthState;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -101,9 +107,17 @@ public class UserInfoRequest {
                 conn = ConnectionBuilderForTesting.INSTANCE.openConnection(Uri.parse(introspectEndpointUri.toString()));
             }
 
-            conn.setRequestProperty(AUTHORIZATION, BEARER + oldAccessToken);
+            conn.setRequestProperty(AUTHORIZATION, "basic admin:admin");
             conn.setRequestMethod("POST");
+            conn.setRequestProperty("data", oldAccessToken);
             Log.d(TAG, "response code AccessToken: " + conn.getResponseCode());
+
+            int responseCode = conn.getResponseCode();
+            if(responseCode != HttpURLConnection.HTTP_OK){
+                LogoutRequest.getInstance().signOutSSO(context);
+                context.startActivity(new Intent(context, MainActivity.class));
+                return "";
+            }
 
             BufferedReader in = new BufferedReader(new InputStreamReader(
                     conn.getInputStream()));
@@ -116,7 +130,7 @@ public class UserInfoRequest {
             in.close();
 
             // print result
-            System.out.println("vao roi checkAccessToken: " + response.toString());
+            System.out.println("vao roi checkAccessToken: " + new JSONObject(response.toString()));
             // TODO
 
 
@@ -127,7 +141,7 @@ public class UserInfoRequest {
 //            } else {
 //                System.out.println("GET request not worked checkAccessToken");
 //            }
-        } catch (IOException ioEx) {
+        } catch (IOException | JSONException ioEx) {
             Log.e(TAG, "Network error when querying userinfo endpoint: ", ioEx);
 
         }
@@ -189,21 +203,35 @@ public class UserInfoRequest {
                     in.close();
 
                     // print result
-                    System.out.println("vao roi" + response.toString());
                     userInfoJson.set(new JSONObject(response.toString()));
                 } else {
                     System.out.println("GET request not worked");
+
+//                    AuthStateManager authStateManager = AuthStateManager.getInstance(context);
+//                    AuthState currentState = authStateManager.getCurrentState();
+//                    AuthState clearedState = new AuthState(currentState.getAuthorizationServiceConfiguration());
+//                    if (currentState.getLastRegistrationResponse() != null) {
+//                        clearedState.update(currentState.getLastRegistrationResponse());
+//                    }
+//                    val = false;
+
                 }
 
 //                String response = Okio.buffer(Okio.source(conn.getInputStream())).readString(Charset.forName(UTF_8));
 //                userInfoJson.set(new JSONObject(response));
-                Log.d(TAG, "Response" + userInfoJson.get().getString("sub"));
+//                Log.d(TAG, "Response" + userInfoJson.get().getString("sub"));
 
                 // Sets values for the user object.
-                if (!userInfoJson.get().isNull("sub")) {
-                    user.setUsername("tên đăng nhập: " + userInfoJson.get().getString("sub"));
+//                if (!userInfoJson.get().isNull("sub")) {
+//                    user.setUsername("tên đăng nhập: " + userInfoJson.get().getString("sub"));
+//                } else {
+//                    user.setUsername("");
+//                }
+
+                if (!userInfoJson.get().isNull("ht_id")) {
+                    user.setHtId("HtID: " + userInfoJson.get().getString("ht_id"));
                 } else {
-                    user.setUsername("");
+                    user.setHtId("");
                 }
 
                 val = true;

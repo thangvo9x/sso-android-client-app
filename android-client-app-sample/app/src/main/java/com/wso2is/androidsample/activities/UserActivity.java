@@ -21,17 +21,25 @@ package com.wso2is.androidsample.activities;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.TabLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.wso2is.androidsample.R;
+import com.wso2is.androidsample.fragments.Categories;
+import com.wso2is.androidsample.fragments.Home;
 import com.wso2is.androidsample.mgt.AuthStateManager;
 import com.wso2is.androidsample.mgt.ConfigManager;
 import com.wso2is.androidsample.models.User;
+import com.wso2is.androidsample.navigation.CustomViewPager;
+import com.wso2is.androidsample.navigation.ViewPagerAdapter;
 import com.wso2is.androidsample.oidc.LogoutRequest;
 import com.wso2is.androidsample.oidc.UserInfoRequest;
 import com.wso2is.androidsample.utils.SetupScreenCustom;
@@ -49,6 +57,7 @@ import org.json.JSONObject;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 import java.util.concurrent.atomic.AtomicReference;
 
 /**
@@ -73,6 +82,14 @@ public class UserActivity extends AppCompatActivity {
     private Toolbar toolbar;
     private SetupScreenCustom setupScreenCustom;
 
+    private TabLayout mTabLayout;
+    private int[] mTabsIcons = {
+            R.drawable.home,
+            R.drawable.list,
+            R.drawable.google_maps,
+            R.drawable.favorite,
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -82,26 +99,82 @@ public class UserActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
 
-
         stateManager = AuthStateManager.getInstance(this);
         configuration = ConfigManager.getInstance(this);
 
+
         if (configuration.hasConfigurationChanged()) {
-            Toast.makeText(this, "Configuration change detected!", Toast.LENGTH_SHORT).show();
-            LogoutRequest.getInstance().signOut(this);
+                Toast.makeText(this, "Configuration change detected!", Toast.LENGTH_SHORT).show();
+            LogoutRequest.getInstance().signOutSSO(this);
             finish();
         } else {
             authService = new AuthorizationService(this, new AppAuthConfiguration.Builder()
                     .setConnectionBuilder(configuration.getConnectionBuilder()).build());
         }
+
+        // Custom TabBar Here
+        setContentView(R.layout.activity_try_user);
+//        getSupportActionBar().setTitle(APP_NAME);
+
+        CustomViewPager viewPager = findViewById(R.id.view_pager);
+
+        ViewPagerAdapter pagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
+
+        if(viewPager != null) {
+            viewPager.setPagingEnabled(false);
+
+            pagerAdapter.addFrag(new com.wso2is.androidsample.fragments.User(), "Home");
+            pagerAdapter.addFrag(new Categories(), "Categories");
+            pagerAdapter.addFrag(new com.wso2is.androidsample.fragments.Map(), "Favorites");
+            pagerAdapter.addFrag(new com.wso2is.androidsample.fragments.Map(), "User");
+            viewPager.setAdapter(pagerAdapter);
+
+            mTabLayout = findViewById(R.id.tab_layout);
+            mTabLayout.setupWithViewPager(viewPager);
+
+            mTabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+                @Override
+                public void onTabSelected(TabLayout.Tab tab) {
+                    switch (tab.getPosition()) {
+                        case 1:
+                            ViewGroup tabItem = (ViewGroup) ((ViewGroup) mTabLayout.getChildAt(0)).getChildAt(0);
+                            tabItem.setClickable(false);
+                            break;
+                        case 2:
+                            ViewGroup tabItem2 = (ViewGroup) ((ViewGroup) mTabLayout.getChildAt(0)).getChildAt(2);
+                            tabItem2.setClickable(false);
+                            break;
+                        case 3:
+                            ViewGroup tabItem3 = (ViewGroup) ((ViewGroup) mTabLayout.getChildAt(0)).getChildAt(3);
+                            tabItem3.setClickable(false);
+                            break;
+                    }
+                }
+
+                @Override
+                public void onTabUnselected(TabLayout.Tab tab) {
+
+                }
+
+                @Override
+                public void onTabReselected(TabLayout.Tab tab) {
+
+                }
+            });
+
+            setupTabIcons();
+        }
+
+
+
     }
 
     @Override
     protected void onStart() {
         super.onStart();
+        Log.i(TAG, "onStart" + user.getHtId());
         if (stateManager.getCurrentState().isAuthorized()) {
             displayAuthorized();
-//            setupScreenCustom.init();
         } else {
             AuthorizationResponse response = AuthorizationResponse.fromIntent(getIntent());
             AuthorizationException ex = AuthorizationException.fromIntent(getIntent());
@@ -114,13 +187,22 @@ public class UserActivity extends AppCompatActivity {
                 } else if (ex != null) {
                     Log.e(TAG, "Authorization request failed: " + ex.getMessage());
                     Toast.makeText(this, "Authorization request failed!", Toast.LENGTH_SHORT).show();
-                    LogoutRequest.getInstance().signOut(this);
+                    LogoutRequest.getInstance().signOutSSO(this);
                     finish();
                 }
             } else {
                 Log.e(TAG, "No authorization state retained - re-authorization required.");
                 Toast.makeText(this, "Re-authorization required!", Toast.LENGTH_SHORT).show();
-                LogoutRequest.getInstance().signOut(this);
+
+                AuthStateManager authStateManager = AuthStateManager.getInstance(this);
+                AuthState currentState = authStateManager.getCurrentState();
+                AuthState clearedState = new AuthState(currentState.getAuthorizationServiceConfiguration());
+                if (currentState.getLastRegistrationResponse() != null) {
+                    clearedState.update(currentState.getLastRegistrationResponse());
+                }
+
+                Intent login = new Intent(this, MainActivity.class);
+                startActivity(login);
                 finish();
             }
         }
@@ -130,6 +212,13 @@ public class UserActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         authService.dispose();
+    }
+
+    private void setupTabIcons() {
+        Objects.requireNonNull(mTabLayout.getTabAt(0)).setIcon(mTabsIcons[0]);
+        Objects.requireNonNull(mTabLayout.getTabAt(1)).setIcon(mTabsIcons[1]);
+        Objects.requireNonNull(mTabLayout.getTabAt(2)).setIcon(mTabsIcons[2]);
+        Objects.requireNonNull(mTabLayout.getTabAt(3)).setIcon(mTabsIcons[3]);
     }
 
     /**
@@ -142,26 +231,29 @@ public class UserActivity extends AppCompatActivity {
         boolean val = UserInfoRequest.getInstance().fetchUserInfo(accessToken == null ? state.getAccessToken() : accessToken, this, user);
 
         if (val) {
-            setContentView(R.layout.activity_try_user);
-//            getSupportActionBar().setTitle(APP_NAME);
-            (findViewById(R.id.bLogout)).setOnClickListener((View view) -> {
-                LogoutRequest.getInstance().signOut(this);
-                finish();
-            });
 
-            (findViewById(R.id.bLogoutSSO)).setOnClickListener((View view) -> {
+            (findViewById(R.id.bLogout)).setOnClickListener((View view) -> {
                 LogoutRequest.getInstance().signOutSSO(this);
                 finish();
             });
 
-            TextView tvUsername = findViewById(R.id.tvUsername);
-            tvUsername.setText(user.getUsername());
+//            (findViewById(R.id.bLogoutSSO)).setOnClickListener((View view) -> {
+//                LogoutRequest.getInstance().signOutSSO(this);
+//                finish();
+//            });
+
+//            TextView tvUsername = findViewById(R.id.tvUsername);
+//            tvUsername.setText(user.getUsername());
+
+            TextView tvHtID = findViewById(R.id.tvHtID);
+            tvHtID.setText(user.getHtId());
 
         } else {
             Toast.makeText(this, "Unable to Fetch User Information", Toast.LENGTH_LONG).show();
             Log.e(TAG, "Error while fetching user information.");
-            Intent login = new Intent(this, MainActivity.class);
-            startActivity(login);
+            Intent main = new Intent(this, MainActivity.class);
+            startActivity(main);
+            finish();
         }
     }
 
