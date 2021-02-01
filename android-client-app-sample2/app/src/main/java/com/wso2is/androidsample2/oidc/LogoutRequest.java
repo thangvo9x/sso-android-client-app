@@ -112,7 +112,7 @@ public class LogoutRequest {
 //        }
     }
 
-    public void signOutSSO(Context context){
+    public void signOutSSO(Context context) {
 
         AuthStateManager authStateManager = AuthStateManager.getInstance(context);
         ConfigManager configuration = ConfigManager.getInstance(context);
@@ -125,29 +125,28 @@ public class LogoutRequest {
         if (currentState.getLastRegistrationResponse() != null) {
             clearedState.update(currentState.getLastRegistrationResponse());
         }
+        authStateManager.replaceState(clearedState);
 
-        AuthState state = authStateManager.getCurrentState();
+//        idToken = state.getIdToken();
 
-        idToken = state.getIdToken();
+//        if(idToken != null) {
+        Log.i(TAG, idToken);
+        String logout_uri = configuration.getLogoutEndpointUri().toString();
+        String redirect = configuration.getRedirectUri().toString();
+        StringBuffer url = new StringBuffer();
+        url.append(logout_uri);
+        url.append("?id_token_hint=");
+        url.append(idToken);
+        url.append("&post_logout_redirect_uri=");
+        url.append(redirect);
+        url.append("&state=");
+        url.append(state);
 
-        if(idToken != null) {
-            Log.i(TAG, idToken);
-            String logout_uri = configuration.getLogoutEndpointUri().toString();
-            String redirect = configuration.getRedirectUri().toString();
-            StringBuffer url = new StringBuffer();
-            url.append(logout_uri);
-            url.append("?id_token_hint=");
-            url.append(idToken);
-            url.append("&post_logout_redirect_uri=");
-            url.append(redirect);
-            url.append("&state=");
-            url.append(state);
-
-            CustomTabsIntent.Builder builder = new CustomTabsIntent.Builder();
-            CustomTabsIntent customTabsIntent = builder.build();
-            customTabsIntent.intent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY | Intent.FLAG_ACTIVITY_NEW_TASK
-                    | Intent.FLAG_ACTIVITY_SINGLE_TOP);
-            customTabsIntent.launchUrl(context, Uri.parse(url.toString()));
-        }
+        CustomTabsIntent.Builder builder = new CustomTabsIntent.Builder();
+        CustomTabsIntent customTabsIntent = builder.build();
+//        customTabsIntent.intent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY | Intent.FLAG_ACTIVITY_NEW_TASK
+//                | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+        customTabsIntent.launchUrl(context, Uri.parse(url.toString()));
+//        }
     }
 }

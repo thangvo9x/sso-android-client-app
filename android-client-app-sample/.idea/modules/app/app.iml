@@ -109,7 +109,11 @@
     <orderEntry type="library" name="Gradle: android.arch.core:common:1.1.1@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:support-annotations:28.0.0@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support.constraint:constraint-layout-solver:1.1.2@jar" level="project" />
-    <orderEntry type="library" name="Gradle: com.squareup.okio:okio:1.14.1@jar" level="project" />
+    <orderEntry type="library" name="Gradle: com.squareup.okhttp3:okhttp:4.9.0@jar" level="project" />
+    <orderEntry type="library" name="Gradle: com.squareup.okio:okio:2.8.0@jar" level="project" />
+    <orderEntry type="library" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib:1.4.10@jar" level="project" />
+    <orderEntry type="library" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib-common:1.4.10@jar" level="project" />
+    <orderEntry type="library" name="Gradle: org.jetbrains:annotations:13.0@jar" level="project" />
     <orderEntry type="library" name="Gradle: androidx.databinding:databinding-adapters:4.0.1@aar" level="project" />
     <orderEntry type="library" name="Gradle: androidx.databinding:databinding-runtime:4.0.1@aar" level="project" />
     <orderEntry type="library" name="Gradle: androidx.databinding:viewbinding:4.0.1@aar" level="project" />

@@ -1035,6 +1035,7 @@ drawable abc_vector_test
 drawable avd_hide_password
 drawable avd_show_password
 drawable background_appbar
+drawable cancel
 drawable design_bottom_navigation_item_background
 drawable design_fab_background
 drawable design_ic_visibility
@@ -1127,6 +1128,7 @@ id beginning
 id blocking
 id bottom
 id buttonPanel
+id buttonUrl
 id center
 id center_horizontal
 id center_vertical

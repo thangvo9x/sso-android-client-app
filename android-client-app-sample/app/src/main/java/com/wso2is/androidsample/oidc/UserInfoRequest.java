@@ -29,7 +29,9 @@ import com.wso2is.androidsample.mgt.AuthStateManager;
 import com.wso2is.androidsample.mgt.ConfigManager;
 import com.wso2is.androidsample.models.User;
 import com.wso2is.androidsample.utils.ConnectionBuilderForTesting;
+
 import android.app.PendingIntent;
+
 import net.openid.appauth.AuthState;
 
 import org.json.JSONException;
@@ -46,6 +48,14 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.atomic.AtomicReference;
+
+import okhttp3.Credentials;
+import okhttp3.MediaType;
+import okhttp3.MultipartBody;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.RequestBody;
+import okhttp3.Response;
 
 import static com.wso2is.androidsample.activities.UserActivity.userInfoJson;
 import static com.wso2is.androidsample.utils.Constants.AUTHORIZATION;
@@ -113,7 +123,7 @@ public class UserInfoRequest {
             Log.d(TAG, "response code AccessToken: " + conn.getResponseCode());
 
             int responseCode = conn.getResponseCode();
-            if(responseCode != HttpURLConnection.HTTP_OK){
+            if (responseCode != HttpURLConnection.HTTP_OK) {
                 LogoutRequest.getInstance().signOutSSO(context);
                 context.startActivity(new Intent(context, MainActivity.class));
                 return "";
@@ -185,7 +195,6 @@ public class UserInfoRequest {
                 // check access token here
 //                String sameAccessToken = checkAccessToken(context, accessToken);
                 String sameAccessToken = accessToken;
-
                 conn.setRequestProperty(AUTHORIZATION, BEARER + sameAccessToken);
                 conn.setRequestMethod("GET");
                 Log.d(TAG, "AccessToken " + sameAccessToken);
@@ -204,6 +213,34 @@ public class UserInfoRequest {
 
                     // print result
                     userInfoJson.set(new JSONObject(response.toString()));
+//                } else if (responseCode == HttpURLConnection.HTTP_UNAUTHORIZED) {
+//
+////                    OkHttpClient client = new OkHttpClient();
+////
+//////                    String postBody = "{'token':" + sameAccessToken + "}";
+////                    RequestBody requestBody = new MultipartBody.Builder()
+////                            .setType(MultipartBody.FORM)
+////                            .addFormDataPart("token", sameAccessToken)
+////                            .build();
+////
+////
+////                    Request request = new Request.Builder()
+////                            .header("Authorization", Credentials.basic("admin", "admin"))
+////                            .header("Content-Type", "application/x-www-form-urlencoded")
+////                            .url(configuration.getIntrospectUri().toString())
+////                            .post(requestBody)
+////                            .build();
+////
+////                    try (Response response = client.newCall(request).execute()) {
+////                        System.out.println(response);
+//////                        if (!response.isSuccessful())
+////                            Log.e(TAG, "Unexpected code " + response);
+////
+////                        System.out.println(response.body().string());
+////                    } catch (IOException ioEx) {
+////                        Log.e(TAG, "Network error when querying userinfo endpoint: ", ioEx);
+//                    }
+
                 } else {
                     System.out.println("GET request not worked");
 
@@ -213,6 +250,8 @@ public class UserInfoRequest {
 //                    if (currentState.getLastRegistrationResponse() != null) {
 //                        clearedState.update(currentState.getLastRegistrationResponse());
 //                    }
+//
+//                    context.startActivity(new Intent(context, MainActivity.class).putExtra("expired", true));
 //                    val = false;
 
                 }
@@ -229,12 +268,13 @@ public class UserInfoRequest {
 //                }
 
                 if (!userInfoJson.get().isNull("ht_id")) {
-                    user.setHtId("HtID: " + userInfoJson.get().getString("ht_id"));
+                    user.setHtId("HT_ID: " + userInfoJson.get().getString("ht_id"));
                 } else {
                     user.setHtId("");
                 }
 
                 val = true;
+//                conn.disconnect();
 
             } catch (IOException ioEx) {
                 Log.e(TAG, "Network error when querying userinfo endpoint: ", ioEx);
@@ -249,7 +289,8 @@ public class UserInfoRequest {
 
         try {
             authIntentLatch.await();
-        } catch (InterruptedException ex) {
+        } catch (
+                InterruptedException ex) {
             Log.w(TAG, "Interrupted while waiting for auth intent: ", ex);
         }
 

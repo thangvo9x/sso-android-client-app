@@ -45,6 +45,7 @@ import com.wso2is.androidsample2.mgt.ConfigManager;
 import com.wso2is.androidsample2.navigation.CustomViewPager;
 import com.wso2is.androidsample2.navigation.ViewPagerAdapter;
 import com.wso2is.androidsample2.oidc.AuthRequest;
+import com.wso2is.androidsample2.oidc.LogoutRequest;
 
 import net.openid.appauth.AuthState;
 import net.openid.appauth.AuthorizationService;
@@ -88,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_login:
-                logIn();
+                AuthRequest.getInstance(this).doAuth();
                 return true;
             case R.id.action_signup:
                 startActivity(new Intent(this, SignUpActivity.class));
@@ -98,56 +99,55 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private void logIn() {
-        AuthRequest.getInstance(this).doAuth();
-    }
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        Intent myintent = getIntent();
+        String expired = myintent.getStringExtra("expired");
 
         AuthStateManager authStateManager = AuthStateManager.getInstance(this);
         AuthState state = authStateManager.getCurrentState();
         ConfigManager configuration = ConfigManager.getInstance(this);
 
-
+//        if(expired == null){
 
 //        Log.i(TAG, "Vao day roi - HTCorp 1 !!!" + new Date(state.getAccessTokenExpirationTime()));
-        // If the user is authorized, the UserActivity view will be launched.
+            // If the user is authorized, the UserActivity view will be launched.
 //        int compare = new Date().compareTo(new Date(state.getAccessTokenExpirationTime()));
 //        Log.i(TAG, String.valueOf(compare));
 //        compare != 1
-        if (authStateManager.getCurrentState().isAuthorized() && !configuration.hasConfigurationChanged()) {
-            Log.i(TAG, "User is already authorized, proceeding to user activity.");
-            startActivity(new Intent(this, UserActivity.class));
-            finish();
-        } else {
-            // If the user is not authorized, the LoginActivity view will be launched.
-            setContentView(R.layout.activity_main);
+            if (authStateManager.getCurrentState().isAuthorized() && !configuration.hasConfigurationChanged()) {
+                Log.i(TAG, "User is already authorized, proceeding to user activity.");
 
-            // Checks if the configuration is valid.
-            if (!configuration.isValid()) {
-                Log.e(TAG, "Configuration is not valid: " + configuration.getConfigurationError());
-                Toast.makeText(this, "Configuration is not valid!", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(this, UserActivity.class));
                 finish();
             } else {
-                // Discards any existing authorization state due to the change of configuration.
-                if (configuration.hasConfigurationChanged()) {
-                    Log.i(TAG, "Configuration change detected, discarding the old state.");
-                    authStateManager.replaceState(new AuthState());
-                    // Stores the current configuration as the last known valid configuration.
-                    configuration.acceptConfiguration();
+                // If the user is not authorized, the LoginActivity view will be launched.
+                setContentView(R.layout.activity_main);
+
+                // Checks if the configuration is valid.
+                if (!configuration.isValid()) {
+                    Log.e(TAG, "Configuration is not valid: " + configuration.getConfigurationError());
+                    Toast.makeText(this, "Configuration is not valid!", Toast.LENGTH_SHORT).show();
+                    finish();
+                } else {
+                    // Discards any existing authorization state due to the change of configuration.
+                    if (configuration.hasConfigurationChanged()) {
+                        Log.i(TAG, "Configuration change detected, discarding the old state.");
+                        authStateManager.replaceState(new AuthState());
+                        // Stores the current configuration as the last known valid configuration.
+                        configuration.acceptConfiguration();
+                    }
                 }
+
             }
-
-        }
-
+//        }else {
+//            setContentView(R.layout.activity_main);
+//        }
 
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
 
         // Setup the viewPager
         CustomViewPager viewPager = findViewById(R.id.view_pager);

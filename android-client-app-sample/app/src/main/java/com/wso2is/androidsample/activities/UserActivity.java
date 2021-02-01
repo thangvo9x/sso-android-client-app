@@ -25,6 +25,7 @@ import android.support.design.widget.TabLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -89,6 +90,16 @@ public class UserActivity extends AppCompatActivity {
             R.drawable.google_maps,
             R.drawable.favorite,
     };
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+//        if(keyCode== KeyEvent.KEYCODE_BACK)
+//            Toast.makeText(getApplicationContext(), "back press",
+//                    Toast.LENGTH_LONG).show();
+
+        return false;
+        // Disable back button..............
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -172,7 +183,7 @@ public class UserActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        Log.i(TAG, "onStart" + user.getHtId());
+        Log.i(TAG, "onStart " + user.getHtId());
         if (stateManager.getCurrentState().isAuthorized()) {
             displayAuthorized();
         } else {
@@ -212,6 +223,7 @@ public class UserActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         authService.dispose();
+        authService = null;
     }
 
     private void setupTabIcons() {
@@ -237,11 +249,6 @@ public class UserActivity extends AppCompatActivity {
                 finish();
             });
 
-//            (findViewById(R.id.bLogoutSSO)).setOnClickListener((View view) -> {
-//                LogoutRequest.getInstance().signOutSSO(this);
-//                finish();
-//            });
-
 //            TextView tvUsername = findViewById(R.id.tvUsername);
 //            tvUsername.setText(user.getUsername());
 
@@ -249,7 +256,7 @@ public class UserActivity extends AppCompatActivity {
             tvHtID.setText(user.getHtId());
 
         } else {
-            Toast.makeText(this, "Unable to Fetch User Information", Toast.LENGTH_LONG).show();
+//            Toast.makeText(this, "Unable to Fetch User Information", Toast.LENGTH_SHORT).show();
             Log.e(TAG, "Error while fetching user information.");
             Intent main = new Intent(this, MainActivity.class);
             startActivity(main);

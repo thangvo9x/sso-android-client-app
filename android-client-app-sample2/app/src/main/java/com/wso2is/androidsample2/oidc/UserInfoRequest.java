@@ -19,12 +19,17 @@
 package com.wso2is.androidsample2.oidc;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.util.Log;
 
+import com.wso2is.androidsample2.activities.MainActivity;
+import com.wso2is.androidsample2.mgt.AuthStateManager;
 import com.wso2is.androidsample2.mgt.ConfigManager;
 import com.wso2is.androidsample2.models.User;
 import com.wso2is.androidsample2.utils.ConnectionBuilderForTesting;
+
+import net.openid.appauth.AuthState;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -192,18 +197,28 @@ public class UserInfoRequest {
                     userInfoJson.set(new JSONObject(response.toString()));
                 } else {
                     System.out.println("GET request not worked");
+
+//                    AuthStateManager authStateManager = AuthStateManager.getInstance(context);
+//                    AuthState currentState = authStateManager.getCurrentState();
+//                    AuthState clearedState = new AuthState(currentState.getAuthorizationServiceConfiguration());
+//                    if (currentState.getLastRegistrationResponse() != null) {
+//                        clearedState.update(currentState.getLastRegistrationResponse());
+//                    }
+
                 }
 
 //                String response = Okio.buffer(Okio.source(conn.getInputStream())).readString(Charset.forName(UTF_8));
 //                userInfoJson.set(new JSONObject(response));
-                Log.d(TAG, "Response" + userInfoJson.get().getString("sub"));
+//                Log.d(TAG, "Response" + userInfoJson.get().getString("sub"));
 
                 // Sets values for the user object.
-                if (!userInfoJson.get().isNull("sub")) {
-                    user.setUsername("tên đăng nhập: " + userInfoJson.get().getString("sub"));
-                } else {
-                    user.setUsername("");
-                }
+//                if (!userInfoJson.get().isNull("sub")) {
+//                    user.setUsername("tên đăng nhập: " + userInfoJson.get().getString("sub"));
+//                } else {
+//                    user.setUsername("");
+//                }
+
+                Log.i(TAG, "aaa" + userInfoJson.get().getString("ht_id"));
 
                 if (!userInfoJson.get().isNull("ht_id")) {
                     user.setHtId("HtID: " + userInfoJson.get().getString("ht_id"));
@@ -212,6 +227,7 @@ public class UserInfoRequest {
                 }
 
                 val = true;
+                conn.disconnect();
 
             } catch (IOException ioEx) {
                 Log.e(TAG, "Network error when querying userinfo endpoint: ", ioEx);

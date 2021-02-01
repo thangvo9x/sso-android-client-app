@@ -25,6 +25,7 @@ import android.support.design.widget.TabLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -91,6 +92,16 @@ public class UserActivity extends AppCompatActivity {
     };
 
     @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+//        if(keyCode== KeyEvent.KEYCODE_BACK)
+//            Toast.makeText(getApplicationContext(), "back press",
+//                    Toast.LENGTH_LONG).show();
+
+        return false;
+        // Disable back button..............
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
@@ -120,7 +131,7 @@ public class UserActivity extends AppCompatActivity {
 
         ViewPagerAdapter pagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
 
-        if(viewPager != null) {
+        if (viewPager != null) {
             viewPager.setPagingEnabled(false);
 
             pagerAdapter.addFrag(new com.wso2is.androidsample2.fragments.User(), "Home");
@@ -166,14 +177,13 @@ public class UserActivity extends AppCompatActivity {
         }
 
 
-
     }
 
     @Override
     protected void onStart() {
         super.onStart();
         Log.i(TAG, "onStart" + user.getHtId());
-        if (stateManager.getCurrentState().isAuthorized() ) {
+        if (stateManager.getCurrentState().isAuthorized()) {
             displayAuthorized();
         } else {
             AuthorizationResponse response = AuthorizationResponse.fromIntent(getIntent());
@@ -193,9 +203,17 @@ public class UserActivity extends AppCompatActivity {
             } else {
                 Log.e(TAG, "No authorization state retained - re-authorization required.");
                 Toast.makeText(this, "Re-authorization required!", Toast.LENGTH_SHORT).show();
-                LogoutRequest.getInstance().signOutSSO(this);
-                Intent login = new Intent(this, MainActivity.class);
-                startActivity(login);
+
+                AuthStateManager authStateManager = AuthStateManager.getInstance(this);
+                AuthState currentState = authStateManager.getCurrentState();
+                AuthState clearedState = new AuthState(currentState.getAuthorizationServiceConfiguration());
+                if (currentState.getLastRegistrationResponse() != null) {
+                    clearedState.update(currentState.getLastRegistrationResponse());
+                }
+
+
+                Intent main = new Intent(this, MainActivity.class);
+                startActivity(main);
                 finish();
             }
         }
@@ -205,6 +223,7 @@ public class UserActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         authService.dispose();
+        authService = null;
     }
 
     private void setupTabIcons() {
@@ -223,17 +242,13 @@ public class UserActivity extends AppCompatActivity {
         // Fetches the user information from the userInfo endpoint of the WSO2 IS.
         boolean val = UserInfoRequest.getInstance().fetchUserInfo(accessToken == null ? state.getAccessToken() : accessToken, this, user);
 
+        Log.i(TAG, String.valueOf(val));
         if (val) {
 
             (findViewById(R.id.bLogout)).setOnClickListener((View view) -> {
                 LogoutRequest.getInstance().signOutSSO(this);
                 finish();
             });
-
-//            (findViewById(R.id.bLogoutSSO)).setOnClickListener((View view) -> {
-//                LogoutRequest.getInstance().signOutSSO(this);
-//                finish();
-//            });
 
 //            TextView tvUsername = findViewById(R.id.tvUsername);
 //            tvUsername.setText(user.getUsername());
@@ -242,10 +257,12 @@ public class UserActivity extends AppCompatActivity {
             tvHtID.setText(user.getHtId());
 
         } else {
-            Toast.makeText(this, "Unable to Fetch User Information", Toast.LENGTH_LONG).show();
+//            Toast.makeText(this, "Unable to Fetch User Information", Toast.LENGTH_SHORT).show();
             Log.e(TAG, "Error while fetching user information.");
-            Intent login = new Intent(this, MainActivity.class);
-            startActivity(login);
+            Intent main = new Intent(this, MainActivity.class);
+//            main.putExtra("expired", "expired");
+            startActivity(main);
+//            finish();
         }
     }
 

@@ -47,6 +47,7 @@ import com.wso2is.androidsample.oidc.AuthRequest;
 import net.openid.appauth.AuthState;
 import net.openid.appauth.AuthorizationService;
 
+import java.util.Date;
 import java.util.Objects;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -105,8 +106,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
 
+        Intent myintent = getIntent();
+        String expired = myintent.getStringExtra("expired");
+
         AuthStateManager authStateManager = AuthStateManager.getInstance(this);
-//        AuthState state = authStateManager.getCurrentState();
+        AuthState state = authStateManager.getCurrentState();
         ConfigManager configuration = ConfigManager.getInstance(this);
 
 
@@ -119,9 +123,13 @@ public class MainActivity extends AppCompatActivity {
             Log.i(TAG, "User is already authorized, proceeding to user activity.");
 //            int compare = new Date().compareTo(new Date(state.getAccessTokenExpirationTime()));
 //            Log.i(TAG, String.valueOf(compare));
+
+//            if(expired != null){
+//                setContentView(R.layout.activity_main);
+//            }
             startActivity(new Intent(this, UserActivity.class));
             finish();
-//            if(compare != 1){
+//            if(compare != 1 && state.getAccessTokenExpirationTime() != null){
 //                startActivity(new Intent(this, UserActivity.class));
 //                finish();
 //            }else{

@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:19:1-98:12
-INJECTED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:19:1-98:12
-INJECTED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:19:1-98:12
-INJECTED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:19:1-98:12
+ADDED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:19:1-100:12
+INJECTED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:19:1-100:12
+INJECTED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:19:1-100:12
+INJECTED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:19:1-100:12
 MERGED from [com.android.support:design:28.0.0] /Users/thang/.gradle/caches/transforms-2/files-2.1/0e8846c1e204e79a65a49499cf5cacc7/design-28.0.0/AndroidManifest.xml:17:1-24:12
 MERGED from [com.android.support:appcompat-v7:28.0.0] /Users/thang/.gradle/caches/transforms-2/files-2.1/02a0b5591867b269bf90099dda756d74/appcompat-v7-28.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support.constraint:constraint-layout:1.1.2] /Users/thang/.gradle/caches/transforms-2/files-2.1/c51942e64d36e413b7725f7918b9000c/constraint-layout-1.1.2/AndroidManifest.xml:2:1-11:12
@@ -37,22 +37,22 @@ MERGED from [com.android.support:interpolator:28.0.0] /Users/thang/.gradle/cache
 MERGED from [android.arch.lifecycle:livedata:1.1.1] /Users/thang/.gradle/caches/transforms-2/files-2.1/92e18467eefd23a76627e1fe83bf1e05/livedata-1.1.1/AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.lifecycle:livedata-core:1.1.1] /Users/thang/.gradle/caches/transforms-2/files-2.1/7f446c61d119859cc910274a8162160c/livedata-core-1.1.1/AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.core:runtime:1.1.1] /Users/thang/.gradle/caches/transforms-2/files-2.1/8ce8513e0c0ed0e577ea55f824679bf4/runtime-1.1.1/AndroidManifest.xml:17:1-22:12
-INJECTED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:19:1-98:12
-INJECTED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:19:1-98:12
-INJECTED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:19:1-98:12
+INJECTED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:19:1-100:12
+INJECTED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:19:1-100:12
+INJECTED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:19:1-100:12
 	package
 		ADDED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:21:5-40
 		INJECTED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml
 		INJECTED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml
-		ADDED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:19:1-98:12
+		ADDED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:19:1-100:12
 		INJECTED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml
 	xmlns:tools
 		ADDED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:20:5-51
 	android:versionCode
 		INJECTED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml
-		ADDED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:19:1-98:12
+		ADDED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:19:1-100:12
 		INJECTED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:19:11-69
@@ -67,7 +67,7 @@ ADDED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample
 	android:name
 		ADDED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:24:22-76
 application
-ADDED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:26:5-96:19
+ADDED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:26:5-98:19
 MERGED from [com.android.support:design:28.0.0] /Users/thang/.gradle/caches/transforms-2/files-2.1/0e8846c1e204e79a65a49499cf5cacc7/design-28.0.0/AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:design:28.0.0] /Users/thang/.gradle/caches/transforms-2/files-2.1/0e8846c1e204e79a65a49499cf5cacc7/design-28.0.0/AndroidManifest.xml:22:5-20
 MERGED from [com.android.support.constraint:constraint-layout:1.1.2] /Users/thang/.gradle/caches/transforms-2/files-2.1/c51942e64d36e413b7725f7918b9000c/constraint-layout-1.1.2/AndroidManifest.xml:9:5-20
@@ -83,99 +83,101 @@ MERGED from [com.android.support:versionedparcelable:28.0.0] /Users/thang/.gradl
 	android:appComponentFactory
 		ADDED from [com.android.support:support-compat:28.0.0] /Users/thang/.gradle/caches/transforms-2/files-2.1/00567bd0de14b33d1bf8a440dc72bff8/support-compat-28.0.0/AndroidManifest.xml:22:18-91
 	android:supportsRtl
-		ADDED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:33:9-35
+		ADDED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:34:9-35
 	android:label
-		ADDED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:30:9-41
+		ADDED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:31:9-41
+	android:hardwareAccelerated
+		ADDED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:27:9-43
 	android:fullBackupContent
-		ADDED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:28:9-41
+		ADDED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:29:9-41
 	android:roundIcon
-		ADDED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:32:9-54
+		ADDED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:33:9-54
 	android:icon
-		ADDED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:29:9-43
+		ADDED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:30:9-43
 	android:allowBackup
-		ADDED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:27:9-35
+		ADDED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:28:9-35
 	android:theme
-		ADDED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:34:9-65
+		ADDED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:35:9-65
 	android:networkSecurityConfig
-		ADDED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:31:9-69
+		ADDED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:32:9-69
 activity#com.wso2is.androidsample2.activities.SplashActivitiy
-ADDED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:36:9-50:20
+ADDED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:37:9-51:20
 	android:label
-		ADDED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:38:13-45
+		ADDED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:39:13-45
 	android:launchMode
-		ADDED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:39:13-43
+		ADDED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:40:13-43
 	android:name
-		ADDED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:37:13-55
+		ADDED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:38:13-55
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.DEFAULT+category:name:android.intent.category.LAUNCHER
-ADDED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:40:13-48:29
+ADDED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:41:13-49:29
 action#android.intent.action.MAIN
-ADDED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:42:17-69
+ADDED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:43:17-69
 	android:name
-		ADDED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:42:25-66
+		ADDED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:43:25-66
 category#android.intent.category.DEFAULT
-ADDED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:44:17-76
+ADDED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:45:17-76
 	android:name
-		ADDED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:44:27-73
+		ADDED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:45:27-73
 category#android.intent.category.LAUNCHER
-ADDED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:45:17-77
+ADDED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:46:17-77
 	android:name
-		ADDED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:45:27-74
+		ADDED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:46:27-74
 activity#com.wso2is.androidsample2.activities.MainActivity
-ADDED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:52:9-54:48
+ADDED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:53:9-55:48
 	android:label
-		ADDED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:54:13-45
+		ADDED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:55:13-45
 	android:name
-		ADDED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:53:13-52
+		ADDED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:54:13-52
 activity#com.wso2is.androidsample2.activities.UserActivity
-ADDED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:56:9-58:48
+ADDED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:57:9-59:48
 	android:label
-		ADDED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:58:13-45
+		ADDED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:59:13-45
 	android:name
-		ADDED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:57:13-52
+		ADDED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:58:13-52
 activity#com.wso2is.androidsample2.activities.SignUpActivity
-ADDED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:60:9-72:20
+ADDED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:61:9-74:20
 	android:label
-		ADDED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:62:13-45
+		ADDED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:63:13-45
 	android:name
-		ADDED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:61:13-54
-intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+data:host:app-profile-dev.hungthinhcorp.com.vn/notification/register-by-email-success+data:scheme:https
-ADDED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:63:13-71:29
+		ADDED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:62:13-54
+intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:host:app-profile-dev.hungthinhcorp.com.vn/notification/register-by-email-success+data:scheme:https
+ADDED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:64:13-73:29
 action#android.intent.action.VIEW
-ADDED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:64:17-69
+ADDED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:65:17-69
 	android:name
-		ADDED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:64:25-66
+		ADDED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:65:25-66
 category#android.intent.category.BROWSABLE
-ADDED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:66:17-78
+ADDED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:68:17-78
 	android:name
-		ADDED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:66:27-75
+		ADDED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:68:27-75
 data
-ADDED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:68:17-70:46
+ADDED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:70:17-72:46
 	android:host
-		ADDED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:69:21-111
+		ADDED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:71:21-111
 	android:scheme
-		ADDED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:70:21-43
+		ADDED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:72:21-43
 activity#com.wso2is.androidsample2.activities.LoginActivity
-ADDED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:74:9-80:20
+ADDED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:76:9-82:20
 	android:launchMode
-		ADDED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:76:13-43
+		ADDED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:78:13-43
 	android:name
-		ADDED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:75:13-53
+		ADDED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:77:13-53
 activity#net.openid.appauth.RedirectUriReceiverActivity
-ADDED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:81:9-91:20
+ADDED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:83:9-93:20
 MERGED from [net.openid:appauth:0.7.0] /Users/thang/.gradle/caches/transforms-2/files-2.1/716676ae7b9f7ff695f61bd9ff3cfefa/appauth-0.7.0/AndroidManifest.xml:32:9-43:20
 MERGED from [net.openid:appauth:0.7.0] /Users/thang/.gradle/caches/transforms-2/files-2.1/716676ae7b9f7ff695f61bd9ff3cfefa/appauth-0.7.0/AndroidManifest.xml:32:9-43:20
 	android:exported
 		ADDED from [net.openid:appauth:0.7.0] /Users/thang/.gradle/caches/transforms-2/files-2.1/716676ae7b9f7ff695f61bd9ff3cfefa/appauth-0.7.0/AndroidManifest.xml:34:13-36
 	android:name
-		ADDED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:81:19-80
+		ADDED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:83:19-80
 intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:scheme:com.wso2is.androidsample2://oauth
-ADDED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:82:13-90:29
+ADDED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:84:13-92:29
 meta-data#preloaded_fonts
-ADDED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:93:9-95:57
+ADDED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:95:9-97:57
 	android:resource
-		ADDED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:95:13-54
+		ADDED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:97:13-54
 	android:name
-		ADDED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:94:13-43
+		ADDED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:96:13-43
 uses-sdk
 INJECTED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml

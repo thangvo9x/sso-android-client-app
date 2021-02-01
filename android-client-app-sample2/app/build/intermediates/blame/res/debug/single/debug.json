@@ -80,6 +80,10 @@
         "source": "/Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/res/drawable-xxhdpi/profile.png"
     },
     {
+        "merged": "/Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/build/intermediates/res/merged/debug/drawable_cancel.png.flat",
+        "source": "/Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/res/drawable/cancel.png"
+    },
+    {
         "merged": "/Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/build/intermediates/res/merged/debug/drawable_background_appbar.png.flat",
         "source": "/Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/res/drawable/background_appbar.png"
     },
