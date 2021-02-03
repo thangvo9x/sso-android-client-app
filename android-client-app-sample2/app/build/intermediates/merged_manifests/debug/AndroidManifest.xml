@@ -63,18 +63,7 @@
             android:label="@string/app_name" />
         <activity
             android:name="com.wso2is.androidsample2.activities.SignUpActivity"
-            android:label="@string/app_name" >
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
-
-                <data
-                    android:host="app-profile-dev.hungthinhcorp.com.vn/notification/register-by-email-success"
-                    android:scheme="https" />
-            </intent-filter>
-        </activity>
+            android:label="@string/app_name" />
         <activity
             android:name="com.wso2is.androidsample2.activities.LoginActivity"
             android:launchMode="singleTop" >

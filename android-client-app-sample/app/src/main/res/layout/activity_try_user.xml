@@ -10,7 +10,8 @@
     <android.support.constraint.ConstraintLayout
         android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_logined">
 
         <!--        <Button-->
         <!--            android:id="@+id/bLogoutSSO"-->
@@ -31,39 +32,19 @@
         <!--            app:layout_constraintTop_toTopOf="parent"-->
         <!--            app:layout_constraintVertical_bias="0.889" />-->
 
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="25dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginBottom="50dp"
-            android:text="@string/copyright"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0" />
-
-        <TextView
-            android:id="@+id/tvProfile"
-            android:layout_width="wrap_content"
-            android:layout_height="42dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="140dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"
-            android:text="@string/welcome"
-            android:textColor="@android:color/black"
-            android:textSize="28sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+        <!--        <ImageView-->
+        <!--            android:id="@+id/imageView"-->
+        <!--            android:layout_width="151dp"-->
+        <!--            android:layout_height="141dp"-->
+        <!--            android:layout_marginTop="8dp"-->
+        <!--            android:layout_marginBottom="8dp"-->
+        <!--            android:contentDescription="@string/user_image"-->
+        <!--            app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--            app:layout_constraintEnd_toEndOf="parent"-->
+        <!--            app:layout_constraintStart_toStartOf="parent"-->
+        <!--            app:layout_constraintTop_toTopOf="parent"-->
+        <!--            app:layout_constraintVertical_bias="0.646"-->
+        <!--            app:srcCompat="@drawable/profile" />-->
 
         <TextView
             android:id="@+id/tvProfile2"
@@ -71,30 +52,17 @@
             android:layout_height="42dp"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
-            android:layout_marginTop="96dp"
-            android:layout_marginEnd="8dp"
+            android:layout_marginTop="70dp"
+            android:layout_marginEnd="20dp"
             android:layout_marginRight="8dp"
-            android:text="@string/app_name"
-            android:textColor="@android:color/black"
+            android:text="@string/app_name_welcome"
+            android:textColor="@color/backgroundTabBar"
             android:textSize="28sp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="151dp"
-            android:layout_height="141dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
-            android:contentDescription="@string/user_image"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.646"
-            app:srcCompat="@drawable/profile" />
 
         <TextView
             android:id="@+id/tvHtID"
@@ -102,25 +70,36 @@
             android:layout_height="24dp"
             android:layout_marginStart="32dp"
             android:layout_marginLeft="32dp"
-            android:layout_marginTop="118dp"
+            android:layout_marginTop="170dp"
             android:layout_marginEnd="32dp"
             android:layout_marginRight="32dp"
-            android:layout_marginBottom="55dp"
-            android:textColor="@android:color/black"
+            android:layout_marginBottom="574dp"
+            android:textColor="@color/backgroundTabBar"
             android:textSize="18sp"
-            app:layout_constraintBottom_toTopOf="@+id/imageView"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvProfile" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints" />
+
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="24dp"
+            android:contentDescription="@string/user_image"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/back" />
 
         <Button
             android:id="@+id/bLogout"
-            style="?android:attr/borderlessButtonStyle"
-            android:layout_width="287dp"
+            android:layout_width="wrap_content"
             android:layout_height="34dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="5dp"
             android:layout_marginBottom="8dp"
-            android:background="#fc511f"
+            android:background="@drawable/rounded_none"
             android:clickable="false"
             android:focusable="true"
             android:fontFamily="sans-serif"
@@ -128,40 +107,16 @@
             android:text="@string/sign_out"
             android:textAlignment="center"
             android:textAllCaps="false"
-            android:textColor="@android:color/white"
+            android:textColor="@color/backgroundTabBar"
             android:textSize="18sp"
+            android:textStyle="italic"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.105"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.861" />
+            app:layout_constraintVertical_bias="0.023" />
 
     </android.support.constraint.ConstraintLayout>
-
-    <include layout="@layout/app_bar" />
-
-    <com.wso2is.androidsample.navigation.CustomViewPager
-
-        android:id="@+id/view_pager"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_anchor="@+id/constraintLayout"
-        app:layout_anchorGravity="center|center_horizontal" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        android:orientation="vertical"
-        app:layout_behavior="com.wso2is.androidsample.navigation.BottomNavigationBehavior">
-
-        <android.support.design.widget.TabLayout
-            android:id="@+id/tab_layout"
-            style="@style/AppTabLayout"
-            android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:background="@color/backgroundTabBar" />
-
-    </LinearLayout>
 
 </android.support.design.widget.CoordinatorLayout>

@@ -10,106 +10,118 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a7167167-28fd-4c6e-90b1-9113f8d7e6af" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../android-client-app-sample2/app/src/main/res/drawable/cancel.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/back.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/bg_home.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/bg_logined.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/logo_hungthinh_white.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/rounded_corners.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/rounded_corners_green.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/rounded_none.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/jarAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_okio_okio_1_14_1_jar.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/app.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/release/app-release.apk" beforeDir="false" afterPath="$PROJECT_DIR$/app/release/app-release.apk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/release/output-metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/release/output-metadata.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/wso2is/androidsample/activities/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/wso2is/androidsample/activities/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/wso2is/androidsample/activities/SignUpActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/wso2is/androidsample/activities/SignUpActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/wso2is/androidsample/activities/UserActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/wso2is/androidsample/activities/UserActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/wso2is/androidsample/oidc/LogoutRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/wso2is/androidsample/oidc/LogoutRequest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/wso2is/androidsample/oidc/UserInfoRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/wso2is/androidsample/oidc/UserInfoRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/intermediates/lint-cache/maven.google/com/android/support/constraint/group-index.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/intermediates/lint-cache/maven.google/com/android/support/group-index.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/intermediates/lint-cache/maven.google/com/android/support/test/espresso/group-index.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/intermediates/lint-cache/maven.google/com/android/support/test/group-index.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/intermediates/lint-cache/maven.google/master-index.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/intermediates/lint-cache/sdk-registry.xml/sdk-registry.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_signup.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_signup.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_try_user.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_try_user.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/splashscreen.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/splashscreen.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/.gradle/6.1.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../android-client-app-sample2/.gradle/6.1.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/.gradle/6.1.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../android-client-app-sample2/.gradle/6.1.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/.gradle/6.1.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../android-client-app-sample2/.gradle/6.1.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/.gradle/6.1.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../android-client-app-sample2/.gradle/6.1.1/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/.gradle/6.1.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../android-client-app-sample2/.gradle/6.1.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/.gradle/6.1.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../android-client-app-sample2/.gradle/6.1.1/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/.gradle/6.1.1/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../android-client-app-sample2/.gradle/6.1.1/javaCompile/jarAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/.gradle/6.1.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../android-client-app-sample2/.gradle/6.1.1/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/.gradle/6.1.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../android-client-app-sample2/.gradle/6.1.1/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../android-client-app-sample2/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../android-client-app-sample2/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../android-client-app-sample2/.gradle/checksums/checksums.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/.gradle/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../android-client-app-sample2/.gradle/checksums/md5-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/.gradle/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../android-client-app-sample2/.gradle/checksums/sha1-checksums.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/../android-client-app-sample2/.idea/caches/build_file_checksums.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/.idea/libraries/Gradle__android_arch_lifecycle_livedata_1_1_1_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/.idea/libraries/Gradle__com_android_support_animated_vector_drawable_28_0_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/.idea/libraries/Gradle__com_android_support_appcompat_v7_28_0_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/.idea/libraries/Gradle__com_android_support_asynclayoutinflater_28_0_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/.idea/libraries/Gradle__com_android_support_cardview_v7_28_0_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/.idea/libraries/Gradle__com_android_support_collections_28_0_0_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/.idea/libraries/Gradle__com_android_support_coordinatorlayout_28_0_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/.idea/libraries/Gradle__com_android_support_cursoradapter_28_0_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/.idea/libraries/Gradle__com_android_support_customview_28_0_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/.idea/libraries/Gradle__com_android_support_design_28_0_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/.idea/libraries/Gradle__com_android_support_documentfile_28_0_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/.idea/libraries/Gradle__com_android_support_drawerlayout_28_0_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/.idea/libraries/Gradle__com_android_support_interpolator_28_0_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/.idea/libraries/Gradle__com_android_support_loader_28_0_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/.idea/libraries/Gradle__com_android_support_localbroadcastmanager_28_0_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/.idea/libraries/Gradle__com_android_support_print_28_0_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/.idea/libraries/Gradle__com_android_support_recyclerview_v7_28_0_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/.idea/libraries/Gradle__com_android_support_slidingpanelayout_28_0_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/.idea/libraries/Gradle__com_android_support_support_annotations_28_0_0_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/.idea/libraries/Gradle__com_android_support_support_compat_28_0_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/.idea/libraries/Gradle__com_android_support_support_core_ui_28_0_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/.idea/libraries/Gradle__com_android_support_support_core_utils_28_0_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/.idea/libraries/Gradle__com_android_support_support_fragment_28_0_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/.idea/libraries/Gradle__com_android_support_support_vector_drawable_28_0_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/.idea/libraries/Gradle__com_android_support_swiperefreshlayout_28_0_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/.idea/libraries/Gradle__com_android_support_transition_28_0_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/.idea/libraries/Gradle__com_android_support_versionedparcelable_28_0_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/.idea/libraries/Gradle__com_android_support_viewpager_28_0_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/.idea/libraries/Gradle__com_squareup_okio_okio_1_14_1_jar.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../android-client-app-sample2/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../android-client-app-sample2/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/app/build/generated/source/buildConfig/debug/com/wso2is/androidsample2/BuildConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../android-client-app-sample2/app/build/generated/source/buildConfig/debug/com/wso2is/androidsample2/BuildConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/app/build/intermediates/blame/res/debug/multi-v2/debug.json" beforeDir="false" afterPath="$PROJECT_DIR$/../android-client-app-sample2/app/build/intermediates/blame/res/debug/multi-v2/debug.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/app/build/intermediates/blame/res/debug/single/debug.json" beforeDir="false" afterPath="$PROJECT_DIR$/../android-client-app-sample2/app/build/intermediates/blame/res/debug/single/debug.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/app/build/intermediates/bundle_manifest/debug/bundle-manifest/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../android-client-app-sample2/app/build/intermediates/bundle_manifest/debug/bundle-manifest/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/app/build/intermediates/bundle_manifest/debug/bundle-manifest/output.json" beforeDir="false" afterPath="$PROJECT_DIR$/../android-client-app-sample2/app/build/intermediates/bundle_manifest/debug/bundle-manifest/output.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/app/build/intermediates/compile_and_runtime_not_namespaced_r_class_jar/debug/R.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../android-client-app-sample2/app/build/intermediates/compile_and_runtime_not_namespaced_r_class_jar/debug/R.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/app/build/intermediates/dex/debug/mergeDexDebug/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/../android-client-app-sample2/app/build/intermediates/dex/debug/mergeDexDebug/classes.dex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/app/build/intermediates/dex_archive_input_jar_hashes/debug/out" beforeDir="false" afterPath="$PROJECT_DIR$/../android-client-app-sample2/app/build/intermediates/dex_archive_input_jar_hashes/debug/out" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/app/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../android-client-app-sample2/app/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/app/build/intermediates/incremental/mergeDebugResources/merger.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../android-client-app-sample2/app/build/intermediates/incremental/mergeDebugResources/merger.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../android-client-app-sample2/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/app/build/intermediates/incremental/packageDebug/tmp/debug/zip-cache/androidResources" beforeDir="false" afterPath="$PROJECT_DIR$/../android-client-app-sample2/app/build/intermediates/incremental/packageDebug/tmp/debug/zip-cache/androidResources" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/app/build/intermediates/incremental/packageDebug/tmp/debug/zip-cache/javaResources0" beforeDir="false" afterPath="$PROJECT_DIR$/../android-client-app-sample2/app/build/intermediates/incremental/packageDebug/tmp/debug/zip-cache/javaResources0" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/app/build/intermediates/instant_app_manifest/debug/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../android-client-app-sample2/app/build/intermediates/instant_app_manifest/debug/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/app/build/intermediates/instant_app_manifest/debug/output.json" beforeDir="false" afterPath="$PROJECT_DIR$/../android-client-app-sample2/app/build/intermediates/instant_app_manifest/debug/output.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/app/build/intermediates/javac/debug/classes/com/wso2is/androidsample2/BuildConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/../android-client-app-sample2/app/build/intermediates/javac/debug/classes/com/wso2is/androidsample2/BuildConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/app/build/intermediates/javac/debug/classes/com/wso2is/androidsample2/activities/MainActivity.class" beforeDir="false" afterPath="$PROJECT_DIR$/../android-client-app-sample2/app/build/intermediates/javac/debug/classes/com/wso2is/androidsample2/activities/MainActivity.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/app/build/intermediates/javac/debug/classes/com/wso2is/androidsample2/activities/UserActivity.class" beforeDir="false" afterPath="$PROJECT_DIR$/../android-client-app-sample2/app/build/intermediates/javac/debug/classes/com/wso2is/androidsample2/activities/UserActivity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/app/build/intermediates/javac/debug/classes/com/wso2is/androidsample2/oidc/LogoutRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../android-client-app-sample2/app/build/intermediates/javac/debug/classes/com/wso2is/androidsample2/oidc/LogoutRequest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/app/build/intermediates/javac/debug/classes/com/wso2is/androidsample2/oidc/UserInfoRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../android-client-app-sample2/app/build/intermediates/javac/debug/classes/com/wso2is/androidsample2/oidc/UserInfoRequest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/app/build/intermediates/javac/debug/classes/com/wso2is/androidsample2/utils/SetupScreenCustom.class" beforeDir="false" afterPath="$PROJECT_DIR$/../android-client-app-sample2/app/build/intermediates/javac/debug/classes/com/wso2is/androidsample2/utils/SetupScreenCustom.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/app/build/intermediates/manifest_merge_blame_file/debug/manifest-merger-blame-debug-report.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../android-client-app-sample2/app/build/intermediates/manifest_merge_blame_file/debug/manifest-merger-blame-debug-report.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/app/build/intermediates/merged_java_res/debug/out.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../android-client-app-sample2/app/build/intermediates/merged_java_res/debug/out.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/app/build/intermediates/merged_manifests/debug/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../android-client-app-sample2/app/build/intermediates/merged_manifests/debug/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/app/build/intermediates/merged_manifests/debug/output.json" beforeDir="false" afterPath="$PROJECT_DIR$/../android-client-app-sample2/app/build/intermediates/merged_manifests/debug/output.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/app/build/intermediates/metadata_feature_manifest/debug/metadata-feature/output.json" beforeDir="false" afterPath="$PROJECT_DIR$/../android-client-app-sample2/app/build/intermediates/metadata_feature_manifest/debug/metadata-feature/output.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/app/build/intermediates/processed_res/debug/out/output.json" beforeDir="false" afterPath="$PROJECT_DIR$/../android-client-app-sample2/app/build/intermediates/processed_res/debug/out/output.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/app/build/intermediates/processed_res/debug/out/resources-debug.ap_" beforeDir="false" afterPath="$PROJECT_DIR$/../android-client-app-sample2/app/build/intermediates/processed_res/debug/out/resources-debug.ap_" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/app/build/intermediates/project_dex_archive/debug/out/com/wso2is/androidsample2/BuildConfig.dex" beforeDir="false" afterPath="$PROJECT_DIR$/../android-client-app-sample2/app/build/intermediates/project_dex_archive/debug/out/com/wso2is/androidsample2/BuildConfig.dex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/app/build/intermediates/project_dex_archive/debug/out/com/wso2is/androidsample2/activities/MainActivity.dex" beforeDir="false" afterPath="$PROJECT_DIR$/../android-client-app-sample2/app/build/intermediates/project_dex_archive/debug/out/com/wso2is/androidsample2/activities/MainActivity.dex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/app/build/intermediates/project_dex_archive/debug/out/com/wso2is/androidsample2/activities/UserActivity.dex" beforeDir="false" afterPath="$PROJECT_DIR$/../android-client-app-sample2/app/build/intermediates/project_dex_archive/debug/out/com/wso2is/androidsample2/activities/UserActivity.dex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/app/build/intermediates/project_dex_archive/debug/out/com/wso2is/androidsample2/oidc/LogoutRequest.dex" beforeDir="false" afterPath="$PROJECT_DIR$/../android-client-app-sample2/app/build/intermediates/project_dex_archive/debug/out/com/wso2is/androidsample2/oidc/LogoutRequest.dex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/app/build/intermediates/project_dex_archive/debug/out/com/wso2is/androidsample2/oidc/UserInfoRequest.dex" beforeDir="false" afterPath="$PROJECT_DIR$/../android-client-app-sample2/app/build/intermediates/project_dex_archive/debug/out/com/wso2is/androidsample2/oidc/UserInfoRequest.dex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/app/build/intermediates/project_dex_archive/debug/out/com/wso2is/androidsample2/utils/SetupScreenCustom.dex" beforeDir="false" afterPath="$PROJECT_DIR$/../android-client-app-sample2/app/build/intermediates/project_dex_archive/debug/out/com/wso2is/androidsample2/utils/SetupScreenCustom.dex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/app/build/intermediates/res/merged/debug/layout_activity_main.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/../android-client-app-sample2/app/build/intermediates/res/merged/debug/layout_activity_main.xml.flat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/app/build/intermediates/runtime_symbol_list/debug/R.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../android-client-app-sample2/app/build/intermediates/runtime_symbol_list/debug/R.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/app/build/intermediates/symbol_list_with_package_name/debug/package-aware-r.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../android-client-app-sample2/app/build/intermediates/symbol_list_with_package_name/debug/package-aware-r.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/app/build/outputs/apk/debug/app-debug.apk" beforeDir="false" afterPath="$PROJECT_DIR$/../android-client-app-sample2/app/build/outputs/apk/debug/app-debug.apk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/app/build/outputs/apk/debug/output-metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/../android-client-app-sample2/app/build/outputs/apk/debug/output-metadata.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/app/build/outputs/logs/manifest-merger-debug-report.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../android-client-app-sample2/app/build/outputs/logs/manifest-merger-debug-report.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/app/release/app-release.apk" beforeDir="false" afterPath="$PROJECT_DIR$/../android-client-app-sample2/app/release/app-release.apk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/app/release/output-metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/../android-client-app-sample2/app/release/output-metadata.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../android-client-app-sample2/app/src/main/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/app/src/main/java/com/wso2is/androidsample2/activities/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../android-client-app-sample2/app/src/main/java/com/wso2is/androidsample2/activities/MainActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/app/src/main/java/com/wso2is/androidsample2/activities/SignUpActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../android-client-app-sample2/app/src/main/java/com/wso2is/androidsample2/activities/SignUpActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/app/src/main/java/com/wso2is/androidsample2/activities/UserActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../android-client-app-sample2/app/src/main/java/com/wso2is/androidsample2/activities/UserActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/app/src/main/java/com/wso2is/androidsample2/oidc/LogoutRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../android-client-app-sample2/app/src/main/java/com/wso2is/androidsample2/oidc/LogoutRequest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/app/src/main/java/com/wso2is/androidsample2/oidc/UserInfoRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../android-client-app-sample2/app/src/main/java/com/wso2is/androidsample2/oidc/UserInfoRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/app/src/main/res/layout/activity_login.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../android-client-app-sample2/app/src/main/res/layout/activity_login.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../android-client-app-sample2/app/src/main/res/layout/activity_main.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/app/src/main/res/layout/activity_signup.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../android-client-app-sample2/app/src/main/res/layout/activity_signup.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../android-client-app-sample2/gradle.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/app/src/main/res/layout/activity_try_user.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../android-client-app-sample2/app/src/main/res/layout/activity_try_user.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/app/src/main/res/layout/splashscreen.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../android-client-app-sample2/app/src/main/res/layout/splashscreen.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/app/src/main/res/menu/app_bar_logined.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/app/src/main/res/raw/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/../android-client-app-sample2/app/src/main/res/raw/config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../android-client-app-sample2/app/src/main/res/values/colors.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../android-client-app-sample2/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/build/intermediates/lint-cache/maven.google/com/android/support/constraint/group-index.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/build/intermediates/lint-cache/maven.google/com/android/support/group-index.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/build/intermediates/lint-cache/maven.google/com/android/support/test/espresso/group-index.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/build/intermediates/lint-cache/maven.google/com/android/support/test/group-index.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/build/intermediates/lint-cache/maven.google/master-index.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android-client-app-sample2/build/intermediates/lint-cache/sdk-registry.xml/sdk-registry.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -181,16 +193,16 @@
     <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="com.wso2is.androidsample.activities" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/app/src/main/res/layout" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.wso2is.androidsample.activities" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/src/main/res/drawable" />
       <recent name="$PROJECT_DIR$/app/src/main/res/drawable-mdpi" />
       <recent name="$PROJECT_DIR$/app/src/main/res/layout" />
     </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.wso2is.androidsample.activities" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/src/main/res/layout" />
     </key>
   </component>
   <component name="RunManager">
@@ -296,9 +308,10 @@
       <screen x="61" y="25" width="1731" height="1095" />
     </state>
     <state x="449" y="326" key="#com.intellij.ide.util.TreeClassChooserDialog/61.25.1731.1095@61.25.1731.1095" timestamp="1610968430245" />
-    <state x="669" y="323" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1611051741296">
-      <screen x="69" y="25" width="1723" height="1095" />
+    <state x="593" y="-768" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1612334881888">
+      <screen x="-76" y="-1055" width="1920" height="1055" />
     </state>
+    <state x="593" y="-768" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/-76.-1055.1920.1055/72.25.1720.1095@-76.-1055.1920.1055" timestamp="1612334881888" />
     <state x="664" y="323" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/61.25.1731.1095@61.25.1731.1095" timestamp="1610978861611" />
     <state x="669" y="323" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/69.25.1723.1095@69.25.1723.1095" timestamp="1611051741296" />
     <state x="841" y="424" key="#xdebugger.evaluate" timestamp="1610952681735">
@@ -324,9 +337,11 @@
     </state>
     <state x="161" y="125" width="1531" height="855" key="DiffContextDialog/61.25.1731.1095@61.25.1731.1095" timestamp="1610937939657" />
     <state x="169" y="125" width="1524" height="855" key="DiffContextDialog/69.25.1723.1095@69.25.1723.1095" timestamp="1611909099318" />
-    <state width="86" height="-81" key="GridCell.Tab.0.bottom" timestamp="1612162842173">
-      <screen x="69" y="25" width="1723" height="1095" />
+    <state width="1878" height="285" key="GridCell.Tab.0.bottom" timestamp="1612331847433">
+      <screen x="-76" y="-1055" width="1920" height="1055" />
     </state>
+    <state width="1681" height="299" key="GridCell.Tab.0.bottom/-76.-1055.1920.1055/69.25.1723.1095@69.25.1723.1095" timestamp="1612262284056" />
+    <state width="1878" height="285" key="GridCell.Tab.0.bottom/-76.-1055.1920.1055/72.25.1720.1095@-76.-1055.1920.1055" timestamp="1612331847433" />
     <state width="1820" height="232" key="GridCell.Tab.0.bottom/58.25.1862.1055/1920.25.1792.1095@58.25.1862.1055" timestamp="1605770034643" />
     <state width="1690" height="332" key="GridCell.Tab.0.bottom/60.25.1732.1095@60.25.1732.1095" timestamp="1610608823307" />
     <state width="1692" height="289" key="GridCell.Tab.0.bottom/60.25.1860.1055/1920.25.1792.1095@1920.25.1792.1095" timestamp="1606272099454" />
@@ -334,12 +349,14 @@
     <state width="844" height="307" key="GridCell.Tab.0.bottom/61.25.1731.1095@61.25.1731.1095" timestamp="1611023690747" />
     <state width="844" height="307" key="GridCell.Tab.0.bottom/63.25.1729.1095@63.25.1729.1095" timestamp="1611026108637" />
     <state width="1681" height="344" key="GridCell.Tab.0.bottom/68.25.1724.1095@68.25.1724.1095" timestamp="1611933389418" />
-    <state width="86" height="-81" key="GridCell.Tab.0.bottom/69.25.1723.1095@69.25.1723.1095" timestamp="1612162842173" />
     <state width="1681" height="370" key="GridCell.Tab.0.bottom/69.25.1851.1055/1920.-15.2048.1255@69.25.1851.1055" timestamp="1611381327998" />
     <state width="1681" height="332" key="GridCell.Tab.0.bottom/69.25.1851.1055@69.25.1851.1055" timestamp="1611805509582" />
-    <state width="86" height="-81" key="GridCell.Tab.0.center" timestamp="1612162842170">
-      <screen x="69" y="25" width="1723" height="1095" />
+    <state width="1678" height="299" key="GridCell.Tab.0.bottom/72.25.1720.1095@72.25.1720.1095" timestamp="1612316943833" />
+    <state width="1878" height="285" key="GridCell.Tab.0.center" timestamp="1612331847432">
+      <screen x="-76" y="-1055" width="1920" height="1055" />
     </state>
+    <state width="1681" height="299" key="GridCell.Tab.0.center/-76.-1055.1920.1055/69.25.1723.1095@69.25.1723.1095" timestamp="1612262284055" />
+    <state width="1878" height="285" key="GridCell.Tab.0.center/-76.-1055.1920.1055/72.25.1720.1095@-76.-1055.1920.1055" timestamp="1612331847432" />
     <state width="1820" height="232" key="GridCell.Tab.0.center/58.25.1862.1055/1920.25.1792.1095@58.25.1862.1055" timestamp="1605770034642" />
     <state width="1690" height="332" key="GridCell.Tab.0.center/60.25.1732.1095@60.25.1732.1095" timestamp="1610608823307" />
     <state width="1692" height="289" key="GridCell.Tab.0.center/60.25.1860.1055/1920.25.1792.1095@1920.25.1792.1095" timestamp="1606272099454" />
@@ -347,12 +364,14 @@
     <state width="844" height="307" key="GridCell.Tab.0.center/61.25.1731.1095@61.25.1731.1095" timestamp="1611023690746" />
     <state width="844" height="307" key="GridCell.Tab.0.center/63.25.1729.1095@63.25.1729.1095" timestamp="1611026108637" />
     <state width="1681" height="344" key="GridCell.Tab.0.center/68.25.1724.1095@68.25.1724.1095" timestamp="1611933389417" />
-    <state width="86" height="-81" key="GridCell.Tab.0.center/69.25.1723.1095@69.25.1723.1095" timestamp="1612162842170" />
     <state width="1681" height="370" key="GridCell.Tab.0.center/69.25.1851.1055/1920.-15.2048.1255@69.25.1851.1055" timestamp="1611381327994" />
     <state width="1681" height="332" key="GridCell.Tab.0.center/69.25.1851.1055@69.25.1851.1055" timestamp="1611805509581" />
-    <state width="86" height="-81" key="GridCell.Tab.0.left" timestamp="1612162842170">
-      <screen x="69" y="25" width="1723" height="1095" />
+    <state width="1678" height="299" key="GridCell.Tab.0.center/72.25.1720.1095@72.25.1720.1095" timestamp="1612316943832" />
+    <state width="1878" height="285" key="GridCell.Tab.0.left" timestamp="1612331847432">
+      <screen x="-76" y="-1055" width="1920" height="1055" />
     </state>
+    <state width="1681" height="299" key="GridCell.Tab.0.left/-76.-1055.1920.1055/69.25.1723.1095@69.25.1723.1095" timestamp="1612262284055" />
+    <state width="1878" height="285" key="GridCell.Tab.0.left/-76.-1055.1920.1055/72.25.1720.1095@-76.-1055.1920.1055" timestamp="1612331847432" />
     <state width="1820" height="232" key="GridCell.Tab.0.left/58.25.1862.1055/1920.25.1792.1095@58.25.1862.1055" timestamp="1605770034641" />
     <state width="1690" height="332" key="GridCell.Tab.0.left/60.25.1732.1095@60.25.1732.1095" timestamp="1610608823306" />
     <state width="1692" height="289" key="GridCell.Tab.0.left/60.25.1860.1055/1920.25.1792.1095@1920.25.1792.1095" timestamp="1606272099453" />
@@ -360,12 +379,14 @@
     <state width="844" height="307" key="GridCell.Tab.0.left/61.25.1731.1095@61.25.1731.1095" timestamp="1611023690746" />
     <state width="844" height="307" key="GridCell.Tab.0.left/63.25.1729.1095@63.25.1729.1095" timestamp="1611026108637" />
     <state width="1681" height="344" key="GridCell.Tab.0.left/68.25.1724.1095@68.25.1724.1095" timestamp="1611933389417" />
-    <state width="86" height="-81" key="GridCell.Tab.0.left/69.25.1723.1095@69.25.1723.1095" timestamp="1612162842170" />
     <state width="1681" height="370" key="GridCell.Tab.0.left/69.25.1851.1055/1920.-15.2048.1255@69.25.1851.1055" timestamp="1611381327991" />
     <state width="1681" height="332" key="GridCell.Tab.0.left/69.25.1851.1055@69.25.1851.1055" timestamp="1611805509581" />
-    <state width="86" height="-81" key="GridCell.Tab.0.right" timestamp="1612162842170">
-      <screen x="69" y="25" width="1723" height="1095" />
+    <state width="1678" height="299" key="GridCell.Tab.0.left/72.25.1720.1095@72.25.1720.1095" timestamp="1612316943832" />
+    <state width="1878" height="285" key="GridCell.Tab.0.right" timestamp="1612331847433">
+      <screen x="-76" y="-1055" width="1920" height="1055" />
     </state>
+    <state width="1681" height="299" key="GridCell.Tab.0.right/-76.-1055.1920.1055/69.25.1723.1095@69.25.1723.1095" timestamp="1612262284055" />
+    <state width="1878" height="285" key="GridCell.Tab.0.right/-76.-1055.1920.1055/72.25.1720.1095@-76.-1055.1920.1055" timestamp="1612331847433" />
     <state width="1820" height="232" key="GridCell.Tab.0.right/58.25.1862.1055/1920.25.1792.1095@58.25.1862.1055" timestamp="1605770034642" />
     <state width="1690" height="332" key="GridCell.Tab.0.right/60.25.1732.1095@60.25.1732.1095" timestamp="1610608823307" />
     <state width="1692" height="289" key="GridCell.Tab.0.right/60.25.1860.1055/1920.25.1792.1095@1920.25.1792.1095" timestamp="1606272099454" />
@@ -373,9 +394,9 @@
     <state width="844" height="307" key="GridCell.Tab.0.right/61.25.1731.1095@61.25.1731.1095" timestamp="1611023690746" />
     <state width="844" height="307" key="GridCell.Tab.0.right/63.25.1729.1095@63.25.1729.1095" timestamp="1611026108637" />
     <state width="1681" height="344" key="GridCell.Tab.0.right/68.25.1724.1095@68.25.1724.1095" timestamp="1611933389418" />
-    <state width="86" height="-81" key="GridCell.Tab.0.right/69.25.1723.1095@69.25.1723.1095" timestamp="1612162842170" />
     <state width="1681" height="370" key="GridCell.Tab.0.right/69.25.1851.1055/1920.-15.2048.1255@69.25.1851.1055" timestamp="1611381327997" />
     <state width="1681" height="332" key="GridCell.Tab.0.right/69.25.1851.1055@69.25.1851.1055" timestamp="1611805509581" />
+    <state width="1678" height="299" key="GridCell.Tab.0.right/72.25.1720.1095@72.25.1720.1095" timestamp="1612316943833" />
     <state width="1689" height="370" key="GridCell.Tab.1.bottom" timestamp="1611051914102">
       <screen x="69" y="25" width="1723" height="1095" />
     </state>
@@ -404,6 +425,10 @@
       <screen x="69" y="25" width="1723" height="1095" />
     </state>
     <state x="432" y="208" key="SettingsEditor/69.25.1723.1095@69.25.1723.1095" timestamp="1611836744676" />
+    <state x="734" y="-608" key="VCS.ChangelistChooser" timestamp="1612334007710">
+      <screen x="-76" y="-1055" width="1920" height="1055" />
+    </state>
+    <state x="734" y="-608" key="VCS.ChangelistChooser/-76.-1055.1920.1055/72.25.1720.1095@-76.-1055.1920.1055" timestamp="1612334007710" />
     <state width="866" height="527" key="XDebugger.FullValuePopup" timestamp="1610446430754">
       <screen x="60" y="25" width="1732" height="1095" />
     </state>
@@ -429,14 +454,16 @@
       <screen x="61" y="25" width="1731" height="1095" />
     </state>
     <state x="664" y="343" key="extract.method.dialog/61.25.1731.1095@61.25.1731.1095" timestamp="1610683999130" />
-    <state x="552" y="194" width="1020" height="757" key="find.popup" timestamp="1612159098969">
-      <screen x="69" y="25" width="1723" height="1095" />
+    <state x="462" y="-892" width="1138" height="730" key="find.popup" timestamp="1612330333296">
+      <screen x="-76" y="-1055" width="1920" height="1055" />
     </state>
+    <state x="462" y="-892" width="1138" height="730" key="find.popup/-76.-1055.1920.1055/72.25.1720.1095@-76.-1055.1920.1055" timestamp="1612330333296" />
     <state x="579" y="188" width="1025" height="729" key="find.popup/58.25.1862.1055/1920.25.1792.1095@58.25.1862.1055" timestamp="1605607289895" />
     <state x="545" y="194" width="954" height="757" key="find.popup/60.25.1732.1095@60.25.1732.1095" timestamp="1610446212166" />
     <state x="546" y="194" width="1024" height="757" key="find.popup/61.25.1731.1095@61.25.1731.1095" timestamp="1610980682641" />
     <state x="551" y="194" width="1021" height="757" key="find.popup/68.25.1724.1095@68.25.1724.1095" timestamp="1611933373987" />
     <state x="552" y="194" width="1020" height="757" key="find.popup/69.25.1723.1095@69.25.1723.1095" timestamp="1612159098969" />
+    <state x="554" y="194" width="1019" height="757" key="find.popup/72.25.1720.1095@72.25.1720.1095" timestamp="1612314742803" />
     <state x="689" y="457" key="git4idea.ui.GitStashDialog" timestamp="1611227321105">
       <screen x="68" y="25" width="1724" height="1095" />
     </state>
@@ -446,9 +473,11 @@
       <screen x="69" y="25" width="1723" height="1095" />
     </state>
     <state x="633" y="192" key="refactoring.ChangeSignatureDialog/69.25.1723.1095@69.25.1723.1095" timestamp="1611299453351" />
-    <state x="562" y="268" width="670" height="702" key="search.everywhere.popup" timestamp="1612166754322">
-      <screen x="69" y="25" width="1723" height="1095" />
+    <state x="473" y="-821" width="747" height="677" key="search.everywhere.popup" timestamp="1612335736503">
+      <screen x="-76" y="-1055" width="1920" height="1055" />
     </state>
+    <state x="562" y="268" width="670" height="702" key="search.everywhere.popup/-76.-1055.1920.1055/69.25.1723.1095@69.25.1723.1095" timestamp="1612262726632" />
+    <state x="473" y="-821" width="747" height="677" key="search.everywhere.popup/-76.-1055.1920.1055/72.25.1720.1095@-76.-1055.1920.1055" timestamp="1612335736503" />
     <state x="592" y="259" width="670" height="676" key="search.everywhere.popup/58.25.1862.1055/1920.25.1792.1095@58.25.1862.1055" timestamp="1605666873542" />
     <state x="556" y="268" width="670" height="702" key="search.everywhere.popup/60.25.1732.1095@60.25.1732.1095" timestamp="1610448677436" />
     <state x="2434" y="268" width="670" height="702" key="search.everywhere.popup/60.25.1860.1055/1920.25.1792.1095@1920.25.1792.1095" timestamp="1606443903506" />
@@ -463,62 +492,62 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/wso2is/androidsample/oidc/UserInfoRequest.java</url>
-          <line>122</line>
+          <line>124</line>
           <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/wso2is/androidsample/oidc/UserInfoRequest.java</url>
-          <line>119</line>
+          <line>121</line>
           <option name="timeStamp" value="19" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/wso2is/androidsample/oidc/UserInfoRequest.java</url>
-          <line>120</line>
+          <line>122</line>
           <option name="timeStamp" value="20" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/wso2is/androidsample/oidc/UserInfoRequest.java</url>
-          <line>104</line>
+          <line>106</line>
           <option name="timeStamp" value="24" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/wso2is/androidsample/oidc/UserInfoRequest.java</url>
-          <line>101</line>
+          <line>103</line>
           <option name="timeStamp" value="25" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/wso2is/androidsample/oidc/UserInfoRequest.java</url>
-          <line>107</line>
+          <line>109</line>
           <option name="timeStamp" value="26" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/wso2is/androidsample/oidc/UserInfoRequest.java</url>
-          <line>114</line>
+          <line>116</line>
           <option name="timeStamp" value="27" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/wso2is/androidsample/oidc/UserInfoRequest.java</url>
-          <line>142</line>
+          <line>144</line>
           <option name="timeStamp" value="30" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/wso2is/androidsample/oidc/UserInfoRequest.java</url>
-          <line>131</line>
+          <line>133</line>
           <option name="timeStamp" value="31" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/wso2is/androidsample/oidc/UserInfoRequest.java</url>
-          <line>134</line>
+          <line>136</line>
           <option name="timeStamp" value="33" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/wso2is/androidsample/oidc/UserInfoRequest.java</url>
-          <line>137</line>
+          <line>139</line>
           <option name="timeStamp" value="35" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/wso2is/androidsample/oidc/UserInfoRequest.java</url>
-          <line>136</line>
+          <line>138</line>
           <option name="timeStamp" value="36" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
@@ -558,18 +587,28 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/wso2is/androidsample/oidc/UserInfoRequest.java</url>
-          <line>246</line>
+          <line>249</line>
           <option name="timeStamp" value="56" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/wso2is/androidsample/oidc/UserInfoRequest.java</url>
-          <line>247</line>
+          <line>250</line>
           <option name="timeStamp" value="57" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/wso2is/androidsample/oidc/UserInfoRequest.java</url>
-          <line>249</line>
+          <line>252</line>
           <option name="timeStamp" value="58" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/wso2is/androidsample/activities/UserActivity.java</url>
+          <line>257</line>
+          <option name="timeStamp" value="59" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/wso2is/androidsample/activities/UserActivity.java</url>
+          <line>258</line>
+          <option name="timeStamp" value="60" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

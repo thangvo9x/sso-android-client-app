@@ -24,12 +24,9 @@ import android.net.Uri;
 import android.util.Log;
 
 import com.wso2is.androidsample2.activities.MainActivity;
-import com.wso2is.androidsample2.mgt.AuthStateManager;
 import com.wso2is.androidsample2.mgt.ConfigManager;
 import com.wso2is.androidsample2.models.User;
 import com.wso2is.androidsample2.utils.ConnectionBuilderForTesting;
-
-import net.openid.appauth.AuthState;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -106,9 +103,17 @@ public class UserInfoRequest {
                 conn = ConnectionBuilderForTesting.INSTANCE.openConnection(Uri.parse(introspectEndpointUri.toString()));
             }
 
-            conn.setRequestProperty(AUTHORIZATION, BEARER + oldAccessToken);
+            conn.setRequestProperty(AUTHORIZATION, "basic admin:admin");
             conn.setRequestMethod("POST");
+            conn.setRequestProperty("data", oldAccessToken);
             Log.d(TAG, "response code AccessToken: " + conn.getResponseCode());
+
+            int responseCode = conn.getResponseCode();
+            if (responseCode != HttpURLConnection.HTTP_OK) {
+                LogoutRequest.getInstance().signOutSSO(context);
+                context.startActivity(new Intent(context, MainActivity.class));
+                return "";
+            }
 
             BufferedReader in = new BufferedReader(new InputStreamReader(
                     conn.getInputStream()));
@@ -121,7 +126,7 @@ public class UserInfoRequest {
             in.close();
 
             // print result
-            System.out.println("vao roi checkAccessToken: " + response.toString());
+            System.out.println("vao roi checkAccessToken: " + new JSONObject(response.toString()));
             // TODO
 
 
@@ -132,7 +137,7 @@ public class UserInfoRequest {
 //            } else {
 //                System.out.println("GET request not worked checkAccessToken");
 //            }
-        } catch (IOException ioEx) {
+        } catch (IOException | JSONException ioEx) {
             Log.e(TAG, "Network error when querying userinfo endpoint: ", ioEx);
 
         }
@@ -176,7 +181,6 @@ public class UserInfoRequest {
                 // check access token here
 //                String sameAccessToken = checkAccessToken(context, accessToken);
                 String sameAccessToken = accessToken;
-
                 conn.setRequestProperty(AUTHORIZATION, BEARER + sameAccessToken);
                 conn.setRequestMethod("GET");
                 Log.d(TAG, "AccessToken " + sameAccessToken);
@@ -195,7 +199,36 @@ public class UserInfoRequest {
 
                     // print result
                     userInfoJson.set(new JSONObject(response.toString()));
+//                } else if (responseCode == HttpURLConnection.HTTP_UNAUTHORIZED) {
+//
+////                    OkHttpClient client = new OkHttpClient();
+////
+//////                    String postBody = "{'token':" + sameAccessToken + "}";
+////                    RequestBody requestBody = new MultipartBody.Builder()
+////                            .setType(MultipartBody.FORM)
+////                            .addFormDataPart("token", sameAccessToken)
+////                            .build();
+////
+////
+////                    Request request = new Request.Builder()
+////                            .header("Authorization", Credentials.basic("admin", "admin"))
+////                            .header("Content-Type", "application/x-www-form-urlencoded")
+////                            .url(configuration.getIntrospectUri().toString())
+////                            .post(requestBody)
+////                            .build();
+////
+////                    try (Response response = client.newCall(request).execute()) {
+////                        System.out.println(response);
+//////                        if (!response.isSuccessful())
+////                            Log.e(TAG, "Unexpected code " + response);
+////
+////                        System.out.println(response.body().string());
+////                    } catch (IOException ioEx) {
+////                        Log.e(TAG, "Network error when querying userinfo endpoint: ", ioEx);
+//                    }
+
                 } else {
+                    val = false;
                     System.out.println("GET request not worked");
 
 //                    AuthStateManager authStateManager = AuthStateManager.getInstance(context);
@@ -204,12 +237,15 @@ public class UserInfoRequest {
 //                    if (currentState.getLastRegistrationResponse() != null) {
 //                        clearedState.update(currentState.getLastRegistrationResponse());
 //                    }
+//
+//                    context.startActivity(new Intent(context, MainActivity.class).putExtra("expired", true));
+//                    val = false;
 
                 }
 
 //                String response = Okio.buffer(Okio.source(conn.getInputStream())).readString(Charset.forName(UTF_8));
 //                userInfoJson.set(new JSONObject(response));
-//                Log.d(TAG, "Response" + userInfoJson.get().getString("sub"));
+                Log.d(TAG, "Response: " + userInfoJson.get().getString("ht_id"));
 
                 // Sets values for the user object.
 //                if (!userInfoJson.get().isNull("sub")) {
@@ -218,12 +254,14 @@ public class UserInfoRequest {
 //                    user.setUsername("");
 //                }
 
-                Log.i(TAG, "aaa" + userInfoJson.get().getString("ht_id"));
-
                 if (!userInfoJson.get().isNull("ht_id")) {
-                    user.setHtId("HtID: " + userInfoJson.get().getString("ht_id"));
+//                    Log.d(TAG, "vao day" + userInfoJson.get().getString("ht_id"));
+
+                    user.setHtId("HT_ID:" + userInfoJson.get().getString("ht_id"));
+                    Log.d(TAG, "user " + user.getHtId());
                 } else {
-                    user.setHtId("");
+                    Log.d(TAG, "xuong day " + user.getHtId());
+                    user.setHtId("HT_ID:");
                 }
 
                 val = true;
@@ -242,7 +280,8 @@ public class UserInfoRequest {
 
         try {
             authIntentLatch.await();
-        } catch (InterruptedException ex) {
+        } catch (
+                InterruptedException ex) {
             Log.w(TAG, "Interrupted while waiting for auth intent: ", ex);
         }
 

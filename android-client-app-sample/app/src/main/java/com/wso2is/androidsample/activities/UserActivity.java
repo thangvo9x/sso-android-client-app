@@ -54,6 +54,7 @@ import net.openid.appauth.ClientAuthentication;
 import net.openid.appauth.TokenRequest;
 import net.openid.appauth.TokenResponse;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.HashMap;
@@ -103,11 +104,11 @@ public class UserActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
 
-        toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+
+//        toolbar = findViewById(R.id.toolbar);
+//        setSupportActionBar(toolbar);
 
 
         stateManager = AuthStateManager.getInstance(this);
@@ -127,54 +128,54 @@ public class UserActivity extends AppCompatActivity {
         setContentView(R.layout.activity_try_user);
 //        getSupportActionBar().setTitle(APP_NAME);
 
-        CustomViewPager viewPager = findViewById(R.id.view_pager);
-
-        ViewPagerAdapter pagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
-
-        if(viewPager != null) {
-            viewPager.setPagingEnabled(false);
-
-            pagerAdapter.addFrag(new com.wso2is.androidsample.fragments.User(), "Home");
-            pagerAdapter.addFrag(new Categories(), "Categories");
-            pagerAdapter.addFrag(new com.wso2is.androidsample.fragments.Map(), "Favorites");
-            pagerAdapter.addFrag(new com.wso2is.androidsample.fragments.Map(), "User");
-            viewPager.setAdapter(pagerAdapter);
-
-            mTabLayout = findViewById(R.id.tab_layout);
-            mTabLayout.setupWithViewPager(viewPager);
-
-            mTabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
-                @Override
-                public void onTabSelected(TabLayout.Tab tab) {
-                    switch (tab.getPosition()) {
-                        case 1:
-                            ViewGroup tabItem = (ViewGroup) ((ViewGroup) mTabLayout.getChildAt(0)).getChildAt(0);
-                            tabItem.setClickable(false);
-                            break;
-                        case 2:
-                            ViewGroup tabItem2 = (ViewGroup) ((ViewGroup) mTabLayout.getChildAt(0)).getChildAt(2);
-                            tabItem2.setClickable(false);
-                            break;
-                        case 3:
-                            ViewGroup tabItem3 = (ViewGroup) ((ViewGroup) mTabLayout.getChildAt(0)).getChildAt(3);
-                            tabItem3.setClickable(false);
-                            break;
-                    }
-                }
-
-                @Override
-                public void onTabUnselected(TabLayout.Tab tab) {
-
-                }
-
-                @Override
-                public void onTabReselected(TabLayout.Tab tab) {
-
-                }
-            });
-
-            setupTabIcons();
-        }
+//        CustomViewPager viewPager = findViewById(R.id.view_pager);
+//
+//        ViewPagerAdapter pagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
+//
+//        if(viewPager != null) {
+//            viewPager.setPagingEnabled(false);
+//
+//            pagerAdapter.addFrag(new com.wso2is.androidsample.fragments.User(), "Home");
+//            pagerAdapter.addFrag(new Categories(), "Categories");
+//            pagerAdapter.addFrag(new com.wso2is.androidsample.fragments.Map(), "Favorites");
+//            pagerAdapter.addFrag(new com.wso2is.androidsample.fragments.Map(), "User");
+//            viewPager.setAdapter(pagerAdapter);
+//
+//            mTabLayout = findViewById(R.id.tab_layout);
+//            mTabLayout.setupWithViewPager(viewPager);
+//
+//            mTabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+//                @Override
+//                public void onTabSelected(TabLayout.Tab tab) {
+//                    switch (tab.getPosition()) {
+//                        case 1:
+//                            ViewGroup tabItem = (ViewGroup) ((ViewGroup) mTabLayout.getChildAt(0)).getChildAt(0);
+//                            tabItem.setClickable(false);
+//                            break;
+//                        case 2:
+//                            ViewGroup tabItem2 = (ViewGroup) ((ViewGroup) mTabLayout.getChildAt(0)).getChildAt(2);
+//                            tabItem2.setClickable(false);
+//                            break;
+//                        case 3:
+//                            ViewGroup tabItem3 = (ViewGroup) ((ViewGroup) mTabLayout.getChildAt(0)).getChildAt(3);
+//                            tabItem3.setClickable(false);
+//                            break;
+//                    }
+//                }
+//
+//                @Override
+//                public void onTabUnselected(TabLayout.Tab tab) {
+//
+//                }
+//
+//                @Override
+//                public void onTabReselected(TabLayout.Tab tab) {
+//
+//                }
+//            });
+//
+//            setupTabIcons();
+//        }
 
 
 
@@ -243,16 +244,18 @@ public class UserActivity extends AppCompatActivity {
         boolean val = UserInfoRequest.getInstance().fetchUserInfo(accessToken == null ? state.getAccessToken() : accessToken, this, user);
 
         if (val) {
-
             (findViewById(R.id.bLogout)).setOnClickListener((View view) -> {
-                LogoutRequest.getInstance().signOutSSO(this);
+                LogoutRequest.getInstance().signOut(this);
+                finish();
+            });
+            (findViewById(R.id.imageView)).setOnClickListener((View view) -> {
+                LogoutRequest.getInstance().signOut(this);
                 finish();
             });
 
-//            TextView tvUsername = findViewById(R.id.tvUsername);
-//            tvUsername.setText(user.getUsername());
 
             TextView tvHtID = findViewById(R.id.tvHtID);
+//            Log.i(TAG, "vao day roi" + user.getHtId());
             tvHtID.setText(user.getHtId());
 
         } else {

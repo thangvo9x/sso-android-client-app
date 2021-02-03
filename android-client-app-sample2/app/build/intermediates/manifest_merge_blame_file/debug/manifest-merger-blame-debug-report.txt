@@ -41,7 +41,7 @@
 32-->[com.android.support:customtabs:25.3.1] /Users/thang/.gradle/caches/transforms-2/files-2.1/fdaa7689687e62911b9c012d0a531665/customtabs-25.3.1/AndroidManifest.xml:24:9-31
 33
 34    <application
-34-->/Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:26:5-98:19
+34-->/Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:26:5-87:19
 35        android:allowBackup="true"
 35-->/Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:28:9-35
 36        android:appComponentFactory="android.support.v4.app.CoreComponentFactory"
@@ -99,101 +99,80 @@
 63            android:label="@string/app_name" />
 63-->/Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:59:13-45
 64        <activity
-64-->/Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:61:9-74:20
+64-->/Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:61:9-63:57
 65            android:name="com.wso2is.androidsample2.activities.SignUpActivity"
 65-->/Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:62:13-54
-66            android:label="@string/app_name" >
+66            android:label="@string/app_name" />
 66-->/Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:63:13-45
-67            <intent-filter>
-67-->/Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:64:13-73:29
-68                <action android:name="android.intent.action.VIEW" />
-68-->/Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:65:17-69
-68-->/Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:65:25-66
-69
-70                <category android:name="android.intent.category.DEFAULT" />
-70-->/Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:45:17-76
-70-->/Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:45:27-73
-71                <category android:name="android.intent.category.BROWSABLE" />
-71-->/Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:68:17-78
-71-->/Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:68:27-75
+67        <activity
+67-->/Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:65:9-71:20
+68            android:name="com.wso2is.androidsample2.activities.LoginActivity"
+68-->/Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:66:13-53
+69            android:launchMode="singleTop" >
+69-->/Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:67:13-43
+70
+71            <!-- <tools:validation testUrl="https://172.19.23.27:8082/notification/register-by-email-success" /> -->
 72
-73                <data
-73-->/Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:70:17-72:46
-74                    android:host="app-profile-dev.hungthinhcorp.com.vn/notification/register-by-email-success"
-74-->/Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:71:21-111
-75                    android:scheme="https" />
-75-->/Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:72:21-43
-76            </intent-filter>
-77        </activity>
-78        <activity
-78-->/Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:76:9-82:20
-79            android:name="com.wso2is.androidsample2.activities.LoginActivity"
-79-->/Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:77:13-53
-80            android:launchMode="singleTop" >
-80-->/Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:78:13-43
-81
-82            <!-- <tools:validation testUrl="https://172.19.23.27:8082/notification/register-by-email-success" /> -->
-83
-84        </activity>
-85        <activity
-85-->/Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:83:9-93:20
-86            android:name="net.openid.appauth.RedirectUriReceiverActivity"
-86-->/Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:83:19-80
-87            android:exported="true" >
-87-->[net.openid:appauth:0.7.0] /Users/thang/.gradle/caches/transforms-2/files-2.1/716676ae7b9f7ff695f61bd9ff3cfefa/appauth-0.7.0/AndroidManifest.xml:34:13-36
-88            <intent-filter>
-88-->/Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:84:13-92:29
-89                <action android:name="android.intent.action.VIEW" />
-89-->/Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:65:17-69
-89-->/Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:65:25-66
+73        </activity>
+74        <activity
+74-->/Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:72:9-82:20
+75            android:name="net.openid.appauth.RedirectUriReceiverActivity"
+75-->/Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:72:19-80
+76            android:exported="true" >
+76-->[net.openid:appauth:0.7.0] /Users/thang/.gradle/caches/transforms-2/files-2.1/716676ae7b9f7ff695f61bd9ff3cfefa/appauth-0.7.0/AndroidManifest.xml:34:13-36
+77            <intent-filter>
+77-->/Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:73:13-81:29
+78                <action android:name="android.intent.action.VIEW" />
+78-->/Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:74:17-69
+78-->/Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:74:25-66
+79
+80                <category android:name="android.intent.category.DEFAULT" />
+80-->/Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:45:17-76
+80-->/Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:45:27-73
+81                <category android:name="android.intent.category.BROWSABLE" />
+81-->/Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:77:17-78
+81-->/Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:77:27-75
+82
+83                <data android:scheme="com.wso2is.androidsample2://oauth" />
+83-->/Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:79:17-76
+83-->/Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:79:23-73
+84            </intent-filter>
+85            <intent-filter>
+85-->[net.openid:appauth:0.7.0] /Users/thang/.gradle/caches/transforms-2/files-2.1/716676ae7b9f7ff695f61bd9ff3cfefa/appauth-0.7.0/AndroidManifest.xml:35:13-42:29
+86                <action android:name="android.intent.action.VIEW" />
+86-->/Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:74:17-69
+86-->/Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:74:25-66
+87
+88                <category android:name="android.intent.category.DEFAULT" />
+88-->/Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:45:17-76
+88-->/Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:45:27-73
+89                <category android:name="android.intent.category.BROWSABLE" />
+89-->/Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:77:17-78
+89-->/Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:77:27-75
 90
-91                <category android:name="android.intent.category.DEFAULT" />
-91-->/Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:45:17-76
-91-->/Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:45:27-73
-92                <category android:name="android.intent.category.BROWSABLE" />
-92-->/Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:68:17-78
-92-->/Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:68:27-75
-93
-94                <data android:scheme="com.wso2is.androidsample2://oauth" />
-94-->/Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:70:17-72:46
-94-->/Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:72:21-43
-95            </intent-filter>
-96            <intent-filter>
-96-->[net.openid:appauth:0.7.0] /Users/thang/.gradle/caches/transforms-2/files-2.1/716676ae7b9f7ff695f61bd9ff3cfefa/appauth-0.7.0/AndroidManifest.xml:35:13-42:29
-97                <action android:name="android.intent.action.VIEW" />
-97-->/Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:65:17-69
-97-->/Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:65:25-66
+91                <data android:scheme="com.wso2is.androidsample2" />
+91-->/Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:79:17-76
+91-->/Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:79:23-73
+92            </intent-filter>
+93        </activity>
+94
+95        <meta-data
+95-->/Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:84:9-86:57
+96            android:name="preloaded_fonts"
+96-->/Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:85:13-43
+97            android:resource="@array/preloaded_fonts" />
+97-->/Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:86:13-54
 98
-99                <category android:name="android.intent.category.DEFAULT" />
-99-->/Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:45:17-76
-99-->/Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:45:27-73
-100                <category android:name="android.intent.category.BROWSABLE" />
-100-->/Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:68:17-78
-100-->/Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:68:27-75
-101
-102                <data android:scheme="com.wso2is.androidsample2" />
-102-->/Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:70:17-72:46
-102-->/Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:72:21-43
-103            </intent-filter>
-104        </activity>
+99        <activity
+99-->[net.openid:appauth:0.7.0] /Users/thang/.gradle/caches/transforms-2/files-2.1/716676ae7b9f7ff695f61bd9ff3cfefa/appauth-0.7.0/AndroidManifest.xml:27:9-31:75
+100            android:name="net.openid.appauth.AuthorizationManagementActivity"
+100-->[net.openid:appauth:0.7.0] /Users/thang/.gradle/caches/transforms-2/files-2.1/716676ae7b9f7ff695f61bd9ff3cfefa/appauth-0.7.0/AndroidManifest.xml:28:13-78
+101            android:exported="false"
+101-->[net.openid:appauth:0.7.0] /Users/thang/.gradle/caches/transforms-2/files-2.1/716676ae7b9f7ff695f61bd9ff3cfefa/appauth-0.7.0/AndroidManifest.xml:29:13-37
+102            android:launchMode="singleTask"
+102-->[net.openid:appauth:0.7.0] /Users/thang/.gradle/caches/transforms-2/files-2.1/716676ae7b9f7ff695f61bd9ff3cfefa/appauth-0.7.0/AndroidManifest.xml:30:13-44
+103            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+103-->[net.openid:appauth:0.7.0] /Users/thang/.gradle/caches/transforms-2/files-2.1/716676ae7b9f7ff695f61bd9ff3cfefa/appauth-0.7.0/AndroidManifest.xml:31:13-72
+104    </application>
 105
-106        <meta-data
-106-->/Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:95:9-97:57
-107            android:name="preloaded_fonts"
-107-->/Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:96:13-43
-108            android:resource="@array/preloaded_fonts" />
-108-->/Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/AndroidManifest.xml:97:13-54
-109
-110        <activity
-110-->[net.openid:appauth:0.7.0] /Users/thang/.gradle/caches/transforms-2/files-2.1/716676ae7b9f7ff695f61bd9ff3cfefa/appauth-0.7.0/AndroidManifest.xml:27:9-31:75
-111            android:name="net.openid.appauth.AuthorizationManagementActivity"
-111-->[net.openid:appauth:0.7.0] /Users/thang/.gradle/caches/transforms-2/files-2.1/716676ae7b9f7ff695f61bd9ff3cfefa/appauth-0.7.0/AndroidManifest.xml:28:13-78
-112            android:exported="false"
-112-->[net.openid:appauth:0.7.0] /Users/thang/.gradle/caches/transforms-2/files-2.1/716676ae7b9f7ff695f61bd9ff3cfefa/appauth-0.7.0/AndroidManifest.xml:29:13-37
-113            android:launchMode="singleTask"
-113-->[net.openid:appauth:0.7.0] /Users/thang/.gradle/caches/transforms-2/files-2.1/716676ae7b9f7ff695f61bd9ff3cfefa/appauth-0.7.0/AndroidManifest.xml:30:13-44
-114            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-114-->[net.openid:appauth:0.7.0] /Users/thang/.gradle/caches/transforms-2/files-2.1/716676ae7b9f7ff695f61bd9ff3cfefa/appauth-0.7.0/AndroidManifest.xml:31:13-72
-115    </application>
-116
-117</manifest>
+106</manifest>

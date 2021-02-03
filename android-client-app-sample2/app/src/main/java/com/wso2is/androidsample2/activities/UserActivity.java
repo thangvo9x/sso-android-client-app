@@ -26,24 +26,16 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.KeyEvent;
-import android.view.MotionEvent;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.wso2is.androidsample2.R;
-import com.wso2is.androidsample2.fragments.Categories;
-import com.wso2is.androidsample2.fragments.Home;
 import com.wso2is.androidsample2.mgt.AuthStateManager;
 import com.wso2is.androidsample2.mgt.ConfigManager;
 import com.wso2is.androidsample2.models.User;
-import com.wso2is.androidsample2.navigation.CustomViewPager;
-import com.wso2is.androidsample2.navigation.ViewPagerAdapter;
 import com.wso2is.androidsample2.oidc.LogoutRequest;
 import com.wso2is.androidsample2.oidc.UserInfoRequest;
-import com.wso2is.androidsample2.utils.SetupScreenCustom;
 
 import net.openid.appauth.AppAuthConfiguration;
 import net.openid.appauth.AuthState;
@@ -81,8 +73,6 @@ public class UserActivity extends AppCompatActivity {
     private AuthorizationService authService;
     private ConfigManager configuration;
     private Toolbar toolbar;
-    private SetupScreenCustom setupScreenCustom;
-
     private TabLayout mTabLayout;
     private int[] mTabsIcons = {
             R.drawable.home,
@@ -103,11 +93,11 @@ public class UserActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
 
-        toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+
+//        toolbar = findViewById(R.id.toolbar);
+//        setSupportActionBar(toolbar);
 
 
         stateManager = AuthStateManager.getInstance(this);
@@ -127,54 +117,55 @@ public class UserActivity extends AppCompatActivity {
         setContentView(R.layout.activity_try_user);
 //        getSupportActionBar().setTitle(APP_NAME);
 
-        CustomViewPager viewPager = findViewById(R.id.view_pager);
+//        CustomViewPager viewPager = findViewById(R.id.view_pager);
+//
+//        ViewPagerAdapter pagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
+//
+//        if(viewPager != null) {
+//            viewPager.setPagingEnabled(false);
+//
+//            pagerAdapter.addFrag(new com.wso2is.androidsample2.fragments.User(), "Home");
+//            pagerAdapter.addFrag(new Categories(), "Categories");
+//            pagerAdapter.addFrag(new com.wso2is.androidsample2.fragments.Map(), "Favorites");
+//            pagerAdapter.addFrag(new com.wso2is.androidsample2.fragments.Map(), "User");
+//            viewPager.setAdapter(pagerAdapter);
+//
+//            mTabLayout = findViewById(R.id.tab_layout);
+//            mTabLayout.setupWithViewPager(viewPager);
+//
+//            mTabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+//                @Override
+//                public void onTabSelected(TabLayout.Tab tab) {
+//                    switch (tab.getPosition()) {
+//                        case 1:
+//                            ViewGroup tabItem = (ViewGroup) ((ViewGroup) mTabLayout.getChildAt(0)).getChildAt(0);
+//                            tabItem.setClickable(false);
+//                            break;
+//                        case 2:
+//                            ViewGroup tabItem2 = (ViewGroup) ((ViewGroup) mTabLayout.getChildAt(0)).getChildAt(2);
+//                            tabItem2.setClickable(false);
+//                            break;
+//                        case 3:
+//                            ViewGroup tabItem3 = (ViewGroup) ((ViewGroup) mTabLayout.getChildAt(0)).getChildAt(3);
+//                            tabItem3.setClickable(false);
+//                            break;
+//                    }
+//                }
+//
+//                @Override
+//                public void onTabUnselected(TabLayout.Tab tab) {
+//
+//                }
+//
+//                @Override
+//                public void onTabReselected(TabLayout.Tab tab) {
+//
+//                }
+//            });
+//
+//            setupTabIcons();
+//        }
 
-        ViewPagerAdapter pagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
-
-        if (viewPager != null) {
-            viewPager.setPagingEnabled(false);
-
-            pagerAdapter.addFrag(new com.wso2is.androidsample2.fragments.User(), "Home");
-            pagerAdapter.addFrag(new Categories(), "Categories");
-            pagerAdapter.addFrag(new com.wso2is.androidsample2.fragments.Map(), "Favorites");
-            pagerAdapter.addFrag(new com.wso2is.androidsample2.fragments.Map(), "User");
-            viewPager.setAdapter(pagerAdapter);
-
-            mTabLayout = findViewById(R.id.tab_layout);
-            mTabLayout.setupWithViewPager(viewPager);
-
-            mTabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
-                @Override
-                public void onTabSelected(TabLayout.Tab tab) {
-                    switch (tab.getPosition()) {
-                        case 1:
-                            ViewGroup tabItem = (ViewGroup) ((ViewGroup) mTabLayout.getChildAt(0)).getChildAt(0);
-                            tabItem.setClickable(false);
-                            break;
-                        case 2:
-                            ViewGroup tabItem2 = (ViewGroup) ((ViewGroup) mTabLayout.getChildAt(0)).getChildAt(2);
-                            tabItem2.setClickable(false);
-                            break;
-                        case 3:
-                            ViewGroup tabItem3 = (ViewGroup) ((ViewGroup) mTabLayout.getChildAt(0)).getChildAt(3);
-                            tabItem3.setClickable(false);
-                            break;
-                    }
-                }
-
-                @Override
-                public void onTabUnselected(TabLayout.Tab tab) {
-
-                }
-
-                @Override
-                public void onTabReselected(TabLayout.Tab tab) {
-
-                }
-            });
-
-            setupTabIcons();
-        }
 
 
     }
@@ -182,7 +173,7 @@ public class UserActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        Log.i(TAG, "onStart" + user.getHtId());
+        Log.i(TAG, "onStart " + user.getHtId());
         if (stateManager.getCurrentState().isAuthorized()) {
             displayAuthorized();
         } else {
@@ -211,9 +202,8 @@ public class UserActivity extends AppCompatActivity {
                     clearedState.update(currentState.getLastRegistrationResponse());
                 }
 
-
-                Intent main = new Intent(this, MainActivity.class);
-                startActivity(main);
+                Intent login = new Intent(this, MainActivity.class);
+                startActivity(login);
                 finish();
             }
         }
@@ -242,27 +232,27 @@ public class UserActivity extends AppCompatActivity {
         // Fetches the user information from the userInfo endpoint of the WSO2 IS.
         boolean val = UserInfoRequest.getInstance().fetchUserInfo(accessToken == null ? state.getAccessToken() : accessToken, this, user);
 
-        Log.i(TAG, String.valueOf(val));
         if (val) {
-
             (findViewById(R.id.bLogout)).setOnClickListener((View view) -> {
-                LogoutRequest.getInstance().signOutSSO(this);
+                LogoutRequest.getInstance().signOut(this);
+                finish();
+            });
+            (findViewById(R.id.imageView)).setOnClickListener((View view) -> {
+                LogoutRequest.getInstance().signOut(this);
                 finish();
             });
 
-//            TextView tvUsername = findViewById(R.id.tvUsername);
-//            tvUsername.setText(user.getUsername());
 
             TextView tvHtID = findViewById(R.id.tvHtID);
+//            Log.i(TAG, "vao day roi" + user.getHtId());
             tvHtID.setText(user.getHtId());
 
         } else {
 //            Toast.makeText(this, "Unable to Fetch User Information", Toast.LENGTH_SHORT).show();
             Log.e(TAG, "Error while fetching user information.");
             Intent main = new Intent(this, MainActivity.class);
-//            main.putExtra("expired", "expired");
             startActivity(main);
-//            finish();
+            finish();
         }
     }
 

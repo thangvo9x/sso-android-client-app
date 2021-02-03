@@ -9,13 +9,6 @@
 
     <include layout="@layout/app_bar" />
 
-        <com.wso2is.androidsample2.navigation.CustomViewPager
-        android:id="@+id/view_pager"
-        android:layout_width="match_parent"
-        android:layout_height="686dp">
-
-    </com.wso2is.androidsample2.navigation.CustomViewPager>
-
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="122dp"
@@ -31,19 +24,24 @@
         app:layout_constraintVertical_bias="0.0"
         tools:srcCompat="@drawable/logo_hungthinh" />
 
-    <WebView
-        android:id="@+id/webview"
+    <com.wso2is.androidsample.navigation.CustomViewPager
+        android:id="@+id/view_pager"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-    </WebView>
+        <WebView
+            android:id="@+id/webview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </com.wso2is.androidsample.navigation.CustomViewPager>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         android:orientation="vertical"
-        app:layout_behavior="com.wso2is.androidsample2.navigation.BottomNavigationBehavior">
+        app:layout_behavior="com.wso2is.androidsample.navigation.BottomNavigationBehavior">
 
         <android.support.design.widget.TabLayout
             android:id="@+id/tab_layout"

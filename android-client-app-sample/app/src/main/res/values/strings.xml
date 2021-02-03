@@ -18,6 +18,7 @@
 
 <resources>
     <string name="app_name">HT Mobile App</string>
+    <string name="app_name_welcome">HT Mobile App xin chào !</string>
     <string name="sign_in">Đăng nhập</string>
     <string name="sign_up">Đăng ký</string>
     <string name="logged_out">Successfully Logged Out!</string>

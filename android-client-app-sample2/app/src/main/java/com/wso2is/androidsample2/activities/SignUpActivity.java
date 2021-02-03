@@ -1,5 +1,6 @@
 package com.wso2is.androidsample2.activities;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -19,12 +20,13 @@ import java.util.HashMap;
 import java.util.Map;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 
 public class SignUpActivity extends Activity {
 
     private static final String TAG = SignUpActivity.class.getSimpleName();
 
-    private ImageButton button;
+    private ImageView button;
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -32,6 +34,7 @@ public class SignUpActivity extends Activity {
         return true;
     }
 
+    @SuppressLint("ResourceType")
     public void onCreate(Bundle savedInstanceState) {
 
         final Context context = this;
@@ -40,7 +43,7 @@ public class SignUpActivity extends Activity {
         setContentView(R.layout.activity_signup);
 
         button = (ImageButton) findViewById(R.id.buttonUrl);
-
+        button.setImageResource(R.drawable.cancel);
         button.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -66,34 +69,34 @@ public class SignUpActivity extends Activity {
 
 //        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 //        setSupportActionBar(toolbar);
-//        wv.setWebViewClient(new WebViewClient() {
-//            @Override
-//            public boolean shouldOverrideUrlLoading(WebView wView, String url) {
-//                Log.i(TAG, "message");
-//                if (url.startsWith("com.wso2is")) {
-//                    Log.w(TAG, "vao day");
-//                    Log.w(TAG, wView.toString());
-//                    Intent sendIntent = new Intent();
-//                    sendIntent.setAction(Intent.ACTION_VIEW);
-//
-//                    startActivity(sendIntent);
-//                    finish();
-//
-//                    return true;
-//
-//                }
-//                return false;
-//            }
-//        });
+        wv.setWebViewClient(new WebViewClient() {
+            @Override
+            public boolean shouldOverrideUrlLoading(WebView wView, String url) {
+                Log.i(TAG, "message");
+                if (url.startsWith("com.wso2is")) {
+                    Log.w(TAG, "vao day");
+                    Log.w(TAG, wView.toString());
+                    Intent sendIntent = new Intent();
+                    sendIntent.setAction(Intent.ACTION_VIEW);
+
+                    startActivity(sendIntent);
+                    finish();
+
+                    return true;
+
+                }
+                return false;
+            }
+        });
 
         // ATTENTION: This was auto-generated to handle app links.
         Intent appLinkIntent = getIntent();
         String appLinkAction = appLinkIntent.getAction();
         Uri appLinkData = appLinkIntent.getData();
 
-        if (appLinkData != null) {
-            Log.i(TAG, appLinkData.toString());
-        }
+//        if (appLinkData != null) {
+//            Log.i(TAG, appLinkData.toString());
+//        }
 
     }
 }

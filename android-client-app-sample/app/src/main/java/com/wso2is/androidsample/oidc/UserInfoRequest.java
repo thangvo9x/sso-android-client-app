@@ -23,6 +23,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.util.Log;
 
+import com.wso2is.androidsample.R;
 import com.wso2is.androidsample.activities.MainActivity;
 import com.wso2is.androidsample.activities.SplashActivity;
 import com.wso2is.androidsample.mgt.AuthStateManager;
@@ -31,6 +32,7 @@ import com.wso2is.androidsample.models.User;
 import com.wso2is.androidsample.utils.ConnectionBuilderForTesting;
 
 import android.app.PendingIntent;
+import android.widget.TextView;
 
 import net.openid.appauth.AuthState;
 
@@ -242,6 +244,7 @@ public class UserInfoRequest {
 //                    }
 
                 } else {
+                    val = false;
                     System.out.println("GET request not worked");
 
 //                    AuthStateManager authStateManager = AuthStateManager.getInstance(context);
@@ -258,7 +261,7 @@ public class UserInfoRequest {
 
 //                String response = Okio.buffer(Okio.source(conn.getInputStream())).readString(Charset.forName(UTF_8));
 //                userInfoJson.set(new JSONObject(response));
-//                Log.d(TAG, "Response" + userInfoJson.get().getString("sub"));
+                Log.d(TAG, "Response: " + userInfoJson.get().getString("ht_id"));
 
                 // Sets values for the user object.
 //                if (!userInfoJson.get().isNull("sub")) {
@@ -268,13 +271,17 @@ public class UserInfoRequest {
 //                }
 
                 if (!userInfoJson.get().isNull("ht_id")) {
-                    user.setHtId("HT_ID: " + userInfoJson.get().getString("ht_id"));
+//                    Log.d(TAG, "vao day" + userInfoJson.get().getString("ht_id"));
+
+                    user.setHtId("HT_ID:" + userInfoJson.get().getString("ht_id"));
+                    Log.d(TAG, "user " + user.getHtId());
                 } else {
-                    user.setHtId("");
+                    Log.d(TAG, "xuong day " + user.getHtId());
+                    user.setHtId("HT_ID:");
                 }
 
                 val = true;
-//                conn.disconnect();
+                conn.disconnect();
 
             } catch (IOException ioEx) {
                 Log.e(TAG, "Network error when querying userinfo endpoint: ", ioEx);
