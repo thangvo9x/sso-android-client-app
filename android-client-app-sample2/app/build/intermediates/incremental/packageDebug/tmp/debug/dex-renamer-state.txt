@@ -1,4 +1,4 @@
-#Thu Feb 04 11:00:41 ICT 2021
+#Thu Feb 04 16:23:47 ICT 2021
 base.0=/Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/build/intermediates/dex/debug/mergeDexDebug/classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

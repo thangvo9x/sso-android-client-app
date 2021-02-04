@@ -24,6 +24,47 @@
     android:background="@drawable/bg_home"
     tools:context=".activities.LoginActivity">
 
+    <RadioGroup
+        android:id="@+id/toggle"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="275dp"
+        android:layout_marginLeft="275dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@drawable/switch_btn"
+        android:checkedButton="@+id/vn"
+        android:orientation="horizontal"
+        android:paddingHorizontal="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RadioButton
+            android:id="@+id/vn"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/toggle_background"
+            android:button="@null"
+            android:gravity="center"
+            android:text="@string/vietnam_txt"
+            android:textAllCaps="true"
+            android:textColor="@color/white" />
+
+        <RadioButton
+            android:id="@+id/en"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/toggle_background"
+            android:button="@null"
+            android:gravity="center"
+            android:text="@string/english_txt"
+            android:textAllCaps="true"
+            android:textColor="@color/white" />
+    </RadioGroup>
 
     <ImageView
         android:id="@+id/imgLogo"

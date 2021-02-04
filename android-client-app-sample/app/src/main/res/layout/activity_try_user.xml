@@ -46,6 +46,48 @@
         <!--            app:layout_constraintVertical_bias="0.646"-->
         <!--            app:srcCompat="@drawable/profile" />-->
 
+        <RadioGroup
+            android:id="@+id/toggle"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="255dp"
+            android:layout_marginLeft="255dp"
+            android:layout_marginTop="28dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:background="@drawable/switch_btn"
+            android:checkedButton="@+id/vn"
+            android:orientation="horizontal"
+            android:paddingHorizontal="5dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageView"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <RadioButton
+                android:id="@+id/vn"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/toggle_background"
+                android:button="@null"
+                android:gravity="center"
+                android:text="@string/vietnam_txt"
+                android:textAllCaps="true"
+                android:textColor="@color/white" />
+
+            <RadioButton
+                android:id="@+id/en"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/toggle_background"
+                android:button="@null"
+                android:gravity="center"
+                android:text="@string/english_txt"
+                android:textAllCaps="true"
+                android:textColor="@color/white" />
+        </RadioGroup>
+
         <TextView
             android:id="@+id/tvProfile2"
             android:layout_width="wrap_content"

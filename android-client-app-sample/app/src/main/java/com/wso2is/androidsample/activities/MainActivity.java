@@ -23,9 +23,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.CompoundButton;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SwitchCompat;
 import androidx.browser.customtabs.CustomTabsIntent;
 
 import com.wso2is.androidsample.R;
@@ -83,6 +85,8 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(this, SignUpActivity.class));
                 finish();
             });
+
+
         }
 
 //

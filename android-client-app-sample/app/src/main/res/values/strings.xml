@@ -30,6 +30,8 @@
     <string name="wso2_logo">WSO2 Logo</string>
     <string name="user_image">User Image</string>
     <string name="language">Tiếng Việt</string>
+    <string name="vietnam_txt">Việt</string>
+    <string name="english_txt">EN</string>
     <string name="copyright">Copyright \u00A9 Hưng Thịnh Corp 2021</string>
 
 </resources>

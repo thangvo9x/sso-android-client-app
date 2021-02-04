@@ -12,12 +12,12 @@
         "source": "/Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/res/drawable/bg_logined.png"
     },
     {
-        "merged": "/Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/build/intermediates/res/merged/debug/mipmap-xxhdpi_ic_launcher_round.png.flat",
-        "source": "/Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png"
-    },
-    {
         "merged": "/Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/build/intermediates/res/merged/debug/drawable_google_maps.png.flat",
         "source": "/Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/res/drawable/google_maps.png"
+    },
+    {
+        "merged": "/Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/build/intermediates/res/merged/debug/mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "/Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png"
     },
     {
         "merged": "/Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/build/intermediates/res/merged/debug/drawable-hdpi_ic_baseline_supervised_user_circle_24.png.flat",
@@ -292,6 +292,10 @@
         "source": "/Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/res/raw/config.json"
     },
     {
+        "merged": "/Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/build/intermediates/res/merged/debug/drawable_toggle_background.xml.flat",
+        "source": "/Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/res/drawable/toggle_background.xml"
+    },
+    {
         "merged": "/Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/build/intermediates/res/merged/debug/drawable-mdpi_ic_food.png.flat",
         "source": "/Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/res/drawable-mdpi/ic_food.png"
     },
@@ -366,5 +370,9 @@
     {
         "merged": "/Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/build/intermediates/res/merged/debug/drawable-xxhdpi_ic_menu.png.flat",
         "source": "/Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/build/generated/res/pngs/debug/drawable-xxhdpi/ic_menu.png"
+    },
+    {
+        "merged": "/Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/build/intermediates/res/merged/debug/drawable_switch_btn.xml.flat",
+        "source": "/Users/thang/Desktop/sso-android-client-app/android-client-app-sample2/app/src/main/res/drawable/switch_btn.xml"
     }
 ]
