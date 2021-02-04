@@ -21,13 +21,12 @@ package com.wso2is.androidsample.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.customtabs.CustomTabsIntent;
-import android.support.design.widget.TabLayout;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.browser.customtabs.CustomTabsIntent;
 
 import com.wso2is.androidsample.R;
 import com.wso2is.androidsample.mgt.AuthStateManager;
@@ -35,59 +34,15 @@ import com.wso2is.androidsample.mgt.ConfigManager;
 import com.wso2is.androidsample.oidc.AuthRequest;
 
 import net.openid.appauth.AuthState;
-import net.openid.appauth.AuthorizationService;
 
-import java.util.Objects;
 import java.util.concurrent.atomic.AtomicReference;
 
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = MainActivity.class.getSimpleName();
 
-    private TabLayout mTabLayout;
-    private Toolbar toolbar;
 
-    private int[] mTabsIcons = {
-            R.drawable.home,
-            R.drawable.list,
-            R.drawable.google_maps,
-            R.drawable.favorite,
-    };
-    private AuthorizationService authService;
-    private final AtomicReference<CustomTabsIntent> customTabIntent = new AtomicReference<>();
 
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        MenuInflater inflater = getMenuInflater();
-//        inflater.inflate(R.menu.items_app_bar, menu);
-//
-//        for (int i = 0; i < menu.size(); i++) {
-//            MenuItem item = menu.getItem(i);
-//            SpannableString spanString = new SpannableString(menu.getItem(i).getTitle().toString());
-//            spanString.setSpan(new ForegroundColorSpan(Color.WHITE), 0, spanString.length(), 0); //fix the color to white
-//            item.setTitle(spanString);
-//        }
-//
-//        return true;
-//    }
-//
-//    @Override
-//    public boolean onOptionsItemSelected(MenuItem item) {
-//        switch (item.getItemId()) {
-//            case R.id.action_login:
-//                logIn();
-//                return true;
-//            case R.id.action_signup:
-//                startActivity(new Intent(this, SignUpActivity.class));
-//                return true;
-//            default:
-//                return super.onOptionsItemSelected(item);
-//        }
-//    }
-
-    private void logIn() {
-        AuthRequest.getInstance(this).doAuth();
-    }
 
 
     @Override
@@ -103,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
             Log.i(TAG, "User is already authorized, proceeding to user activity.");
             startActivity(new Intent(this, UserActivity.class));
             finish();
+            return;
 
         } else {
             // If the user is not authorized, the LoginActivity view will be launched.
@@ -129,7 +85,6 @@ public class MainActivity extends AppCompatActivity {
             });
         }
 
-
 //
 //        toolbar = findViewById(R.id.toolbar);
 //        setSupportActionBar(toolbar);
@@ -141,12 +96,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    private void setupTabIcons() {
-        Objects.requireNonNull(mTabLayout.getTabAt(0)).setIcon(mTabsIcons[0]);
-        Objects.requireNonNull(mTabLayout.getTabAt(1)).setIcon(mTabsIcons[1]);
-        Objects.requireNonNull(mTabLayout.getTabAt(2)).setIcon(mTabsIcons[2]);
-        Objects.requireNonNull(mTabLayout.getTabAt(3)).setIcon(mTabsIcons[3]);
-    }
 
 
 }

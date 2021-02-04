@@ -6,14 +6,14 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
+import com.wso2is.androidsample2.activities.MainActivity;
 import com.wso2is.androidsample2.R;
 import android.app.ActionBar;
 import java.util.HashMap;
@@ -94,9 +94,9 @@ public class SignUpActivity extends Activity {
         String appLinkAction = appLinkIntent.getAction();
         Uri appLinkData = appLinkIntent.getData();
 
-//        if (appLinkData != null) {
-//            Log.i(TAG, appLinkData.toString());
-//        }
+        if (appLinkData != null) {
+            Log.i(TAG, appLinkData.toString());
+        }
 
     }
 }

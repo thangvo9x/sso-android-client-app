@@ -19,31 +19,24 @@
 package com.wso2is.androidsample.activities;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.design.widget.TabLayout;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.KeyEvent;
-import android.view.MotionEvent;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.browser.customtabs.CustomTabsIntent;
+
 import com.wso2is.androidsample.R;
-import com.wso2is.androidsample.fragments.Categories;
-import com.wso2is.androidsample.fragments.Home;
 import com.wso2is.androidsample.mgt.AuthStateManager;
 import com.wso2is.androidsample.mgt.ConfigManager;
 import com.wso2is.androidsample.models.User;
-import com.wso2is.androidsample.navigation.CustomViewPager;
-import com.wso2is.androidsample.navigation.ViewPagerAdapter;
 import com.wso2is.androidsample.oidc.LogoutRequest;
 import com.wso2is.androidsample.oidc.UserInfoRequest;
-import com.wso2is.androidsample.utils.SetupScreenCustom;
 
 import net.openid.appauth.AppAuthConfiguration;
 import net.openid.appauth.AuthState;
@@ -51,6 +44,7 @@ import net.openid.appauth.AuthorizationException;
 import net.openid.appauth.AuthorizationResponse;
 import net.openid.appauth.AuthorizationService;
 import net.openid.appauth.ClientAuthentication;
+import net.openid.appauth.EndSessionRequest;
 import net.openid.appauth.TokenRequest;
 import net.openid.appauth.TokenResponse;
 
@@ -59,7 +53,7 @@ import org.json.JSONObject;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Objects;
+import java.util.concurrent.ExecutorService;
 import java.util.concurrent.atomic.AtomicReference;
 
 /**
@@ -69,7 +63,8 @@ import java.util.concurrent.atomic.AtomicReference;
 public class UserActivity extends AppCompatActivity {
 
     public static final AtomicReference<JSONObject> userInfoJson = new AtomicReference<>();
-
+    private static final int END_SESSION_REQUEST_CODE = 911;
+    private static final String KEY_USER_INFO = "userInfo";
     private final String TAG = UserActivity.class.getSimpleName();
     private final User user = new User();
 
@@ -81,16 +76,7 @@ public class UserActivity extends AppCompatActivity {
 
     private AuthorizationService authService;
     private ConfigManager configuration;
-    private Toolbar toolbar;
-    private SetupScreenCustom setupScreenCustom;
-
-    private TabLayout mTabLayout;
-    private int[] mTabsIcons = {
-            R.drawable.home,
-            R.drawable.list,
-            R.drawable.google_maps,
-            R.drawable.favorite,
-    };
+    private ExecutorService executorService;
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
@@ -100,6 +86,17 @@ public class UserActivity extends AppCompatActivity {
 
         return false;
         // Disable back button..............
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle state) {
+        super.onSaveInstanceState(state);
+        // user info is retained to survive activity restarts, such as when rotating the
+        // device or switching apps. This isn't essential, but it helps provide a less
+        // jarring UX when these events occur - data does not just disappear from the view.
+        if (userInfoJson.get() != null) {
+            state.putString(KEY_USER_INFO, userInfoJson.toString());
+        }
     }
 
     @Override
@@ -116,8 +113,8 @@ public class UserActivity extends AppCompatActivity {
 
 
         if (configuration.hasConfigurationChanged()) {
-                Toast.makeText(this, "Configuration change detected!", Toast.LENGTH_SHORT).show();
-            LogoutRequest.getInstance().signOutSSO(this);
+            Toast.makeText(this, "Configuration change detected!", Toast.LENGTH_SHORT).show();
+            this.logout();
             finish();
         } else {
             authService = new AuthorizationService(this, new AppAuthConfiguration.Builder()
@@ -125,65 +122,23 @@ public class UserActivity extends AppCompatActivity {
         }
 
         // Custom TabBar Here
-        setContentView(R.layout.activity_try_user);
-//        getSupportActionBar().setTitle(APP_NAME);
-
-//        CustomViewPager viewPager = findViewById(R.id.view_pager);
-//
-//        ViewPagerAdapter pagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
-//
-//        if(viewPager != null) {
-//            viewPager.setPagingEnabled(false);
-//
-//            pagerAdapter.addFrag(new com.wso2is.androidsample.fragments.User(), "Home");
-//            pagerAdapter.addFrag(new Categories(), "Categories");
-//            pagerAdapter.addFrag(new com.wso2is.androidsample.fragments.Map(), "Favorites");
-//            pagerAdapter.addFrag(new com.wso2is.androidsample.fragments.Map(), "User");
-//            viewPager.setAdapter(pagerAdapter);
-//
-//            mTabLayout = findViewById(R.id.tab_layout);
-//            mTabLayout.setupWithViewPager(viewPager);
-//
-//            mTabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
-//                @Override
-//                public void onTabSelected(TabLayout.Tab tab) {
-//                    switch (tab.getPosition()) {
-//                        case 1:
-//                            ViewGroup tabItem = (ViewGroup) ((ViewGroup) mTabLayout.getChildAt(0)).getChildAt(0);
-//                            tabItem.setClickable(false);
-//                            break;
-//                        case 2:
-//                            ViewGroup tabItem2 = (ViewGroup) ((ViewGroup) mTabLayout.getChildAt(0)).getChildAt(2);
-//                            tabItem2.setClickable(false);
-//                            break;
-//                        case 3:
-//                            ViewGroup tabItem3 = (ViewGroup) ((ViewGroup) mTabLayout.getChildAt(0)).getChildAt(3);
-//                            tabItem3.setClickable(false);
-//                            break;
-//                    }
-//                }
-//
-//                @Override
-//                public void onTabUnselected(TabLayout.Tab tab) {
-//
-//                }
-//
-//                @Override
-//                public void onTabReselected(TabLayout.Tab tab) {
-//
-//                }
-//            });
-//
-//            setupTabIcons();
-//        }
+//        setContentView(R.layout.activity_try_user);
 
 
+        if (savedInstanceState != null) {
+            try {
+                userInfoJson.set(new JSONObject(savedInstanceState.getString(KEY_USER_INFO)));
+            } catch (JSONException ex) {
+                Log.e(TAG, "Failed to parse saved user info JSON, discarding", ex);
+            }
+        }
 
     }
 
     @Override
     protected void onStart() {
         super.onStart();
+
         Log.i(TAG, "onStart " + user.getHtId());
         if (stateManager.getCurrentState().isAuthorized()) {
             displayAuthorized();
@@ -199,22 +154,13 @@ public class UserActivity extends AppCompatActivity {
                 } else if (ex != null) {
                     Log.e(TAG, "Authorization request failed: " + ex.getMessage());
                     Toast.makeText(this, "Authorization request failed!", Toast.LENGTH_SHORT).show();
-                    LogoutRequest.getInstance().signOutSSO(this);
                     finish();
                 }
             } else {
                 Log.e(TAG, "No authorization state retained - re-authorization required.");
                 Toast.makeText(this, "Re-authorization required!", Toast.LENGTH_SHORT).show();
 
-                AuthStateManager authStateManager = AuthStateManager.getInstance(this);
-                AuthState currentState = authStateManager.getCurrentState();
-                AuthState clearedState = new AuthState(currentState.getAuthorizationServiceConfiguration());
-                if (currentState.getLastRegistrationResponse() != null) {
-                    clearedState.update(currentState.getLastRegistrationResponse());
-                }
-
-                Intent login = new Intent(this, MainActivity.class);
-                startActivity(login);
+                this.logout();
                 finish();
             }
         }
@@ -227,29 +173,24 @@ public class UserActivity extends AppCompatActivity {
         authService = null;
     }
 
-    private void setupTabIcons() {
-        Objects.requireNonNull(mTabLayout.getTabAt(0)).setIcon(mTabsIcons[0]);
-        Objects.requireNonNull(mTabLayout.getTabAt(1)).setIcon(mTabsIcons[1]);
-        Objects.requireNonNull(mTabLayout.getTabAt(2)).setIcon(mTabsIcons[2]);
-        Objects.requireNonNull(mTabLayout.getTabAt(3)).setIcon(mTabsIcons[3]);
-    }
 
     /**
      * Once the access token is obtained the user profile view will be set.
      */
     private void displayAuthorized() {
 
-        AuthState state = stateManager.getCurrentState();
+//        AuthState state = stateManager.getCurrentState();
         // Fetches the user information from the userInfo endpoint of the WSO2 IS.
-        boolean val = UserInfoRequest.getInstance().fetchUserInfo(accessToken == null ? state.getAccessToken() : accessToken, this, user);
+        boolean val = UserInfoRequest.getInstance().fetchUserInfo(stateManager.getCurrentState().getAccessToken(), this, user);
 
         if (val) {
-            (findViewById(R.id.bLogout)).setOnClickListener((View view) -> {
-                LogoutRequest.getInstance().signOut(this);
-                finish();
-            });
+            setContentView(R.layout.activity_try_user);
+//            (findViewById(R.id.bLogout)).setOnClickListener((View view) -> {
+//                this.logout();
+//                finish();
+//            });
             (findViewById(R.id.imageView)).setOnClickListener((View view) -> {
-                LogoutRequest.getInstance().signOut(this);
+                this.logout();
                 finish();
             });
 
@@ -320,9 +261,65 @@ public class UserActivity extends AppCompatActivity {
         if (!stateManager.getCurrentState().isAuthorized()) {
             Log.e(TAG, "Authorization code exchange failed.");
         } else {
+
             idToken = tokenResponse.idToken;
             accessToken = tokenResponse.accessToken;
             runOnUiThread(this::displayAuthorized);
         }
+    }
+
+    private void logout() {
+
+        AuthState currentState = stateManager.getCurrentState();
+        AuthState clearedState = new AuthState(currentState.getAuthorizationServiceConfiguration());
+
+        if (currentState.getLastRegistrationResponse() != null) {
+            clearedState.update(currentState.getLastRegistrationResponse());
+        }
+        stateManager.replaceState(clearedState);
+
+
+        Log.i(TAG, stateManager.getCurrentState().getAuthorizationServiceConfiguration().toString());
+        Log.i(TAG, idToken + configuration.getEndSessionUri().toString());
+        Log.i(TAG, "accessToken:" + accessToken);
+
+//        Log.i(TAG, "getLogoutEndpointUri:" +  configuration.getLogoutEndpointUri().toString());
+        Log.i(TAG, "redirect:" +  configuration.getRedirectUri().toString());
+        Log.i(TAG, "post_logout_redirect_uri:" +  configuration.getLogoutEndpointUri().toString());
+
+//        if (idToken != null) {
+//            Intent endSessionIntent = authService.getEndSessionRequestIntent(
+//                    new EndSessionRequest.Builder(
+//                            stateManager.getCurrentState().getAuthorizationServiceConfiguration(),
+//                            idToken,
+//                            configuration.getRedirectUri()).build());
+//            startActivityForResult(endSessionIntent, END_SESSION_REQUEST_CODE);
+//        } else {
+//            Intent mainIntent = new Intent(this, MainActivity.class);
+//            mainIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+//            startActivityForResult(mainIntent, END_SESSION_REQUEST_CODE);
+//            finish();
+//        }
+//
+
+        String logout_uri = configuration.getLogoutEndpointUri().toString();
+        String redirect = configuration.getRedirectUri().toString();
+        StringBuffer url = new StringBuffer();
+        url.append(logout_uri);
+        url.append("?id_token_hint=");
+        url.append(idToken);
+        url.append("&post_logout_redirect_uri=");
+        url.append(redirect);
+        url.append("&state=");
+        url.append(state);
+
+        CustomTabsIntent.Builder builder = new CustomTabsIntent.Builder();
+        CustomTabsIntent customTabsIntent = builder.build();
+        customTabsIntent.intent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY | Intent.FLAG_ACTIVITY_NEW_TASK
+                | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+        customTabsIntent.launchUrl(this, Uri.parse(url.toString()));
+
+
+//
     }
 }

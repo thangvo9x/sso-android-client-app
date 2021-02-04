@@ -21,9 +21,10 @@ package com.wso2is.androidsample.mgt;
 import android.util.Log;
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.support.annotation.AnyThread;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
+
+import androidx.annotation.AnyThread;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import java.lang.ref.WeakReference;
 import java.util.concurrent.atomic.AtomicReference;
@@ -44,7 +45,7 @@ import static com.wso2is.androidsample.utils.Constants.STORE_NAME;
 public class AuthStateManager {
 
     private static final AtomicReference<WeakReference<AuthStateManager>> INSTANCE_REF =
-            new AtomicReference<>(new WeakReference<AuthStateManager>(null));
+            new AtomicReference<>(new WeakReference<>(null));
 
     private final SharedPreferences prefs;
     private final AtomicReference<AuthState> currentAuthState;
@@ -113,7 +114,7 @@ public class AuthStateManager {
      * Updates the current AuthState with authorization response and exception.
      *
      * @param response Authorization response.
-     * @param ex Authorization exception.
+     * @param ex       Authorization exception.
      */
     @AnyThread
     public void updateAfterAuthorization(@Nullable AuthorizationResponse response,
@@ -128,7 +129,7 @@ public class AuthStateManager {
      * Updates the current AuthState with token response and exception.
      *
      * @param response Token response.
-     * @param ex Authorization exception.
+     * @param ex       Authorization exception.
      */
     @AnyThread
     public void updateAfterTokenResponse(@Nullable TokenResponse response, @Nullable AuthorizationException ex) {

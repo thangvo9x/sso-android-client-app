@@ -23,9 +23,11 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.net.Uri;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
+
 import android.text.TextUtils;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import com.wso2is.androidsample2.utils.ConnectionBuilderForTesting;
 import com.wso2is.androidsample2.R;
@@ -74,6 +76,8 @@ public class ConfigManager {
     private Uri logoutEndpointUri;
     private Boolean httpsRequired;
     private Uri introspectUri;
+    private Uri endSessionUri;
+    private Uri registrationUri;
 
     private ConfigManager(Context context) {
 
@@ -212,6 +216,12 @@ public class ConfigManager {
         return userInfoEndpointUri;
     }
 
+    @Nullable
+    public Uri getRegistrationUri() {
+        return registrationUri;
+    }
+
+
     /**
      * Returns the logout endpoint URI specified in the res/raw/config.json file.
      *
@@ -221,6 +231,11 @@ public class ConfigManager {
     public Uri getLogoutEndpointUri() {
 
         return logoutEndpointUri;
+    }
+
+    @Nullable
+    public Uri getEndSessionUri() {
+        return endSessionUri;
     }
 
     @Nullable
@@ -299,6 +314,7 @@ public class ConfigManager {
         clientSecret = getConfigString("client_secret");
         scope = getRequiredConfigString("authorization_scope");
         redirectUri = getRequiredConfigUri("redirect_uri");
+        endSessionUri = getRequiredConfigUri("end_session_uri");
 
         if (!isRedirectUriRegistered()) {
             throw new InvalidConfigurationException("redirect_uri is not handled by any activity in this app! "
@@ -313,6 +329,12 @@ public class ConfigManager {
         logoutEndpointUri = getRequiredConfigWebUri("end_session_endpoint");
         httpsRequired = configJson.optBoolean("https_required", true);
         introspectUri = getRequiredConfigWebUri("introspect");
+        if (getConfigString("discovery_uri") == null) {
+
+            if (clientId == null) {
+                registrationUri = getRequiredConfigWebUri("registration_endpoint_uri");
+            }
+        }
     }
 
     /**
@@ -325,6 +347,10 @@ public class ConfigManager {
     private String getConfigString(String propName) {
 
         String value = configJson.optString(propName);
+
+        if (value == null) {
+            return null;
+        }
 
         if (value != null) {
             value = value.trim();

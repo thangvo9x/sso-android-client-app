@@ -23,10 +23,17 @@ import android.content.Intent;
 import android.net.Uri;
 import android.util.Log;
 
+import com.wso2is.androidsample2.R;
 import com.wso2is.androidsample2.activities.MainActivity;
+import com.wso2is.androidsample2.mgt.AuthStateManager;
 import com.wso2is.androidsample2.mgt.ConfigManager;
 import com.wso2is.androidsample2.models.User;
 import com.wso2is.androidsample2.utils.ConnectionBuilderForTesting;
+
+import android.app.PendingIntent;
+import android.widget.TextView;
+
+import net.openid.appauth.AuthState;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -38,10 +45,20 @@ import java.lang.ref.WeakReference;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.nio.charset.Charset;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.atomic.AtomicReference;
+
+import okhttp3.Credentials;
+import okhttp3.MediaType;
+import okhttp3.MultipartBody;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.RequestBody;
+import okhttp3.Response;
+import okio.Okio;
 
 import static com.wso2is.androidsample2.activities.UserActivity.userInfoJson;
 import static com.wso2is.androidsample2.utils.Constants.AUTHORIZATION;

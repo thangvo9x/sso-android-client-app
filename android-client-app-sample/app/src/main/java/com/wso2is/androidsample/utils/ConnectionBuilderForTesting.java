@@ -19,10 +19,12 @@
 package com.wso2is.androidsample.utils;
 
 import android.annotation.SuppressLint;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
+
 import android.util.Log;
 import android.net.Uri;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import java.net.HttpURLConnection;
 import java.net.URL;

@@ -21,7 +21,7 @@ package com.wso2is.androidsample.oidc;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
-import android.support.customtabs.CustomTabsIntent;
+//import android.support.customtabs.CustomTabsIntent;
 import android.util.Log;
 
 import com.wso2is.androidsample.activities.MainActivity;
@@ -29,6 +29,8 @@ import com.wso2is.androidsample.mgt.AuthStateManager;
 import com.wso2is.androidsample.mgt.ConfigManager;
 
 import net.openid.appauth.AuthState;
+import net.openid.appauth.AuthorizationService;
+import net.openid.appauth.EndSessionRequest;
 
 import java.lang.ref.WeakReference;
 import java.util.concurrent.atomic.AtomicReference;
@@ -45,7 +47,7 @@ public class LogoutRequest {
     private static final String TAG = LogoutRequest.class.getSimpleName();
     private static final AtomicReference<WeakReference<LogoutRequest>> instance = new AtomicReference<>
             (new WeakReference<LogoutRequest>(null));
-
+    private AuthorizationService mAuthService;
     private LogoutRequest() {
 
     }
@@ -133,22 +135,24 @@ public class LogoutRequest {
 //        Log.i(TAG, idToken);
 //        if(idToken != null) {
 //            Log.i(TAG, idToken);
-        String logout_uri = configuration.getLogoutEndpointUri().toString();
-        String redirect = configuration.getRedirectUri().toString();
-        StringBuffer url = new StringBuffer();
-        url.append(logout_uri);
-        url.append("?id_token_hint=");
-        url.append(idToken);
-        url.append("&post_logout_redirect_uri=");
-        url.append(redirect);
-        url.append("&state=");
-        url.append(state);
+//        String logout_uri = configuration.getLogoutEndpointUri().toString();
+//        String redirect = configuration.getRedirectUri().toString();
+//        StringBuffer url = new StringBuffer();
+//        url.append(logout_uri);
+//        url.append("?id_token_hint=");
+//        url.append(idToken);
+//        url.append("&post_logout_redirect_uri=");
+//        url.append(redirect);
+//        url.append("&state=");
+//        url.append(state);
 
-        CustomTabsIntent.Builder builder = new CustomTabsIntent.Builder();
-        CustomTabsIntent customTabsIntent = builder.build();
-        customTabsIntent.intent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY | Intent.FLAG_ACTIVITY_NEW_TASK
-                | Intent.FLAG_ACTIVITY_SINGLE_TOP);
-        customTabsIntent.launchUrl(context, Uri.parse(url.toString()));
+//        CustomTabsIntent.Builder builder = new CustomTabsIntent.Builder();
+//        CustomTabsIntent customTabsIntent = builder.build();
+//        customTabsIntent.intent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY | Intent.FLAG_ACTIVITY_NEW_TASK
+//                | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+//        customTabsIntent.launchUrl(context, Uri.parse(url.toString()));
 //        }
+
+
     }
 }

@@ -16,7 +16,7 @@
  limitations under the License.
 -->
 
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -27,15 +27,15 @@
 
     <ImageView
         android:id="@+id/imgLogo"
-        android:layout_width="202dp"
-        android:layout_height="144dp"
+        android:layout_width="198dp"
+        android:layout_height="168dp"
         android:layout_marginStart="51dp"
         android:layout_marginLeft="51dp"
         android:layout_marginTop="56dp"
         android:layout_marginEnd="52dp"
         android:layout_marginRight="52dp"
         android:layout_marginBottom="29dp"
-        android:background="@drawable/logo_hungthinh_white"
+        android:background="@drawable/logo_inside"
         app:layout_constraintBottom_toTopOf="@+id/bsignUp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -88,4 +88,4 @@
         app:layout_constraintTop_toTopOf="parent" />
 
 
-</android.support.constraint.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
